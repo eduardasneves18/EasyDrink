@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .container {
+        max-width: 540px;
+        margin-bottom: 10px;
+        /* justify-content: space-between; */
+        text-align: center;
+        justify-content: center;
+        display: inline;
+    }
+
+    .fluid-container {
+        padding: 25px;
+    }
+
+    .codigo-produto {
+        /* font-size: 11px;? */
+        padding: 15px 0;
+        /* margin-bottom: 20px; */
+        text-align: left;
+    }
+
+    .codigo-produto {
+        font-weight: 400;
+        font-size: 14px;
+        border: none;
+    }
+
+    .row {
+        width: 100%;
+        padding: 2%;
+    }
+
+    .nome-produto .desconto-a-vista {
+        text-align: left;
+    }
+
+    .preco .preco-valor {
+        text-align: left;
+    }
+
+    .valor {
+        text-align: left;
+    }
+
+    .main-button {
+        margin-top: 5%;
+        border-radius: 30px;
+    }
+
+    /* 
+    .produtos .carousel-inner {
+        width: 80%;
+        right: auto;
+    } */
+
+    .pagamento {
+        margin-top: 5%;
+    }
+</style>
+
+<div class="fluid-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="produtos" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#galeria" data-slide-to="0" class="active"></li>
+                        <li data-target="#galeria" data-slide-to="1"></li>
+                        <li data-target="#galeria" data-slide-to="2"></li>
+                    </ul>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100"
+                                src="https://content.paodeacucar.com/wp-content/uploads/2019/06/o-que-%C3%A9-vinho-de-mesa3.jpg"
+                                alt="Los Angeles">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100"
+                                src="https://content.paodeacucar.com/wp-content/uploads/2019/06/o-que-%C3%A9-vinho-de-mesa5.jpg"
+                                alt="Chicago">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100"
+                                src="https://content.paodeacucar.com/wp-content/uploads/2019/06/o-que-%C3%A9-vinho-de-mesa5.jpg"
+                                alt="New York">
+                        </div>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#galeria" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#galeria" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="nome-produto">
+                    <h1 class="">Vinho Orgânico Tinto Suave de Mesa 750ml</h1>
+                    <div class="codigo-produto">
+                        <span class="cor-secundaria">
+                            <b>Código:</b>
+                            <span itemprop="sku">VOTSM750</span>
+                        </span>
+                    </div>
+
+                    <div class="preco">
+                        <div class="preco-valor">
+                            <b>R$:</b>
+                            <span itemprop="sku">32,40</span>
+                        </div>
+                    </div>
+
+                    <div class="desconto-a-avista">
+                        <div class="valor">
+                            <span class="desconto-a-vista">
+                                ou
+                                <strong class="cor-principal titulo">R$ 32,40</strong>
+                                via Boleto Bancario
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-button">
+                    <button type="button" class="btn-primary btn-success btn-lg">Adicionar Carrinho</button>
+                    <button type="button" class="btn-primary btn-success btn-lg">Comprar já</button>
+                </div>
+                <div class="pagamento">
+                    <table class="table table-bordered">
+                        <tbody class="table-item">
+                            <tr>
+                                <th scope="row">
+                                    <img
+                                        src="https://cdn.awsli.com.br/production/static/img/formas-de-pagamento/mercadopagov1-logo.png?v=39e08c5" />
+                                </th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <img
+                                        src="https://cdn.awsli.com.br/production/static/img/formas-de-pagamento/boleto-logo.png?v=39e08c5" />
+                                </th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <img
+                                        src="https://cdn.awsli.com.br/production/static/img/formas-de-pagamento/payu-cards.png?v=39e08c5" />
+                                </th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-ThinItalic-webfont.eot');
+  src: url('Roboto-ThinItalic-webfont.eot?#iefix') format('embedded-opentype'),
+    url('Roboto-ThinItalic-webfont.woff') format('woff'),
+    url('Roboto-ThinItalic-webfont.ttf') format('truetype')
+}
+
+
+body {
+  overflow-y: overlay !important;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+
+}
+
+.active {
+  font-weight: bold;
+  color: #FF6542;
+  font-size: 35px;
+  ;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  grid-area: auto;
+  width: 100%;
+  min-height: 5%;
+  ;
+  color: #EFE4D2;
+  background-color: #779FA1;
+
+  padding: 10px;
+
+  display: flex;
+  /* justify-content: center; */
+
+  justify-content: center;
+  font-size: 13px;
+}
+
+.menu {
+  height: 150vh;
+  width: 17vw;
+  padding: 10px;
+  background-color: #EFE4D2;
+}
+
+
+
+.container-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 10vh;
+}
+
+#navbarCollapse {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-search {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: #88498F;
+}
+
+.main-container {
+  display: flex;
+}
+
+.nav-ecommerce {
+  flex: 1;
+}
+
+.nav-item-personalize {
+  margin: 24px;
+  padding: 16px;
+  color: #88498F;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px;
+  font-size: 25px;
+  font-weight: bold
+}
+
+.nav-item-personalize:hover {
+  background-color: transparent;
+  color: #88498F;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-item-personalize>a:active {
+  background-color: transparent;
+  color: #99C19B;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.first {
+  background-color: #779FA1;
+}
+
+
+
+
+.sidebar_box {
+  margin-top: 20px;
+  padding: 5px;
+  position: relative;
+  background: #f0f0f0;
+  margin-bottom: 36px;
+  border: 1px solid #dbdbdb;
+  border-color: orange;
+  width: 100%;
+}
+
+.sidebar_box h3 {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0 10px 0 35px;
+  margin: 0;
+  width: 185px;
+  height: 33px;
+  line-height: 33px;
+  margin-bottom: 0;
+  background: url(images/templatemo_sidebar_header.png) no-repeat;
+  color: #2f2f2f
+}
+
+
+.bs_box {
+  clear: both;
+  margin-bottom: 20px
+}
+
+.bs_box img {
+  float: left;
+  margin-right: 10px;
+  border: 4px solid #fff
+}
+
+.bs_box h4 {
+  margin-bottom: 0
+}
+
+.bs_box h4 a {
+  font-size: 11px;
+  color: #000;
+  font-weight: 700
+}
+
+.bs_box .price {
+  font-size: 12px;
+  font-weight: 700;
+  color: #11bdd1
+}
+
+.fluid-content {
+  width: 100%;
+}
