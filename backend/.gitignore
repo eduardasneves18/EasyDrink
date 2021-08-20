@@ -54,6 +54,7 @@ drf_example
 *.pyc
 *.db
 *.py.bak
+db.sqlite3
 
 # Environments
 .env
