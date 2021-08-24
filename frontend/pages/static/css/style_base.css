@@ -24,11 +24,12 @@ body {
 }
 
 .footer {
-  position:fixed;
+  position:relative;
   bottom: 0;
   grid-area: auto;
   width: 100%;
-  min-height: 5%;
+  min-height: 10vh;
+  height: 20vh;
   color: #EFE4D2;
   background-color: #779FA1;
   padding: 10px;
