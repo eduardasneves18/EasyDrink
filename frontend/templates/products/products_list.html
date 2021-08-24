@@ -1,5 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'base/base.html' %}
 
+{% include 'base/aside.html' %}
 {% block content %}
 <style>
     .card {
@@ -10,6 +11,10 @@
 
     .fluid-container {
         padding: 25px;
+    }
+
+    .button-link {
+        text-decoration: none
     }
 </style>
 
@@ -31,7 +36,7 @@
                                 <span>R$ {{ product.price}}</span>
                             </div>
                             <div class="main-button">
-                                <button type="button" class="btn-primary btn-info btn">Detalhes</button>
+                                <button type="button" class="btn-primary btn-info btn"><a class="button-link"  href="{{product.my_absolute_url }}"> Detalhes </a></button>
                                 <button type="button" class="btn-primary btn-success btn">Comprar já</button>
                             </div>
                         </div>
