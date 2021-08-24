@@ -10,7 +10,7 @@ Com intuito de epreender, nós, a DreamTech, decidimos criar a nossa própria fe
 No desenvolvimento do EasyDrink usamos como ferramenta de gestão de tarefas o Trello, onde empregamos pequenas atividades e fomos criando um fluxo de trabalho produtivo e organizado. Com reuniões diárias de acompanhamento, relatávamos no que estávamos trabalhando e as dificuldades, dessa forma nos ajudávamos internamente e procurávamos formas de solucionar os problemas. Como repositório usamos o GitLab(gitlab.com), onde podemos trabalhar simuntaneamente.
 
 
-## Instações
+## Instalações
 - Primeiramente é necessário fazer a intalação do Python (versão utilizada: 3.9.16).
 
 - Em seguida instalação do django através do comando "pip install django" (versão utilizada: 3.2.6).
