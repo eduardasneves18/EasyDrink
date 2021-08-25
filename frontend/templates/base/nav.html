@@ -5,7 +5,7 @@
         <div class="container-nav">
             <div class="nav-ecommerce">
                 <a href="{% url 'pages:home' %}" class="navbar-brand">
-                    <span class="active">E-commerce</span>
+                    <span class="active">EasyDrink</span>
                 </a>
             </div>
 
@@ -30,12 +30,12 @@
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item">
-                        <a class='nav-item-personalize' href="products/"
-                            class="nav-link lead mr-4 font-weight-bold">Produtos</a>
+                        <a class='nav-item-personalize' href="{% url 'products:list' %}"
+                            class="nav-link lead mr-4 font-weight-bold">Products</a>
                     </li>
 
                     <li class="nav-item ">
-                        <a class='nav-item-personalize' href="{% url 'pages:about' %}"
+                        <a class='nav-item-personalize' href="{% url 'pages:login' %}"
                             class="nav-link lead mr-4 font-weight-bold"><svg xmlns="http://www.w3.org/2000/svg"
                                 width="20" height="20" fill="currentColor" class="bi bi-person-circle"
                                 viewBox="0 0 16 16">
@@ -48,7 +48,7 @@
 
 
                     <li class="nav-item ">
-                        <a class='nav-item-personalize' href="{% url 'pages:about' %}"
+                        <a class='nav-item-personalize' href="{% url 'pages:wishes' %}"
                             class="nav-link lead mr-4 font-weight-bold"><svg xmlns="http://www.w3.org/2000/svg"
                                 width="20" height="20" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -58,7 +58,7 @@
                     </li>
 
                     <li class="nav-item ">
-                        <a class='nav-item-personalize' href="#" class="nav-link lead mr-4 font-weight-bold"><svg
+                        <a class='nav-item-personalize' href="{% url 'carts:detail' %}" class="nav-link lead mr-4 font-weight-bold"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                 class="bi bi-cart" viewBox="0 0 16 16">
                                 <path

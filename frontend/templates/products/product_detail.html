@@ -61,24 +61,26 @@
                 <div class="col-12">
                     <div class="codigo-produto">
                         <span class="cor-secundaria">
-                            <b>Código: {{ product.id }} </b>
-                            {% comment %} <span itemprop="sku">{{product.id}}</span> {% endcomment %}
+                            <b>Code:</b>
+                            <span itemprop="sku">
+                                {{product.id}}
+                            </span> 
                         </span>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="preco">
                         <div class="preco-valor">
-                            <b>R$: {{ product.price }} </b>
-                            {% comment %} <span itemprop="sku">{{product.price}}</span> {% endcomment %}
+                            <b>R$:</b>
+                            {{ product.price }} 
                         </div>
                     </div>
                     <div class="desconto-a-avista">
                         <div class="valor">
                             <span class="desconto-a-vista">
-                                ou
+                                or
                                 <strong class="cor-principal titulo">R$ {{product.price}}</strong>
-                                via Boleto Bancario
+                                via Bank Slip
                             </span>
                         </div>
                     </div>
@@ -88,10 +90,18 @@
 
             <div class="row mt-3">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-info btn-lg w-100">Adicionar Carrinho</button>
+                    <button type="button" class="btn btn-info btn-lg w-100">
+                        <a  href="{% url 'pages:cart' %}">
+                            Add to cart
+                        </a>
+                    </button>
                 </div>
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-success btn-lg w-100">Comprar já</button>
+                    <button type="button" class="btn btn-success btn-lg w-100">
+                        <a  href="{% url 'pages:cart' %}">
+                            Buy now
+                        </a>
+                    </button>
                 </div>
             </div>
 
