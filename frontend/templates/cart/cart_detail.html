@@ -4,7 +4,6 @@
 <style>
     .cart-footer input {
         width: 15%;
-        border-radius: 22px;
 
     }
 
@@ -13,6 +12,7 @@
         margin-right: 5px;
     }
 </style>
+
 
 <div class="shopping-cart">
     <table class="table">
@@ -30,12 +30,12 @@
         <tbody>
             <tr>
                 <td>
-                    <div class="products-item row">
+                    <div class="products-item row align-items-center">
                         <div class="product-thumb col-auto">
                             <img src="https://www.enovinho.com/images_cache/thumb_400x400_palato-do-coa-reserve-red-2011.jpg"
                                 width="60" alt="Product">
                         </div>
-                        <div class="product-info col-auto">
+                        <div class="product-info col-auto ">
                             <h5 class="product-title">
                                 <a href="#">Palato da CÔA</a>
                             </h5>
@@ -63,7 +63,7 @@
             </tr>
             <tr>
                 <td>
-                    <div class="product-item row">
+                    <div class="product-item row align-items-center">
                         <a class="product-thumb col-auto">
                             <img src="https://www.enovinho.com/images_cache/thumb_400x400_palato-do-coa-reserve-red-2011.jpg"
                                 width="60" alt="Product">
@@ -90,25 +90,25 @@
                 <td class="text-center text-lg text-medium">R$20.00</td>
                 <td class="text-center text-lg text-medium">R$20.00</td>
                 <td class="text-center">
-                    <a class="remove-from-cart" href="#" data-toggle="tooltip" title=""
-                        data-original-title="Remove item">
-                        <i class="fa fa-trash"></i>
-                    </a>
+                    <button class="btn btn-outline-light" style="color: red;" title="Remove item">
+                        <i data-feather="trash"></i>
+                    </button>
                 </td>
             </tr>
         </tbody>
     </table>
 
-    <div class="cart-footer">
+    <div class="row justify-content-end">
         <div class="col-auto">
-            <form class="cupon-form" method="POST">
-                <input type="text" class="form-control" id="inputCuponCode" placeholder="cupon code">
-                <button class="btn btn-outline-primary " type="submit">Aplicar Cupom</button>
-            </form>
+            <input type="text" class="form-control" id="inputCuponCode" placeholder="cupon code">
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-outline-primary " type="submit">Aplicar Cupom</button>
         </div>
     </div>
 
 </div>
+
 
 
 {% endblock content %}

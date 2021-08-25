@@ -13,6 +13,7 @@ body {
   overflow-wrap: break-word;
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
+  max-width: 100%;
 
 }
 
@@ -24,7 +25,7 @@ body {
 }
 
 .footer {
-  position:relative;
+  position: relative;
   bottom: 0;
   grid-area: auto;
   width: 100%;
@@ -103,8 +104,9 @@ body {
   text-decoration: none;
 }
 
-.first {
+.box-colorfull {
   background-color: #779FA1;
+  min-height: 25px;
 }
 
 
@@ -136,6 +138,7 @@ body {
 
 
 
-.fluid-content {
-  width: 100%;
+.fluid-container {
+  min-height: calc(100vh - 153px - 189px);
+  padding: 25px;
 }
