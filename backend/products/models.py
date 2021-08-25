@@ -40,7 +40,9 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=9,decimal_places=2)
     available = models.CharField(max_length=1,choices=STATUS)
     image = models.ImageField(upload_to="media", blank=True)
-
+    
+    objects = models.Manager()
+    available = AvailableManager()
     class Meta: 
         ordering = ("name",)
         verbose_name = "Product"
