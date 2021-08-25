@@ -1,8 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'base/base.html' %}
 
 {% block content %}
 <style>
+    .cart-footer input {
+        width: 15%;
+        border-radius: 22px;
 
+    }
+
+    .cupon-form .form-control {
+        display: inline-block;
+        margin-right: 5px;
+    }
 </style>
 
 <div class="shopping-cart">
@@ -13,19 +22,23 @@
                 <th class="text-center">Quantidade</th>
                 <th class="text-center">Preço</th>
                 <th class="text-center">SubTotal</th>
-                <th class="text-center"><a class="btn btn-sm btn-outline-danger" href="#">Clear Cart</a></th>
+                <th class="text-center">
+                    <a class="btn btn-sm btn-outline-danger" href="#">Clear Cart</a>
+                </th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>
-                    <div class="products-item">
-                        <a class="product-thumb" href="#"><img
-                                src="https://www.enovinho.com/images_cache/thumb_400x400_palato-do-coa-reserve-red-2011.jpg"
-                                alt="Product"></a>
-                        <div class="product-info">
-                            <h4 class="product-title"><a href="#">
-                                    Palato da CÔA</a></h4>
+                    <div class="products-item row">
+                        <div class="product-thumb col-auto">
+                            <img src="https://www.enovinho.com/images_cache/thumb_400x400_palato-do-coa-reserve-red-2011.jpg"
+                                width="60" alt="Product">
+                        </div>
+                        <div class="product-info col-auto">
+                            <h5 class="product-title">
+                                <a href="#">Palato da CÔA</a>
+                            </h5>
                         </div>
                     </div>
                 </td>
@@ -40,19 +53,25 @@
                         </select>
                     </div>
                 </td>
-                <td class="text-center text-lg text-medium">R$: 00</td>
                 <td class="text-center text-lg text-medium">R$00</td>
-                <td class="text-center"><a class="remove-from-cart" href="#" data-toggle="tooltip" title=""
-                        data-original-title="Remove item"></a>
+                <td class="text-center text-lg text-medium">R$00</td>
+                <td class="text-center">
+                    <a class="remove-from-cart" href="#" data-toggle="tooltip" title=""
+                        data-original-title="Remove item">
+                    </a>
+                </td>
             </tr>
             <tr>
                 <td>
-                    <div class="product-item">
-                        <a class="product-thumb" href="#"><img
-                                src="https://www.enovinho.com/images_cache/thumb_400x400_palato-do-coa-reserve-red-2011.jpg"
-                                alt="Product"></a>
-                        <div class="product-info">
-                            <h4 class="product-title"><a href="#">Palato da CÔA</a></h4>
+                    <div class="product-item row">
+                        <a class="product-thumb col-auto">
+                            <img src="https://www.enovinho.com/images_cache/thumb_400x400_palato-do-coa-reserve-red-2011.jpg"
+                                width="60" alt="Product">
+                        </a>
+                        <div class="product-info col-auto">
+                            <h5 class="product-title">
+                                <a href="#">Palato da CÔA</a>
+                            </h5>
                         </div>
                     </div>
                 </td>
@@ -67,52 +86,28 @@
                         </select>
                     </div>
                 </td>
+
                 <td class="text-center text-lg text-medium">R$20.00</td>
-                <td class="text-center">—</td>
-                <td class="text-center"><a class="remove-from-cart" href="#" data-toggle="tooltip" title=""
-                        data-original-title="Remove item"><i class="fa fa-trash"></i></a></td>
+                <td class="text-center text-lg text-medium">R$20.00</td>
+                <td class="text-center">
+                    <a class="remove-from-cart" href="#" data-toggle="tooltip" title=""
+                        data-original-title="Remove item">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
             </tr>
         </tbody>
     </table>
-    <div class="cart-total">
-        <h2>Total no Carrinho</h2>
-        <table cellspacing="0" class="shop-table shop-table-responsive">
-            <tbody>
-                <tr class="cart-subtotal">
-                    <th>SubTotal</th>
 
-                </tr>
-            </tbody>
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="cart-footer">
+        <div class="col-auto">
+            <form class="cupon-form" method="POST">
+                <input type="text" class="form-control" id="inputCuponCode" placeholder="cupon code">
+                <button class="btn btn-outline-primary " type="submit">Aplicar Cupom</button>
+            </form>
+        </div>
     </div>
+
 </div>
 
 
