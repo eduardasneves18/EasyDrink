@@ -9,9 +9,7 @@
         text-align: center;
     }
 
-    .fluid-container {
-        padding: 25px;
-    }
+
 
     .button-link {
         text-decoration: none
@@ -19,30 +17,31 @@
 </style>
 
 
-<div class="fluid-container">
+<div>
     <div class="row">
         {% if products %}
-            {% for product in products %}
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <a href="media/static/product/01.pg" class="popup-link">
-                                <img src="https://content.paodeacucar.com/wp-content/uploads/2019/06/o-que-%C3%A9-vinho-de-mesa3.jpg"
-                                    class="img-fluid mb-2" />
-                            </a>
-                            <h5>{{ product.name}}</h5>
-                            <p>3x de R$10,83</p>
-                            <div class="item-preco">
-                                <span>R$ {{ product.price}}</span>
-                            </div>
-                            <div class="main-button">
-                                <button type="button" class="btn-primary btn-info btn"><a class="button-link"  href="{{product.my_absolute_url }}"> Detalhes </a></button>
-                                <button type="button" class="btn-primary btn-success btn">Comprar já</button>
-                            </div>
-                        </div>
+        {% for product in products %}
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <a href="media/static/product/01.pg" class="popup-link">
+                        <img src="https://content.paodeacucar.com/wp-content/uploads/2019/06/o-que-%C3%A9-vinho-de-mesa3.jpg"
+                            class="img-fluid mb-2" />
+                    </a>
+                    <h5>{{ product.name}}</h5>
+                    <p>3x de R$10,83</p>
+                    <div class="item-preco">
+                        <span>R$ {{ product.price}}</span>
+                    </div>
+                    <div class="main-button">
+                        <button type="button" class="btn-primary btn-info btn"><a class="button-link"
+                                href="{{product.my_absolute_url }}"> Detalhes </a></button>
+                        <button type="button" class="btn-primary btn-success btn">Comprar já</button>
                     </div>
                 </div>
-            {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
         {% endif %}
     </div>
 </div>
