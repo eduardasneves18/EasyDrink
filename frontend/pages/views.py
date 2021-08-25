@@ -21,3 +21,11 @@ class ContactsPageView(TemplateView):
 
 class CartView(TemplateView):
     template_name = 'cart/cart_detail.html'
+
+
+class WishesPageView(TemplateView):
+    template_name = 'wishes_list.html'
+
+
+class UserPageView(TemplateView):
+    template_name = 'user/login.html'
