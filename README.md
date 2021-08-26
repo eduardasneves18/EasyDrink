@@ -59,5 +59,3 @@ A DreamTech foi criada e é composta por cinco colaboradores, que viram no proje
 
 ## Status do projeto
 Em andamento.
-
-# by prof
