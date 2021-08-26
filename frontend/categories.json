@@ -1,0 +1,43 @@
+[
+    
+    {
+        "id": 3,
+        "name": "WHISKY",
+        "slug": "whisky"
+    },
+    {
+        "id": 4,
+        "name": "WINE",
+        "slug": "wine"
+    },
+    {
+        "id": 5,
+        "name": "VODKA",
+        "slug": "vodka"
+    },
+    {
+        "id": 6,
+        "name": "SPARKLING WINE",
+        "slug": "sparkling wine"
+    },
+    {
+        "id": 7,
+        "name": "LIQUOR",
+        "slug": "liquor"
+    },
+    {
+        "id": 8,
+        "name": "CHAMPAGNE",
+        "slug": "champagne"
+    },
+    {
+        "id": 9,
+        "name": "GIN",
+        "slug": "gin"
+    },
+    {
+        "id": 10,
+        "name": "RUM",
+        "slug": "rum"
+    }
+]

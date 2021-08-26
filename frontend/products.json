@@ -1,0 +1,180 @@
+[
+    
+    {
+        "id": 7,
+        "my_absolute_url": "/products/7/",
+        "name": "Periquita",
+        "slug": "Periquita",
+        "description": "Red Wine Periquita 600 ml\r\nR$ 60,99 in cash or in 4x de R$ 16,25 ",
+        "price": "60.99",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/vinho-periquita-tinto_1_650.jpg",
+        "category": 4
+    },
+   
+    {
+        "id": 9,
+        "my_absolute_url": "/products/9/",
+        "name": "Chandon Brut Rosé",
+        "slug": "chandon-brut-rose",
+        "description": "Sparkling wine Chadon Baby 187 ml\r\nR$ 40,50 in cash pr in 3x de R$ 14,33",
+        "price": "40.50",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/espumante-chandon-brut-rose-baby_1_650.png",
+        "category": 6
+    },
+    {
+        "id": 10,
+        "my_absolute_url": "/products/10/",
+        "name": "Jack Daniel's",
+        "slug": "jack-daniels",
+        "description": "Whisky Jack Daniel's 1000 ml \r\n R$ 150,00 in cash or in 6x de R$ 25,83",
+        "price": "150.00",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/whisky-jack-daniels_1_650.jpg",
+        "category": 3
+    },
+    {
+        "id": 11,
+        "my_absolute_url": "/products/11/",
+        "name": "Absolut",
+        "slug": "absolut",
+        "description": "Vodka Miniatura Absolut 50 ml \r\nR$ 10,99 in cash or in 3x de R$ 4,50",
+        "price": "10.99",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/miniatura-absolut-50-ml_1_650.jpg",
+        "category": 5
+    },
+    {
+        "id": 12,
+        "my_absolute_url": "/products/12/",
+        "name": "Buchanan's 12 years",
+        "slug": "buchanans-12-years",
+        "description": "Whisky Buchanan's 12 years 1000 ml\r\nR$ 170,00 in cash ou in 5x 35,00",
+        "price": "170.99",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/whisky-buchanans-12-anos_1_650.jpg",
+        "category": 3
+    },
+    {
+        "id": 13,
+        "my_absolute_url": "/products/13/",
+        "name": "FireBall",
+        "slug": "fireball",
+        "description": "Whisky FireBall 750 ml \r\nR$ 89,00 in cash or in 6x de R$ 15,83",
+        "price": "89.00",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/fireball_1_650.jpg",
+        "category": 3
+    },
+    {
+        "id": 14,
+        "my_absolute_url": "/products/14/",
+        "name": "Robert Mondavi Woodbridge Cabernet Sauvignon",
+        "slug": "robert-mondavi-woodbridge-cabernet-sauvignon",
+        "description": "Wine Robert Mondavi Woodbridge Cabernet Sauvignon 750 ml\r\nR$ 90,00 in cash or in 6x de R$ 15,50",
+        "price": "90.00",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/vinho-robert-mondavi-woodbridge-cabernet-sauvignon_1_650.jpg",
+        "category": 4
+    },
+    {
+        "id": 15,
+        "my_absolute_url": "/products/15/",
+        "name": "Rémy Pannier Rosé D'Anjou",
+        "slug": "remy-pannier-rose-danjou",
+        "description": "Wine Rémy Pannier Rosé D'Anjou 750 ml \r\nR$ 99,99 in cash or in 6x de R$ 17,33",
+        "price": "99.99",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/vinho-remy-pannier-rose-danjou_1_650.jpg",
+        "category": 4
+    },
+    {
+        "id": 16,
+        "my_absolute_url": "/products/16/",
+        "name": "Chivas Regal",
+        "slug": "chivas-regal",
+        "description": "Whisky Chivas Regal 18 years 750 ml \r\nR$ 350,00 in cash or in 5x de R$ 71,00",
+        "price": "350.00",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/whisky-chivas-regal-18-anos_1_650.jpg",
+        "category": 3
+    },
+    {
+        "id": 17,
+        "my_absolute_url": "/products/17/",
+        "name": "Chivas Regal",
+        "slug": "chivas-regal-2",
+        "description": "Whisky Chivas Regal 18 years 50 ml \r\nR$ 30,00 in cash or in 2x de R$ 16,00",
+        "price": "30.00",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/chivas-regal-18-anos-50-ml_1_650.jpg",
+        "category": 3
+    },
+    {
+        "id": 18,
+        "my_absolute_url": "/products/18/",
+        "name": "Bacardi Carta Ouro",
+        "slug": "bacardi-carta-ouro",
+        "description": "Rum Bacardi Carta Ouro 980 ml \r\nR$ 49,90 in cash or in 4x de R$ 13,00",
+        "price": "49.90",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/rum-bacardi-carta-ouro_1_650.jpg",
+        "category": 10
+    },
+    {
+        "id": 19,
+        "my_absolute_url": "/products/19/",
+        "name": "Havana Club Anejo",
+        "slug": "havana-club-anejo",
+        "description": "Rum Havana Club Anejo 3 years 750 ml \r\nR$ 89,90 in cash or in 4x de R$ 18,40",
+        "price": "89.90",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/rum-havana-club-anejo-blanco_1_650.jpg",
+        "category": 10
+    },
+    {
+        "id": 20,
+        "my_absolute_url": "/products/20/",
+        "name": "Amarula",
+        "slug": "amarula",
+        "description": "Liquor Amarula  750 ml \r\nR$ 89,90 in cash or in 4x de R$ 18,40",
+        "price": "89.90",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/licor-amarula_1_650.jpg",
+        "category": 7
+    },
+    {
+        "id": 21,
+        "my_absolute_url": "/products/21/",
+        "name": "Drambuie",
+        "slug": "drambuie",
+        "description": "Liquor Drambuie 750 ml\r\nR$ 150,00 in cash or in 6x de R$ 25,83",
+        "price": "150.00",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/licor-drambuie_1_650.jpg",
+        "category": 7
+    },
+    {
+        "id": 22,
+        "my_absolute_url": "/products/22/",
+        "name": "Bombay Sapphire Dry London",
+        "slug": "bombay-sapphire-dry-london",
+        "description": "Gin Bombay Sapphire Dry London 750 ml\r\nR$ 120,00 in cash or in 6x de R$ 20,83",
+        "price": "120.00",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/gin-bombay-sapphire-dry-london_1_650.jpg",
+        "category": 9
+    },
+    {
+        "id": 23,
+        "my_absolute_url": "/products/23/",
+        "name": "Beefeater London Dry",
+        "slug": "beefeater-london-dry",
+        "description": "Gin Beefeater London Dry 750 ml\r\nR$ 90.90 in cash or in 4x de R$ 23,00",
+        "price": "90.90",
+        "available": "A",
+        "image": "http://127.0.0.1:8000/media/gin-beefeater_1_650.jpg",
+        "category": 9
+    }
+]
