@@ -6,7 +6,7 @@ from django.urls import reverse
 # Criando modelo da categoria dos produtos
 class Category(models.Model):
     name = models.CharField(max_length=255, unique=True)
-    slug = models.AutoSlugField(unique=True, always_update=False, populate_from="name")
+    slug = AutoSlugField(unique=True, always_update=False, populate_from="name")
     def __str__(self) -> str:
         return self.name
     
