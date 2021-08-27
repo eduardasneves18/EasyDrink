@@ -6,6 +6,10 @@
     url('Roboto-ThinItalic-webfont.ttf') format('truetype')
 }
 
+figure {
+  margin: 0px;
+}
+
 
 body {
   overflow-y: overlay !important;
