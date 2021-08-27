@@ -11,6 +11,10 @@
         text-decoration: none;
         color: #000;
     }
+
+    .quantidade-input {
+        max-width: 100%;
+    }
 </style>
 
 
@@ -28,7 +32,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="col-auto">
+                    <tr>
                         <td>
                             <figure class="row align-items-center">
                                 <div class="col-auto">
@@ -36,7 +40,7 @@
                                         width="60" alt="Product">
                                 </div>
                                 <figcaption class="info col-auto">
-                                    <a href="#" class="title text-dark" data-abc="true">Palato da CÔA</a>
+                                    <label class="text-dark" data-abc="true">Palato da CÔA</label>
                                     <p class="text-muted small">
                                         vinho
                                         <br>
@@ -52,8 +56,9 @@
                                     </a>
                                 </div>
 
-                                <div class="col-2">
-                                    <input type="text" class="form-control" placeholder="Quantidade" value="1">
+                                <div class="col-4">
+                                    <input type="text" class="form-control quantidade-input" placeholder="Quantidade"
+                                        value="1">
                                 </div>
 
                                 <div class="col-auto">
@@ -74,7 +79,7 @@
                             </div>
                         </td>
                     </tr>
-                    <tr class="col-auto">
+                    <tr>
                         <td>
                             <figure class="row align-items-center">
                                 <div class="col-auto">
@@ -82,7 +87,7 @@
                                         width="60" alt="Product">
                                 </div>
                                 <figcaption class="info col-auto">
-                                    <a href="#" class="title text-dark" data-abc="true">Palato da CÔA</a>
+                                    <label class="text-dark" data-abc="true">Palato da CÔA</label>
                                     <p class="text-muted small">
                                         vinho
                                         <br>
@@ -98,146 +103,9 @@
                                     </a>
                                 </div>
 
-                                <div class="col-2">
-                                    <input type="text" class="form-control" placeholder="Quantidade" value="1">
-                                </div>
-
-                                <div class="col-auto">
-                                    <a data-action="add" class="update-cart">
-                                        <i data-feather="chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price-wrap">
-                                <p class="price">R$10.00</p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-end align-items-center" style="min-height: 100%;">
-                                <button type="button" class="btn btn-danger">Remove</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="col-auto">
-                        <td>
-                            <figure class="row align-items-center">
-                                <div class="col-auto">
-                                    <img src="https://www.enovinho.com/images_cache/thumb_400x400_palato-do-coa-reserve-red-2011.jpg"
-                                        width="60" alt="Product">
-                                </div>
-                                <figcaption class="info col-auto">
-                                    <a href="#" class="title text-dark" data-abc="true">Palato da CÔA</a>
-                                    <p class="text-muted small">
-                                        vinho
-                                        <br>
-                                    </p>
-                                </figcaption>
-                            </figure>
-                        </td>
-                        <td>
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <a data-action="remove" class="update-cart">
-                                        <i data-feather="chevron-left"></i>
-                                    </a>
-                                </div>
-
-                                <div class="col-2">
-                                    <input type="text" class="form-control" placeholder="Quantidade" value="1">
-                                </div>
-
-                                <div class="col-auto">
-                                    <a data-action="add" class="update-cart">
-                                        <i data-feather="chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price-wrap">
-                                <p class="price">R$10.00</p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-end align-items-center" style="min-height: 100%;">
-                                <button type="button" class="btn btn-danger">Remove</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="col-auto">
-                        <td>
-                            <figure class="row align-items-center">
-                                <div class="col-auto">
-                                    <img src="https://www.enovinho.com/images_cache/thumb_400x400_palato-do-coa-reserve-red-2011.jpg"
-                                        width="60" alt="Product">
-                                </div>
-                                <figcaption class="info col-auto">
-                                    <a href="#" class="title text-dark" data-abc="true">Palato da CÔA</a>
-                                    <p class="text-muted small">
-                                        vinho
-                                        <br>
-                                    </p>
-                                </figcaption>
-                            </figure>
-                        </td>
-                        <td>
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <a data-action="remove" class="update-cart">
-                                        <i data-feather="chevron-left"></i>
-                                    </a>
-                                </div>
-
-                                <div class="col-2">
-                                    <input type="text" class="form-control" placeholder="Quantidade" value="1">
-                                </div>
-
-                                <div class="col-auto">
-                                    <a data-action="add" class="update-cart">
-                                        <i data-feather="chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price-wrap">
-                                <p class="price">R$10.00</p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-end align-items-center" style="min-height: 100%;">
-                                <button type="button" class="btn btn-danger">Remove</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="col-auto">
-                        <td>
-                            <figure class="row align-items-center">
-                                <div class="col-auto">
-                                    <img src="https://www.enovinho.com/images_cache/thumb_400x400_palato-do-coa-reserve-red-2011.jpg"
-                                        width="60" alt="Product">
-                                </div>
-                                <figcaption class="info col-auto">
-                                    <a href="#" class="title text-dark" data-abc="true">Palato da CÔA</a>
-                                    <p class="text-muted small">
-                                        vinho
-                                        <br>
-                                    </p>
-                                </figcaption>
-                            </figure>
-                        </td>
-                        <td>
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <a data-action="remove" class="update-cart">
-                                        <i data-feather="chevron-left"></i>
-                                    </a>
-                                </div>
-
-                                <div class="col-2">
-                                    <input type="text" class="form-control" placeholder="Quantidade" value="1">
+                                <div class="col-4">
+                                    <input type="text" class="form-control quantidade-input " placeholder="Quantidade"
+                                        value="1">
                                 </div>
 
                                 <div class="col-auto">
@@ -259,7 +127,149 @@
                         </td>
                     </tr>
 
+                    <tr>
+                        <td>
+                            <figure class="row align-items-center">
+                                <div class="col-auto">
+                                    <img src="https://www.enovinho.com/images_cache/thumb_400x400_palato-do-coa-reserve-red-2011.jpg"
+                                        width="60" alt="Product">
+                                </div>
+                                <figcaption class="info col-auto">
+                                    <label class="text-dark" data-abc="true">Palato da CÔA</label>
+                                    <p class="text-muted small">
+                                        vinho
+                                        <br>
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </td>
+                        <td>
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <a data-action="remove" class="update-cart">
+                                        <i data-feather="chevron-left"></i>
+                                    </a>
+                                </div>
 
+                                <div class="col-4">
+                                    <input type="text" class="form-control quantidade-input " placeholder="Quantidade"
+                                        value="1">
+                                </div>
+
+                                <div class="col-auto">
+                                    <a data-action="add" class="update-cart">
+                                        <i data-feather="chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="price-wrap">
+                                <p class="price">R$10.00</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-end align-items-center" style="min-height: 100%;">
+                                <button type="button" class="btn btn-danger">Remove</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <figure class="row align-items-center">
+                                <div class="col-auto">
+                                    <img src="https://www.enovinho.com/images_cache/thumb_400x400_palato-do-coa-reserve-red-2011.jpg"
+                                        width="60" alt="Product">
+                                </div>
+                                <figcaption class="info col-auto">
+                                    <label class="text-dark" data-abc="true">Palato da CÔA</label>
+                                    <p class="text-muted small">
+                                        vinho
+                                        <br>
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </td>
+                        <td>
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <a data-action="remove" class="update-cart">
+                                        <i data-feather="chevron-left"></i>
+                                    </a>
+                                </div>
+
+                                <div class="col-4">
+                                    <input type="text" class="form-control quantidade-input " placeholder="Quantidade"
+                                        value="1">
+                                </div>
+
+                                <div class="col-auto">
+                                    <a data-action="add" class="update-cart">
+                                        <i data-feather="chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="price-wrap">
+                                <p class="price">R$10.00</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-end align-items-center" style="min-height: 100%;">
+                                <button type="button" class="btn btn-danger">Remove</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <figure class="row align-items-center">
+                                <div class="col-auto">
+                                    <img src="https://www.enovinho.com/images_cache/thumb_400x400_palato-do-coa-reserve-red-2011.jpg"
+                                        width="60" alt="Product">
+                                </div>
+                                <figcaption class="info col-auto">
+                                    <label class="text-dark" data-abc="true">Palato da CÔA</label>
+                                    <p class="text-muted small">
+                                        vinho
+                                        <br>
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </td>
+                        <td>
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <a data-action="remove" class="update-cart">
+                                        <i data-feather="chevron-left"></i>
+                                    </a>
+                                </div>
+
+                                <div class="col-4">
+                                    <input type="text" class="form-control quantidade-input " placeholder="Quantidade"
+                                        value="1">
+                                </div>
+
+                                <div class="col-auto">
+                                    <a data-action="add" class="update-cart">
+                                        <i data-feather="chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="price-wrap">
+                                <p class="price">R$10.00</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-end align-items-center" style="min-height: 100%;">
+                                <button type="button" class="btn btn-danger">Remove</button>
+                            </div>
+                        </td>
+                    </tr>
 
 
                 </tbody>
