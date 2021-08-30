@@ -38,8 +38,8 @@
     margin-right: 2.5%;
 }
 
-.nav-link,
-.form-control {
+.navbar .nav-link,
+.navbar .form-control {
     margin-left: 4%;
 }
 
