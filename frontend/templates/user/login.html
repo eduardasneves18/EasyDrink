@@ -1,6 +1,55 @@
+{% load static %}
 
-{% extends 'base/base.html' %}
+<html>
 
-{% block content %}
+    <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+            <title>Login</title>
+            
+            <!-- Bootstrap 5.0 CSS -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+            
+            <!--CSS-->
+            <link rel="stylesheet" href="/pages/static/css/style_login.css">
+            <link rel="stylesheet" href="/pages/static/css/style_navbar.css">
+    </head>
 
-{% endblock content %}
+    <body>
+    {% include 'base/nav.html' %}
+
+
+        <div class="login">
+
+            <div class="card" style="width: 25rem;">
+                <div class="card-body"> 
+                    <h1 class="card-title">Login</h1>
+                    <form class="box-login">
+                        <div class="row mb-3">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label login-input">Email</label>
+                            <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label login-input">Password</label>
+                            <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword3">
+                            </div>
+                        </div>
+                        <div> 
+                            <a class="link-new-user" href="create_user.html"> 
+                                New customer? <strong> Start here. </strong>
+                            </a>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+            <script src="" async="" defer=""></script>
+        
+    </body>
+
+</html>
