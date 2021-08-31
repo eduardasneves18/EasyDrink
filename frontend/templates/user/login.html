@@ -1,4 +1,4 @@
-{% load static %}
+ {% load static %}
 
 <html>
 
@@ -17,28 +17,34 @@
 
     <body>
     {% include 'base/nav.html' %}
-
-
         <div class="login">
-
-            <div class="card" style="width: 25rem;">
+            <div class="card card-login col-sm-4">
                 <div class="card-body"> 
                     <h1 class="card-title">Login</h1>
                     <form class="box-login">
-                        <div class="row mb-3">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label login-input">Email</label>
-                            <div class="col-sm-10">
-                            <input type="email" class="form-control" id="inputEmail3">
-                            </div>
+                    <div class="row mb-3" >
+                        <label for="input-email" class="col-sm-12 col-form-label">Email</label>
+                        <div class="col-sm-12">
+                            <input type="email" id="input-email" style="width:100%; height:6vh; padding-left: 10px">
                         </div>
-                        <div class="row mb-3">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label login-input">Password</label>
-                            <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword3">
-                            </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputPassword3" class="col-sm-10 col-form-label">Password</label>
+                        <div class="col-sm-12">
+                        <input type="password"  id="inputPassword3" style="width:100%; height:6vh; padding-left: 10px">
+                        </div>
+                    </div>
+
+                    <div class="check-remember">
+                        <input type="checkbox" id="remember-checkbox">
+                        <label  for="remember-checkbox">
+                            Remember me
+                        </label>
+                    </div>
+                          
                         </div>
                         <div> 
-                            <a class="link-new-user" href="create_user.html"> 
+                            <a class="link-new-user" href="create_user.html" style="width: 310px; height:50;"> 
                                 New customer? <strong> Start here. </strong>
                             </a>
                         </div>
