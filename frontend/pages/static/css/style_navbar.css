@@ -1,37 +1,48 @@
-.container-fluid{
+.container-fluid {
     padding: 3% 4%;
 }
+
 .navbar {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-#title, .title {
+
+.navbar #title,
+.navbar .title {
     font-family: 'Ubuntu', sans-serif, cursive;
     padding-left: 15%;
 }
+
 .navbar-nav {
     color: #808080;
 }
 
-.form-control{
-    text-align:center; 
-    width:180px;
+.navbar .form-control {
+    text-align: center;
+    width: 180px;
 }
 
 
-.theme{
+.theme {
     font-family: 'Rampart One', cursive;
 }
-.top{
+
+.top {
     padding: 1% 13%;
-}.dropdown-item{
+}
+
+.dropdown-item {
     text-align: center;
 }
-.navbar-toggler{
+
+.navbar-toggler {
     margin-right: 2.5%;
 }
-.nav-link, .form-control{
+
+.navbar .nav-link,
+.navbar .form-control {
     margin-left: 4%;
 }
-.nav-item{
+
+.nav-item {
     width: 120px;
 }
