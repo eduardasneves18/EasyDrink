@@ -1,5 +1,4 @@
 {% load static %}
-    
 
   <footer class="bg-dark text-center text-lg-start text-white">
     <!-- Grid container -->
@@ -8,38 +7,17 @@
       <div class="row mt-4">
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Veja outras bebidas</h5>
+          <h5 class="text-uppercase">Drinks</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="#!" class="text-white"><i class="fas fa-beer"></i> Cervejas</a>
+              <a href="{% url 'products:list' %}" class="text-white"><i class="fas fa-beer"></i>Beers</a>
             </li>
             <li>
-              <a href="#!" class="text-white"><i class="fas fa-coffee"></i> Chás</a>
+              <a href="{% url 'products:list' %}" class="text-white"><i class="fas fa-coffee"></i>Cognac</a>
             </li>
             <li>
-              <a href="#!" class="text-white"><i class="fas fa-glass-whiskey"></i> Whisky</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Politicas da Empresa</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Fornecedores</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white"><i class="fas fa-backspace fa-fw fa-sm me-2"></i>Devoluções</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Regulamentações</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Politica de privacidade</a>
+              <a href="{% url 'products:list' %}" class="text-white"><i class="fas fa-glass-whiskey"></i>Whisky</a>
             </li>
           </ul>
         </div>
@@ -47,17 +25,41 @@
 
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Localização da empresa</h5>
+          <h5 class="text-uppercase">Company policy</h5>
 
           <ul class="list-unstyled">
             <li>
-              <a href="#!" class="text-white"> Rua Anfilóquio Nunes Píres</a>
+              <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Suppliers</a>
             </li>
             <li>
-              <a href="#!" class="text-white">3000 - Bela Vista, Gaspar - SC</a>
+              <a href="#!" class="text-white"><i class="fas fa-backspace fa-fw fa-sm me-2"></i>Devolutions</a>
             </li>
             <li>
-              <a href="#!" class="text-white"><strong>CEP</strong>: 8911-1900   </a>
+              <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Regulations</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Privacy policy</a>
+            </li>
+            <li>
+              <a href="{% url 'pages:about' %}" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>About us</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Company location</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="{% url 'pages:contacts' %}" class="text-white">3000 Anfilóquio Nunes Píres St.</a>
+            </li>
+            <li>
+              <a href="{% url 'pages:contacts' %}" class="text-white"> - Bela Vista, Gaspar - SC</a>
+            </li>
+            <li>
+              <a href="{% url 'pages:contacts' %}" class="text-white"><strong>Zip Code</strong>: 8911-1900   </a>
             </li>
             <li>
               <a href="#!" class="text-white"><i class="fas fa-briefcase fa-fw fa-sm me-2"></i><strong>CNPJ</strong>: 12.345.678/9101-11</a>
@@ -72,13 +74,16 @@
 
           <ul class="list-unstyled">
             <li>
-              <a href="#!" class="text-white"><i class="fas fa-at fa-fw fa-sm me-2"></i>e-commerce@gmail.com</a>
+              <a href="{% url 'pages:contacts' %}" class="text-white"><i class="fas fa-at fa-fw fa-sm me-2"></i>easydrink@gmail.com</a>
             </li>
             <li>
-              <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Status de Envio</a>
+              <a href="#" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Track your order </a>
             </li>
             <li>
-              <a href="#!" class="text-white"><i class="fas fa-envelope fa-fw fa-sm me-2"></i>Participe da nossa Newsletter</a>
+              <a href="#!" class="text-white"><i class="fas fa-envelope fa-fw fa-sm me-2"></i>Newsletter</a>
+            </li>
+            <li>
+              <a href="{% url 'pages:contacts' %}" class="text-white"><i class="fas fa-phone-alt"></i >Contact us</a>
             </li>
           </ul>
         </div>

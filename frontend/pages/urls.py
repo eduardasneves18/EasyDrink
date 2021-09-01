@@ -1,9 +1,8 @@
 from typing import final
 from django.urls import path
 
-from .views import AboutPageView, HomePageView, ContactsPageView, CartView, WishesPageView, UserPageView
+from .views import AboutPageView, HomePageView, ContactsPageView, CartView, WishesPageView, UserPageView, CreateUserPageView
 
-# , ProdutoView, ProductsDetailView, category_list
 
 app_name = "pages"
 
@@ -14,4 +13,5 @@ urlpatterns = [
     path("cart/", CartView.as_view(), name="cart"),
     path("wishes/", WishesPageView.as_view(), name="wishes"),
     path("login/", UserPageView.as_view(), name="login"),
+    path("create_user/", CreateUserPageView.as_view(), name="create_user"),
 ]

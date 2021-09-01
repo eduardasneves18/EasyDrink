@@ -3,9 +3,6 @@ from django.shortcuts import get_object_or_404, redirect, render
 from services import category
 
 
-class AboutPageView(TemplateView):
-    template_name = 'about.html'
-
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
@@ -29,3 +26,7 @@ class WishesPageView(TemplateView):
 
 class UserPageView(TemplateView):
     template_name = 'user/login.html'
+
+
+class CreateUserPageView(TemplateView):
+    template_name = 'user/create_user.html'
