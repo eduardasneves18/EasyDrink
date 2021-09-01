@@ -19,23 +19,23 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Vinhos</a>
         
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a style="text-align:center;" class="dropdown-item" href="#">Tinto</a></li>
-            <li><a style="text-align:center;" class="dropdown-item" href="#">Seco</a></li>
-            <li><a style="text-align:center;" class="dropdown-item" href="#">Branco</a></li>
-            <li><a style="text-align:center;" class="dropdown-item" href="#">Rosé</a></li>
+            <li><a style="text-align:center;" class="dropdown-item" href="{% url 'products:list' %}">Tinto</a></li>
+            <li><a style="text-align:center;" class="dropdown-item" href="{% url 'products:list' %}">Seco</a></li>
+            <li><a style="text-align:center;" class="dropdown-item" href="{% url 'products:list' %}">Branco</a></li>
+            <li><a style="text-align:center;" class="dropdown-item" href="{% url 'products:list' %}">Rosé</a></li>
         </ul>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link" href="#">Destiladas</a>
+            <a class="nav-link" href="{% url 'products:list' %}">Destiladas</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link" href="#">Espumantes </a>
+            <a class="nav-link" href="{% url 'products:list' %}">Espumantes </a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link" href="#">ClubHouse </a>
+            <a class="nav-link" href="{% url 'products:list' %}">ClubHouse </a>
         </li>
     
     </ul>
