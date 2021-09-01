@@ -4,7 +4,7 @@ from services import product
 # Create your views here.
 
 def product_list(request):
-    products = product.get_products()
+    products = product.get_products_json()
     return render(request, "products/products_list.html", products)
 
 

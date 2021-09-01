@@ -1,4 +1,5 @@
 import requests
+import json
 
 def get_products():
     url = "http://127.0.0.1:8080/api/v1/products/"
@@ -6,6 +7,22 @@ def get_products():
     products = request.json()
     products_list = {'products':products}
     return products_list
+
+def get_products_json ():
+    with open('products.json') as json_file:
+        data = json.load(json_file)
+    products = data
+    products_list = {'products':products}
+
+    print('Typedata', type(products))
+    print('TypeProduct', type(products_list))
+    return products_list
+
+# def get_products_by_category_json(cat):
+#     with open('products.json') as json_file:
+#         data = json.load(json_file)
+#     products_list = {'products':products}
+#     return products_list
 
 
 def get_products_by_id(pk):
