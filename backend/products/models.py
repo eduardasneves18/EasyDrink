@@ -28,6 +28,8 @@ class AvailableManager(models.Manager):
         return super(AvailableManager,self).get_queryset().filter(available="A")
         
 
+
+
 #Criando o modelo dos produtos
 class Product(models.Model):
 

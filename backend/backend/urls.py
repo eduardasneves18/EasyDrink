@@ -1,3 +1,4 @@
+from django import urls
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -13,6 +14,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     #Anothers endpoints
+    path('api/v1/',include('search.urls',namespace='search')),
     path('api/v1/', include('products.urls')),
     path('api/v1/', include('users.urls')),
 
