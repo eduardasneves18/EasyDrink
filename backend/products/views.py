@@ -9,6 +9,9 @@ from .serializers import CategorySerializer, ProductSerializer
 from rest_framework.decorators import api_view
 from rest_framework import viewsets, permissions
 
+#import para usar na search
+from django.views.generic import ListView
+
 #filtro pra criar uma excessão de busca, no caso trazer itens de uma categoria específica
 @api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
@@ -35,3 +38,8 @@ class ProductViewSet(viewsets.ModelViewSet):
   def get_queryset(self):
     products = Product.objects.all()
     return products
+
+# criando essa classe para testar o search;
+class ProductListView(ListView):
+    #traz todos os produtos do banco de dados sem filtrar nada 
+    queryset = Product.objects.all()
