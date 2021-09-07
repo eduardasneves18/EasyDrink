@@ -35,7 +35,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
 class EmailVerificationSerializer(serializers.ModelSerializer):
-    token = serializers.CharField(max_length=555)
+    token = serializers.CharField(max_length=555) #para tornar visivel ao usuário que existe um token.
 
     class Meta:
         model = User

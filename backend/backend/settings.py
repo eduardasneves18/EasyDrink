@@ -1,9 +1,12 @@
 from pathlib import Path
 import environ
+import os
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 SECRET_KEY = 'django-insecure-dtz+me(f%+fd(8%jtse=!=nyqdtz2+l-p)i5c5d-8%9i41^^62'
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -20,6 +23,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_simplejwt.token_blacklist',
+    'drf_yasg',
     'products',
     # 'carts',
     'users',
@@ -124,7 +129,9 @@ REST_FRAMEWORK = {
         # 'oauth2_provider.ext.rest_framework.OAuth2Authentication',  # django-oauth-toolkit < 1.0.0
         'oauth2_provider.contrib.rest_framework.OAuth2Authentication',  # django-oauth-toolkit >= 1.0.0
         'drf_social_oauth2.authentication.SocialAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'NON_FIELD_ERRORS_KEY': 'ERROR'
 }
 
 AUTHENTICATION_BACKENDS = (
@@ -177,3 +184,10 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
 
 #Custom user model
 AUTH_USER_MODEL = "users.User"
+
+# Configurações para enviar e-mails de confirmação
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT =  587
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') #utilizado para não deixar um e-mail em aberto, dificultando o envio de span por meio do mesmo.
+EMAIL_HOST_PASSWORS = os.environ.get('EMAIL_HOST_PASSWORD')
