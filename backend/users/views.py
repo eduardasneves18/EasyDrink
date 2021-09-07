@@ -16,7 +16,7 @@ from drf_yasg import openapi
 
 from .serializers import RegisterSerializer, SetNewPasswordSerializer, ResetPasswordEmailRequestSerializer, EmailVerificationSerializer, LoginSerializer, LogoutSerializer
 from .models import User
-from utils import Util
+from .utils import Util
 from .renderers import UserRenderer
 import jwt
 import os
