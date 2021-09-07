@@ -9,14 +9,13 @@ from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
 from rest_framework import generics, status, views, permissions
 from rest_framework.response import Response
-from rest_framework_simplejwt.tokens import RefreshToken
-
+from rest_framework_simplejwt.tokens import RefreshToken #token de atualização
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 
 from .serializers import RegisterSerializer, SetNewPasswordSerializer, ResetPasswordEmailRequestSerializer, EmailVerificationSerializer, LoginSerializer, LogoutSerializer
 from .models import User
-from .utils import Util
+from .utils import Util # aqui estou importando os dados do arquivo para que exerça as funçoes lá descritas.
 from .renderers import UserRenderer
 import jwt
 import os
@@ -31,6 +30,7 @@ class RegisterView(generics.GenericAPIView):
 
     # campos resposáveis por enviar as informções para serializers.py
     serializer_class = RegisterSerializer
+
     renderer_classes = (UserRenderer,)
 
     # metodo para fazer a solicitação de postagem
@@ -42,16 +42,20 @@ class RegisterView(generics.GenericAPIView):
 
         user_data = serializer.data
         user = User.objects.get(email=user_data['email'])
-        token = RefreshToken.for_user(user).access_token
+
+        token = RefreshToken.for_user(user).access_token # onde se gera o token de acesso
+
         current_site = get_current_site(request).domain
-        relativeLink = reverse('email-verify')
-        absurl = 'http://'+current_site+relativeLink+"?token="+str(token)
+        relativeLink = reverse('email-verify') # aqui recebe o link que foi revertido
+        absurl = 'http://'+current_site+relativeLink+"?token="+str(token) # absolute url, aqui recebo apena o token de acesso como determinado acima
         email_body = 'Hi '+user.username + \
-            ' Use the link below to verify your email \n' + absurl
+            '. Use the link below to verify your email \n' + absurl
+
+        # aqui dentro desse dicionário estou definindo que o primeiro vai ser o domínio que executamos, pois o objetivo é criar um link no qual se clicka e um e-mail é enviado para a pessoa. 
         data = {'email_body': email_body, 'to_email': user.email,
                 'email_subject': 'Verify your email'}
 
-        Util.send_email(data)
+        Util.send_email(data) # aqui estou definindo que o email deve ser enviado, instanciando data como método estático (estatic method)
 
         # está retornando dados do usuário 
         return Response(user_data, status=status.HTTP_201_CREATED)
@@ -63,18 +67,20 @@ class VerifyEmail(views.APIView):
     token_param_config = openapi.Parameter(
         'token', in_=openapi.IN_QUERY, description='Description', type=openapi.TYPE_STRING)
 
-    @swagger_auto_schema(manual_parameters=[token_param_config])
+
+    @swagger_auto_schema(manual_parameters=[token_param_config]) # utilizado para especificar um paraqmetro manualmente.
+    # método para pegar o token que foi enviado ao e-mail.
     def get(self, request):
-        token = request.GET.get('token')
+        token = request.GET.get('token') # aqui o programa está fazendo a autenticação, identificando qual usuário esta realizando a confirmação atravez da assimilação do token.
         try:
             payload = jwt.decode(token, settings.SECRET_KEY)
-            user = User.objects.get(id=payload['user_id'])
+            user = User.objects.get(id=payload['user_id']) # buscando os objetos por meio da id deles.
             if not user.is_verified:
-                user.is_verified = True
-                user.save()
+                user.is_verified = True # definindo a verificação do usuário. Esse campo não é obtido por padrão, nesse caso foi definida no 'User models'.
+                user.save() 
             return Response({'email': 'Successfully activated'}, status=status.HTTP_200_OK)
         except jwt.ExpiredSignatureError as identifier:
-            return Response({'error': 'Activation Expired'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Activation link expired'}, status=status.HTTP_400_BAD_REQUEST)
         except jwt.exceptions.DecodeError as identifier:
             return Response({'error': 'Invalid token'}, status=status.HTTP_400_BAD_REQUEST)
 

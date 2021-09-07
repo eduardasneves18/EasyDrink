@@ -6,15 +6,16 @@ from rest_framework.schemas import get_schema_view
 from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
-    # OAuth
-    path('auth/', include('drf_social_oauth2.urls', namespace='drf')),
+    # Authentication
+    # path('auth/', include('drf_social_oauth2.urls', namespace='drf')),
+    path ('auth/', include ('users.urls')),
 
     # Admin
-    path('admin/', admin.site.urls),
+    path ('admin/', admin.site.urls),
 
     #Anothers endpoints
     path('api/v1/', include('products.urls')),
-    path('api/v1/', include('users.urls')),
+    # path('api/v1/', include('users.urls')),
 
     # API schema and Documentation
     # path('project/docs/', include_docs_urls(title='BlogAPI')),
