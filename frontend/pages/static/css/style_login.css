@@ -23,8 +23,8 @@
 }
 .link-new-user {
     text-decoration: none;
-    color: brown;
-    line-height: 3;
+    color: rgb(87, 2, 32);
+    line-height:  2;
 }
 
 .login-input {
@@ -35,10 +35,14 @@
     display: flex;
     height: 5vh;
     justify-content: center;
-    align-items: center;
+    margin-block: 2%;
+
 }
 
 .check-remember > label {
     margin-left: 10px;
 }
 
+.label-text {
+    text-align: left;
+}
