@@ -1,53 +1,61 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager, PermissionsMixin)
+from rest_framework_simplejwt.tokens import RefreshToken
 
-class AccountManager(BaseUserManager):
-  def create_user(self, email, username, first_name, password, **other_fields):
-        if not email:
-            email = 'e-commerce@entra21.com'
 
-        if not email:
-            raise ValueError('You must provide an email address')
+class UserManager(BaseUserManager):
 
-        email = self.normalize_email(email)
-        user = self.model(email=email, username=username,
-                          first_name=first_name, **other_fields)
+    def create_user(self, username, email, password=None):
+        if username is None:
+            raise TypeError('Users should have a username')
+        if email is None:
+            raise TypeError('Users should have a Email')
+
+        user = self.model(username=username, email=self.normalize_email(email))
         user.set_password(password)
         user.save()
         return user
 
-  def create_superuser(self, email, username, first_name, password, **other_fields):
-        other_fields.setdefault('is_staff', True)
-        other_fields.setdefault('is_superuser', True)
-        other_fields.setdefault('is_active', True)
+    def create_superuser(self, username, email, password=None):
+        if password is None:
+            raise TypeError('Password should not be none')
 
-        if other_fields.get('is_staff') is not True:
-            raise ValueError(
-                'Superuser must be assigned to is_staff=True.')
-        if other_fields.get('is_superuser') is not True:
-            raise ValueError(
-                'Superuser must be assigned to is_superuser=True.')
+        user = self.create_user(username, email, password)
+        user.is_superuser = True
+        user.is_staff = True
+        user.save()
+        return user
 
-        return self.create_user(email, username, first_name, password, **other_fields)
 
+AUTH_PROVIDERS = {'facebook': 'facebook', 'google': 'google',
+                  'twitter': 'twitter', 'email': 'email'}
 
 class User(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField(max_length=150, unique=True)
-    username = models.CharField(max_length=150, unique=True)
-    first_name = models.CharField(max_length=100, blank=True)
-    last_name = models.CharField(max_length=100, blank=True)
-    birth_day = models.DateTimeField(blank=True, null=True)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    username = models.CharField(max_length=255, unique=True, db_index=True)
+    email = models.EmailField(max_length=255, unique=True, db_index=True)
+    is_verified = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    is_social_login = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True) #campo para saber quando um usuário foi criado, para isso usei o 'adicionar automaticamnte'.
+    updated_at = models.DateTimeField(auto_now=True) # campo para saber quando fez uma atualização, para isso usei o 'automaticamente agora'.
+    auth_provider = models.CharField(
+        max_length=255, blank=False,
+        null=False, default=AUTH_PROVIDERS.get('email'))
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'first_name']
 
-    objects = AccountManager()
-    
+    USERNAME_FIELD = 'email' #definindo qual vai ser o capo que vai ser utilizado para fazer o login.
+    REQUIRED_FIELDS = ['username'] #designando qual campo é obrigatório 
+
+    objects = UserManager() # aqui vamos dar o comando de como gerenciar objetos do tipo acima, instanciando a classe gerente.
 
     def __str__(self):
-        return self.username
+        return self.email
+
+
+    # metodo utilizado para que se torne possível obter os detalhes do usuário, capaz de fazer tokens de usuários
+    def tokens(self):
+        refresh = RefreshToken.for_user(self)
+        return {
+            'refresh': str(refresh),
+            'access': str(refresh.access_token)
+        }

@@ -7,3 +7,6 @@ class UserPageView(TemplateView):
 
 class RegisterPageView(TemplateView):
     template_name = 'user/register.html'
+
+class ResetPageView(TemplateView):
+    template_name = 'user/reset_password.html'

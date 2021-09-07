@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'products',
-    'carts',
+    # 'carts',
     'users',
 ]
 
@@ -67,6 +67,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+
 
 
 # Password validation
@@ -173,4 +176,3 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
 
 #Custom user model
 AUTH_USER_MODEL = "users.User"
-
