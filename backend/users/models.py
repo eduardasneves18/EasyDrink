@@ -54,7 +54,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     # metodo utilizado para que se torne possível obter os detalhes do usuário, capaz de fazer tokens de usuários
     def tokens(self):
-        refresh = RefreshToken.for_user(self)
+        refresh = RefreshToken.for_user(self) #variável para o token de atualização
         return {
             'refresh': str(refresh),
             'access': str(refresh.access_token)
