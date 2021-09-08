@@ -186,8 +186,10 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
 AUTH_USER_MODEL = "users.User"
 
 # Configurações para enviar e-mails de confirmação
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT =  587
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') #utilizado para não deixar um e-mail em aberto, dificultando o envio de span por meio do mesmo.
 EMAIL_HOST_PASSWORS = os.environ.get('EMAIL_HOST_PASSWORD')
+
