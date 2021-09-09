@@ -1,45 +1,39 @@
- {% load static %}
+{% load static %}
 
-<html>
 
-    <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-            <title>Login</title>
-            
-            <!-- Bootstrap 5.0 CSS -->
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-            
-            <!--CSS-->
-            <link rel="stylesheet" href="/pages/static/css/style_login.css">
-            <link rel="stylesheet" href="/pages/static/css/style_navbar.css">
-    </head>
+{%block style %}
+<link rel="stylesheet" href="/pages/static/css/style_navbar.css">
+<link rel="stylesheet" href="/pages/static/css/style_login.css">
+{%endblock style%}
 
-    <body>
-    {% include 'base/nav.html' %}
+{% include 'base/nav.html' %}
 
-        <form action="." method="post">
+{%block content %}
+<div class="login-style">
+<form action="." method="post" style="background-color:'gray'">
         {% csrf_token %}
             <div class="login">
-                <div class="card card-login col-sm-4">
+                <div class="card card-login col-sm-4" style="border-radius:4%;">
                     <div class="card-body"> 
-                        <h1 class="card-title">Login</h1>
+                        <h1 class="card-title" style="font-family: 'LOKICOLA',Arial, Helvetica, sans-serif;">LOGIN</h1>
                         <form class="box-login">
                         <div class="row mb-3" >
-                            <label for="input-email" class="col-sm-12 col-form-label label-text">Email</label>
+                            <label for="input-email" class="col-sm-12 col-form-label label-text" style="font-size: 15px;">E-mail</label>
                             <div class="col-sm-12">
-                                <input type="email" id="input-email" style="width:100%; height:6vh; padding-left: 10px">
+                                <input type="email" id="input-email" placeholder='E-mail' style="width:100%; height:6vh; padding-left: 10px; text-transform: lowercase;">
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="inputPassword3" class="col-sm-10 col-form-label label-text">Password</label>
+                            <label for="inputPassword3" class="col-sm-10 col-form-label label-text" style="font-size: 15px;">Password</label>
                             <div class="col-sm-12">
-                            <input type="password"  id="inputPassword3" style="width:100%; height:6vh; padding-left: 10px">
+                            <input type="password"  id="inputPassword3 "  placeholder="myp@ssw0$d!" style="width:100%; height:6vh; padding-left: 10px">
+                                <!-- An element to toggle between password visibility -->
+                            
                             </div>
                         </div>
 
-                        <div class="check-remember ">
-                            <input type="checkbox" id="remember-checkbox" style="margin-top: 2%;">
+                        <div class="check-remember " style="padding-top: 2rem;padding-bottom: 2rem;">
+                            <input type="checkbox" id="remember-checkbox">
                             <label  for="remember-checkbox">
                                 Remember me
                             </label>
@@ -65,6 +59,7 @@
                 <script src="" async="" defer=""></script>
         
         </form>
-    </body>
-
-</html>
+    </div>
+   
+    <script src="pages\static\js\script_nav.js"></script>
+    {%endblock content%}

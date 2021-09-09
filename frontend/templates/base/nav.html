@@ -1,14 +1,13 @@
 {% load static%}
-{%block style%}<link rel="stylesheet" href="pages\static\css\style_navbar.css" />{%endblock style%}
+
     
 <header>
     <a href="#" class="logo">EasyDrink</a>
 
 <nav class="navbar">
-      <a href="#home" class="active">Home</a>
+    <a href="#home" class="active">Home</a>
     <a href="#wines">Wines</a>
     <a href="#about">About</a>
-    <a href="#Review">Review</a> 
     <a href="#Order">Order</a>
 </nav>
     <div class="icons">
@@ -16,7 +15,9 @@
         <i class="fas fa-search" id="search-icon"></i>
         <a href="#" class="fas fa-heart"></a>
         <a href="#" class="fas fa-shopping-cart"></a>
-        <a href="#" id="login" class="fas fa-user-circle"></a>
+
+        
+        <a href="{%url 'users:login'%}" id="login" class="fas fa-user-circle"></a>
     </div>
 </header>
 
@@ -30,4 +31,3 @@
 </form>
 
 
-<script src="pages\static\js\script_nav.js"></script>   
