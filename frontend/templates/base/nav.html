@@ -1,49 +1,28 @@
 {% load static%}
-<nav  class="navbar navbar-expand-lg navbar-light style: #F4F4F4">
+<header>
+    <a href="#" class="logo">EasyDrink</a>
 
-        
-            <a class="navbar-brand title" href="{% url 'pages:home' %}">EasyDrink</a>
-
-        </div>
-   
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    
-     
-<div class="collapse navbar-collapse" id="navbarTogglerDemo02">    
-    
-    
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{% url 'products:list' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Vinhos</a>
-        
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a style="text-align:center;" class="dropdown-item" href="{% url 'products:list' %}">Tinto</a></li>
-            <li><a style="text-align:center;" class="dropdown-item" href="{% url 'products:list' %}">Seco</a></li>
-            <li><a style="text-align:center;" class="dropdown-item" href="{% url 'products:list' %}">Branco</a></li>
-            <li><a style="text-align:center;" class="dropdown-item" href="{% url 'products:list' %}">Rosé</a></li>
-        </ul>
-        </li>
-        
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:login' %}">Login</a>
-        </li>
-        
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'carts:cart' %}">Cart </a>
-        </li>
-        
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'products:list' %}">ClubHouse </a>
-        </li>
-    
-    </ul>
-    
-    <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="'Tinto'" aria-label="Search">
-        <button class="btn btn-outline-danger" type="submit">Search</button>
-      </form>
-    </div>
-    </div>
+<nav class="navbar">
+      <a href="#home" class="active">Home</a>
+    <a href="#wines">Wines</a>
+    <a href="#about">About</a>
+    <a href="#Review">Review</a> 
+    <a href="#Order">Order</a>
 </nav>
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        <i class="fas fa-search" id="search-icon"></i>
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+    </div>
+</header>
+
+<!-- header section ends -->
+
+<!-- search form -->
+<form action="" id="search-form">
+    <input type="search" placeholder="Search Here ..." name="" id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+    <i class="fa fa-times" id="close" aria-hidden="true"></i>
+</form>
+<script src="pages\static\js\script_nav.js"></script>   

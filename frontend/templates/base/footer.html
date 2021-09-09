@@ -1,102 +1,98 @@
-{% load static %}
+{% load static%}
+<!-- Footer -->
+<div style="font-size: 1.5rem;">
+<footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+    <!-- Left -->
+    <div class="me-5">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
 
-  <footer class="bg-dark text-center text-lg-start text-white">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!--Grid row-->
-      <div class="row mt-4">
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Drinks</h5>
+    <!-- Right -->
+    <div>
+      <a href="" class="text-white me-4">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
 
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="{% url 'products:list' %}" class="text-white"><i class="fas fa-beer"></i>Beers</a>
-            </li>
-            <li>
-              <a href="{% url 'products:list' %}" class="text-white"><i class="fas fa-coffee"></i>Cognac</a>
-            </li>
-            <li>
-              <a href="{% url 'products:list' %}" class="text-white"><i class="fas fa-glass-whiskey"></i>Whisky</a>
-            </li>
-          </ul>
+  <!-- Section: Links  -->
+  <section style="background-color:#1c2331;">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold">Easy Drink</h6>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+          <p>
+            We are dreamlizers, we make your beverage arive at your clients house
+          </p>
         </div>
-        <!--Grid column-->
+        <!-- Grid column -->
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Company policy</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Suppliers</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white"><i class="fas fa-backspace fa-fw fa-sm me-2"></i>Devolutions</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Regulations</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Privacy policy</a>
-            </li>
-            <li>
-              <a href="{% url 'pages:about' %}" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>About us</a>
-            </li>
-          </ul>
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold">Useful links</h6>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+          <p>
+            <a href="#!" class="text-white">Your Account</a>
+          </p>
+          <p>
+            <a href="#!" class="text-white">Become a Provider</a>
+          </p>
+          <p>
+            <a href="#!" class="text-white">Shipping Rates</a>
+          </p>
+          <p>
+            <a href="#!" class="text-white">Help</a>
+          </p>
         </div>
-        <!--Grid column-->
+        <!-- Grid column -->
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Company location</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="{% url 'pages:contacts' %}" class="text-white">3000 Anfilóquio Nunes Píres St.</a>
-            </li>
-            <li>
-              <a href="{% url 'pages:contacts' %}" class="text-white"> - Bela Vista, Gaspar - SC</a>
-            </li>
-            <li>
-              <a href="{% url 'pages:contacts' %}" class="text-white"><strong>Zip Code</strong>: 8911-1900   </a>
-            </li>
-            <li>
-              <a href="#!" class="text-white"><i class="fas fa-briefcase fa-fw fa-sm me-2"></i><strong>CNPJ</strong>: 12.345.678/9101-11</a>
-            </li>
-          </ul>
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold">Contact</h6>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+          <p><i class="fas fa-home mr-3"></i> R. Anfilóquio Nunes Píres</p>
+          <p><i class="fas fa-envelope mr-3"></i> e-commerce@gmail.com</p>
+          <p><i class="fas fa-phone mr-3"></i> (+ 55) 47 9 9699-0424</p>
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Fique por Dentro!</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="{% url 'pages:contacts' %}" class="text-white"><i class="fas fa-at fa-fw fa-sm me-2"></i>easydrink@gmail.com</a>
-            </li>
-            <li>
-              <a href="#" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Track your order </a>
-            </li>
-            <li>
-              <a href="#!" class="text-white"><i class="fas fa-envelope fa-fw fa-sm me-2"></i>Newsletter</a>
-            </li>
-            <li>
-              <a href="{% url 'pages:contacts' %}" class="text-white"><i class="fas fa-phone-alt"></i >Contact us</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
+        <!-- Grid column -->
       </div>
-      <!--Grid row-->
+      <!-- Grid row -->
     </div>
-    <!-- Grid container -->
+  </section>
+  <!-- Section: Links  -->
 
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-      © 2021 Copyright -
-      <a class="text-white" href="#!"> <strong>DreamTech</strong></a>
-    </div>
-    <!-- Copyright -->
-  </footer>
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(87, 87, 87, 0.274)">
+    © 2021 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">DreamTech.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+</div>
