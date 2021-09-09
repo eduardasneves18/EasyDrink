@@ -1,4 +1,6 @@
 {% load static%}
+{%block style%}<link rel="stylesheet" href="pages\static\css\style_navbar.css" />{%endblock style%}
+    
 <header>
     <a href="#" class="logo">EasyDrink</a>
 
@@ -14,6 +16,7 @@
         <i class="fas fa-search" id="search-icon"></i>
         <a href="#" class="fas fa-heart"></a>
         <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="#" id="login" class="fas fa-user-circle"></a>
     </div>
 </header>
 
@@ -25,4 +28,6 @@
     <label for="search-box" class="fas fa-search"></label>
     <i class="fa fa-times" id="close" aria-hidden="true"></i>
 </form>
+
+
 <script src="pages\static\js\script_nav.js"></script>   
