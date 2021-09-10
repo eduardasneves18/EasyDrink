@@ -1,11 +1,14 @@
 from pathlib import Path
 import environ
 import os
+import datetime
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-dtz+me(f%+fd(8%jtse=!=nyqdtz2+l-p)i5c5d-8%9i41^^62'
+SECRET_KEY = '@6p-h7#oy4unyb4+(@i&3eq(knbkvjkeyv&@*8+a%f45b@mfm1'
+
+# 'django-insecure-dtz+me(f%+fd(8%jtse=!=nyqdtz2+l-p)i5c5d-8%9i41^^62'
 
 DEBUG = True
 
@@ -74,10 +77,6 @@ DATABASES = {
     }
 }
 
-
-
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -127,8 +126,8 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         # 'oauth2_provider.ext.rest_framework.OAuth2Authentication',  # django-oauth-toolkit < 1.0.0
-        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',  # django-oauth-toolkit >= 1.0.0
-        'drf_social_oauth2.authentication.SocialAuthentication',
+        # 'oauth2_provider.contrib.rest_framework.OAuth2Authentication',  # django-oauth-toolkit >= 1.0.0
+        # 'drf_social_oauth2.authentication.SocialAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'NON_FIELD_ERRORS_KEY': 'ERROR'
@@ -186,10 +185,22 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
 AUTH_USER_MODEL = "users.User"
 
 # Configurações para enviar e-mails de confirmação
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT =  587
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') #utilizado para não deixar um e-mail em aberto, dificultando o envio de span por meio do mesmo.
-EMAIL_HOST_PASSWORS = os.environ.get('EMAIL_HOST_PASSWORD')
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_USE_SSL = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT =  465
+# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') #utilizado para não deixar um e-mail em aberto, dificultando o envio de span por meio do mesmo.
+# EMAIL_HOST_PASSWORDS = os.environ.get('EMAIL_HOST_PASSWORD')
 
+GMAIL_CONTA = "testeseduarda@gmail.com"
+GMAIL_FROM = "testeseduarda@gmail.com"
+GMAIL_SENHA = 'testes_entra21'
+GMAIL_SMTP= 'smtp.gmail.com: 587'
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=4400),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
+}
+
+# estabelecendo a porta 8080 conforme foi registrado no frontend
+# DEFAULT_PORT = "8080"
