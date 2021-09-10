@@ -1,17 +1,96 @@
-
-{% extends 'base/base.html' %}
-
 {% load static %}
 
-{% block content %}
+{%block swiper-header%}
+<!-- Swiper -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+{%endblock swiper-header%}
+<!--CSS-->
+
+{%block style %}
+<link rel="stylesheet" href="/pages/static/css/style_navbar.css">
+<link rel="stylesheet" href="/pages/static/css/style_login.css">
+<link rel="stylesheet" href="/pages/static/css/style_home.css">
+
+{%endblock style%}
 
 
 
+<!-- Font font-awesome -->
+{%block font-awesome%}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+{%endblock font-awesome%}
+<!--External Font-->
+{%block fonts%}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,200&family=Rampart+One&family=Ubuntu:wght@500&display=swap"
+    rel="stylesheet">
+{%endblock fonts%}
+
+{% include 'base/nav.html' %}
+
+<section class="home" id="home">
+
+    <div class="swiper-container home-slider">
+
+        <div class="swiper-wrapper wrapper">
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>our special Wine</span>
+                    <h3>Dyed</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
+                    <a href="#" class="btn">order now</a>
+                </div>
+                <div class="image">
+                    <img src="\pages\static\images\Logo2.png" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>our special dish</span>
+                    <h3>fried chicken</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
+                    <a href="#" class="btn">order now</a>
+                </div>
+                <div class="image">
+                    <img src="\pages\static\images\Logo2.png" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>our special dish</span>
+                    <h3>hot pizza</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
+                    <a href="#" class="btn">order now</a>
+                </div>
+                <div class="image">
+                    <img src="\pages\static\images\Logo2.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
 
 
+{%block swiper%}
 
-
-{% endblock content %}
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.5/swiper-bundle.min.js"
+    integrity="sha512-QiBicDZzj0dLDxaV5d0iLTSmtSJcf4dR2Z2uGMqxOMqKm6FBM7AaY0vS1Cq6EbAn7I9i0oDnEZO4J75zeHuVBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{%endblock swiper%}
+<!-- external Javascript -->
+{%block script%}
+<script src="pages\static\js\script_nav.js"></script>
+<script src="pages\static\js\script_home.js"></script>
+{%endblock script%}
 
