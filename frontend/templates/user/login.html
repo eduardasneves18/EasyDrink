@@ -10,57 +10,24 @@
 {% include 'base/nav.html' %}
 
 {%block content %}
-<div class="login-style">
-<form action="." method="post" style="background-color:'gray'">
-        {% csrf_token %}
-            <div class="login">
-                <div class="card card-login col-sm-4" style="border-radius:4%;">
-                    <div class="card-body"> 
-                        <h1 class="card-title" style="font-family: 'LOKICOLA',Arial, Helvetica, sans-serif;">LOGIN</h1>
-                        <form class="box-login">
-                        <div class="row mb-3" >
-                            <label for="input-email" class="col-sm-12 col-form-label label-text" style="font-size: 15px;">E-mail</label>
-                            <div class="col-sm-12">
-                                <input type="email" id="input-email" placeholder='E-mail' style="width:100%; height:6vh; padding-left: 10px; text-transform: lowercase;">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="inputPassword3" class="col-sm-10 col-form-label label-text" style="font-size: 15px;">Password</label>
-                            <div class="col-sm-12">
-                            <input type="password"  id="inputPassword3 "  placeholder="myp@ssw0$d!" style="width:100%; height:6vh; padding-left: 10px">
-                                <!-- An element to toggle between password visibility -->
-                            
-                            </div>
-                        </div>
 
-                        <div class="check-remember " style="padding-top: 2rem;padding-bottom: 2rem;">
-                            <input type="checkbox" id="remember-checkbox">
-                            <label  for="remember-checkbox">
-                                Remember me
-                            </label>
-                        </div>
-                            
-                        <div> 
-                            <a class="link-new-user" href="{% url 'users:reset' %}" style="width: 310px; height:50;"> 
-                                Forgot your password? <strong> Reset now. </strong>
-                            </a>
-                        </div>
+{% load crispy_forms_tags %}
 
-                            <div> 
-                                <a class="link-new-user" href="{% url 'users:register' %}" style="width: 310px; height:50;"> 
-                                    New customer? <strong> Start here. </strong>
-                                </a>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                        </form>
+<div class="login-style login">
+        {% comment %} <div class="login"> {% endcomment %}
 
-                    </div>
-                </div>
-            </div>
-                <script src="" async="" defer=""></script>
-        
-        </form>
-    </div>
+        <!--Login--> 
+        <div class="container py-5">
+        <h1>Login</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {{ login_form|crispy }}
+                <button class="btn btn-primary" type="submit">Login</button>
+            </form>
+            <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+        </div>
+        {% comment %} </div> {% endcomment %}
+</div>
    
-    <script src="pages\static\js\script_nav.js"></script>
-    {%endblock content%}
+ <script src="pages\static\js\script_nav.js"></script>
+{%endblock content%}
