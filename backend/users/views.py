@@ -21,6 +21,8 @@ import jwt
 import os
 
 
+register = False
+
 class CustomRedirect(HttpResponsePermanentRedirect):
 
     allowed_schemes = [os.environ.get('APP_SCHEME'), 'http', 'https']
@@ -75,21 +77,17 @@ class VerifyEmail(views.APIView):
     def get(self, request):
         token = request.GET.get('token') # aqui o programa está fazendo a autenticação, identificando qual usuário esta realizando a confirmação atravez da assimilação do token.
         try:
-            # print('token', token)
-            # print('secretKey', settings.SECRET_KEY)
             payload = jwt.decode(token, settings.SECRET_KEY)
-            print('payload', payload)
             user = User.objects.get(id=payload['user_id']) # buscando os objetos por meio da id deles.
             if not user.is_verified:
                 user.is_verified = True # definindo a verificação do usuário. Esse campo não é obtido por padrão, nesse caso foi definida no 'User models'.
                 user.save() 
             return Response({'email': 'Successfully activated'}, status=status.HTTP_200_OK)
-        # except jwt.ExpiredSignatureError as identifier:
-        #     return Response({'error': 'Activation link expired'}, status=status.HTTP_400_BAD_REQUEST)
-        # except jwt.exceptions.DecodeError as identifier:
-        #     return Response({'error': 'Invalid token'}, status=status.HTTP_400_BAD_REQUEST)
+        except jwt.ExpiredSignatureError as identifier:
+            return Response({'error': 'Activation link expired'}, status=status.HTTP_400_BAD_REQUEST)
         except jwt.exceptions.DecodeError as identifier:
-            return Response({'error': 'Invalid token -> {}'.format(identifier)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Invalid token'}, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 class LoginAPIView(generics.GenericAPIView):
