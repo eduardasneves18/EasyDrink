@@ -15,5 +15,5 @@ class SearchProductView(ListView):
         result = request.GET
         query = result.get('q',None)
         if query is not None:
-            return Product.objects.search(query)
+            return Product.objects.search(query) # n tenho certeza se isso esta funcionando corretamente
         return Product.objects.featured()

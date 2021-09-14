@@ -43,13 +43,13 @@ class ProductManager(models.Manager):
     def get_queryset(self):
         return ProductQuerySet(self.model, using=self.db)
 
-    def all(self):
+    def all(self): #Função que traz todos os produtos disponiveis 
        return self.get_queryset().available()
 
-    def featured(self):
+    def featured(self):#Função que traz todos os produtos em destaque
         return self.get_queryset().featured()
         
-    def search(self,query):
+    def search(self,query): #Função que retorna algo que esteja disponivel e referente a pesquisa do cliente
         return self.get_queryset().available().search(query)
 
 
