@@ -29,7 +29,6 @@ def login_request(request):
 				return redirect("pages:home")
 			else:
 				messages.error(request, username)
-
 		else:
 			print('Senha correta')
             
