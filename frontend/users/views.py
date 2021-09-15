@@ -1,11 +1,12 @@
 from django.views.generic import TemplateView
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
-from .forms import LoginForm
 from django.shortcuts import  render, redirect
 from django.contrib.auth import login, authenticate #add this
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm #add this
+from services import users
+from .forms import LoginForm, RegisterForm
 
 
 # class UserPageView(TemplateView):
@@ -21,16 +22,34 @@ class ResetPageView(TemplateView):
 
 def login_request(request):
 	if request.method == "POST":
-		form = AuthenticationForm(request, data=request.POST)
+		form = LoginForm(request.POST)
 		if form.is_valid():
-			username = form.cleaned_data.get('username')
+			email = form.cleaned_data.get('email')
 			password = form.cleaned_data.get('password')
-			if password is not None:
+
+			user = users.login(email, password)
+			if user is not None:
+				print('Selected User: ', user)
 				return redirect("pages:home")
 			else:
-				messages.error(request, username)
+				messages.error(request, email)
 		else:
-			print('Senha correta')
-            
-	form = AuthenticationForm()
+			print(form.errors)
+	else:
+		form = LoginForm()
+
 	return render(request=request, template_name="user/login.html", context={"login_form":form})
+
+
+
+def register_request(request):
+	if request.method == "POST":
+		form = RegisterForm(request.POST)
+		if form.is_valid():
+			user = form.save()
+			login(request, user)
+			messages.success(request, "Registration successful." )
+			return redirect("pages:home")
+		messages.error(request, "Unsuccessful registration. Invalid information.")
+	form = RegisterForm()
+	return render (request=request, template_name="user/register.html", context={"register_form":form})
