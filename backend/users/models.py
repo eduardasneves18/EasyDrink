@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager, PermissionsMixin)
+from django.db.models import base
 from rest_framework_simplejwt.tokens import RefreshToken
 
 
@@ -36,6 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_verified = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    birth_date = models.DateField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True) #campo para saber quando um usuário foi criado, para isso usei o 'adicionar automaticamnte'.
     updated_at = models.DateTimeField(auto_now=True) # campo para saber quando fez uma atualização, para isso usei o 'automaticamente agora'.
     auth_provider = models.CharField(
