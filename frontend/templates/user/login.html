@@ -15,7 +15,7 @@
 
 <div class="login-style login">
         <!--Login--> 
-        <div class="container py-5">
+        <div class="container py-5 ">
         <h1>Login</h1>
             <form method="POST">
                 {% csrf_token %}
@@ -25,7 +25,7 @@
             </form>
 
             <div style="margin:10px">
-                <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+                <p class="text-center">Don't have an account? <a href="{% url 'users:register' %}">Create an account</a>.</p>
             </div>
 
             <div style="margin:10px">
