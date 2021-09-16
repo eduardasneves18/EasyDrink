@@ -12,37 +12,3 @@
     justify-items: center;
 }
 
-.box-login {
-    text-align: left;
-    width: 100%;
-  }
-
-.card-login{
-    padding: 10px;
-
-}
-.link-new-user {
-    text-decoration: none;
-    color: rgb(87, 2, 32);
-    line-height:  2;
-}
-
-.login-input {
-    width: 8rem;
-}
-
-.check-remember {
-    display: flex;
-    height: 5vh;
-    justify-content: center;
-    margin-block: 2%;
-
-}
-
-.check-remember > label {
-    margin-left: 10px;
-}
-
-.label-text {
-    text-align: left;
-}

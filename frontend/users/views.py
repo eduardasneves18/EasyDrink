@@ -1,20 +1,11 @@
 from django.views.generic import TemplateView
-from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 from django.shortcuts import  render, redirect
-from django.contrib.auth import login, authenticate #add this
+from django.contrib.auth import login
 from django.contrib import messages
-from django.contrib.auth.forms import AuthenticationForm #add this
 from services import users
 from .forms import LoginForm, RegisterForm
-
-
-# class UserPageView(TemplateView):
-#     template_name = 'user/login.html'    
-    
-
-class RegisterPageView(TemplateView):
-    template_name = 'user/register.html'
+  
 
 class ResetPageView(TemplateView):
     template_name = 'user/reset_password.html'
