@@ -19,6 +19,6 @@ import requests
 #     template_name = 'wishes_list.html'
 
 
-def products(request):
-    response = requests.get('http://127.0.0.1:8000/api/v1/products/list/').json()
-    return render (request, 'templates/products/products_list.html', {'response':response})
+# def products(request):
+#     response = requests.get('http://127.0.0.1:8000/api/v1/products/list/').json()
+#     return render (request, 'templates/products/products_list.html', {'response':response})
