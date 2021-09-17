@@ -4,8 +4,8 @@ from rest_framework.routers import DefaultRouter
 
 
 router = DefaultRouter()
-router.register('categories', CategoryViewSet)
-router.register('products', ProductViewSet)
+router.register('/categories', CategoryViewSet)
+router.register('/list', ProductViewSet)
 
 #forma utilizada prara trazer items de uma categoria especifica 
 urlpatterns = [
