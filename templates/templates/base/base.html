@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Easy Drink{% endblock %}</title>
+
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+   
+    <!-- Font font-awesome -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--External Font-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,200&family=Rampart+One&family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+     <!--CSS-->
+     <link rel="stylesheet" href="templates/css/style_navbar.css" />
+     <link rel="stylesheet" href="templates/css/style_login.css" />
+     <link rel="stylesheet" href="templates/css/style_home.css" />
+ 
+  </head>
+  <body>
+    {% include 'templates/base/nav.html' %}
+
+     {% block content %}
+
+
+    {% endblock content %}
+
+
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.5/swiper-bundle.min.js"
+      integrity="sha512-QiBicDZzj0dLDxaV5d0iLTSmtSJcf4dR2Z2uGMqxOMqKm6FBM7AaY0vS1Cq6EbAn7I9i0oDnEZO4J75zeHuVBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- external Javascript -->
+    <script src="pages\templates\js\script_nav.js"></script>
+    <script src="pages\templates\js\script_home.js"></script>
+  </body>
+</html>
