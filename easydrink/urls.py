@@ -56,7 +56,7 @@ urlpatterns = [
     path('api/v1/products', include('products.urls')),
     
     #frontend
-    path('page/', include('pages.urls'))
+    path('', include('pages.urls'))
 
     # API schema and Documentation
     # path('project/docs/', include_docs_urls(title='BlogAPI')),
