@@ -50,6 +50,7 @@ urlpatterns = [
 
     # Admin
     path ('admin/', admin.site.urls),
+
     #API endpoints
     path('api/v1/search', include('search.urls')),
     path('api/v1/products', include('products.urls')),
