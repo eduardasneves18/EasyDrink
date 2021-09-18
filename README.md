@@ -59,3 +59,28 @@ A DreamTech foi criada e é composta por cinco colaboradores, que viram no proje
 
 ## Status do projeto
 Em andamento.
+
+
+Descrição dos Arquivos e Diretorios deste projeto.
+├── easydrink
+│   ├── carts
+│   │   └── migrations
+│   ├── easydrink
+│   ├── pages
+│   ├── products
+│   │   └── migrations
+│   ├── search
+│   │   └── migrations
+│   ├── static
+│   │   ├── css
+│   │   ├── images
+│   │   ├── js
+│   │   └── templates
+│   │       ├── base
+│   │       ├── cart
+│   │       ├── categories
+│   │       ├── products
+│   │       └── user
+│   └── users
+│       └── migrations
+
