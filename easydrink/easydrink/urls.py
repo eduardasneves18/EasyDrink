@@ -51,8 +51,8 @@ urlpatterns = [
     # Admin
     path ('admin/', admin.site.urls),
     #Anothers endpoints
-    path('api/v1/', include('search.urls')),
-    path('api/v1/', include('products.urls')),
+    path('api/v1/search', include('search.urls')),
+    path('api/v1/products', include('products.urls')),
     # path('api/v1/', include('users.urls')),
 
     # API schema and Documentation
