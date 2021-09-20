@@ -54,7 +54,7 @@ ROOT_URLCONF = 'easydrink.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'static'],
+        'DIRS': [   BASE_DIR /  'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,7 +122,7 @@ USE_TZ = True
 env = environ.Env()
 environ.Env.read_env()
 
-STATIC_URL = '/static/'
+STATIC_URL = 'pages/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
