@@ -4,7 +4,7 @@ import requests
 
 
 class HomePageView(TemplateView):
-    template_name = 'templates/home.html'
+    template_name = 'home.html'
 
 
 # class AboutPageView(TemplateView):
@@ -21,4 +21,4 @@ class HomePageView(TemplateView):
 
 # def products(request):
 #     response = requests.get('http://127.0.0.1:8000/api/v1/products/list/').json()
-#     return render (request, 'templates/products/products_list.html', {'response':response})
+#     return render (request, 'products/products_list.html', {'response':response})

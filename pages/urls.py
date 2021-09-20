@@ -2,7 +2,7 @@ from typing import final
 from django.urls import path
 from drf_yasg import views
 
-from .views import  HomePageView #AboutPageView, ContactsPageView, WishesPageView
+from .views import  HomePageView #,AboutPageView, ContactsPageView, WishesPageView
 from pages import views
 
 app_name = "pages"
