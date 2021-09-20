@@ -1,6 +1,6 @@
-{% comment %} {% extends 'base/base.html' %} {% endcomment %}
-{% comment %} 
-{% include 'base/aside.html' %} {% endcomment %}
+{% extends 'base/base.html' %}
+
+
 {% block content %}
 <style>
     .card {
@@ -14,8 +14,8 @@
     }
 </style>
 
-<p> Teste</p>
-<div>
+
+<div style="margin-top: 80px">
     <div class="row">
         {% if products %}
         {% for product in products %}
