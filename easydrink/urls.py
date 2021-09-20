@@ -50,13 +50,12 @@ urlpatterns = [
 
     # Admin
     path ('admin/', admin.site.urls),
-
     #API endpoints
     path('api/v1/search', include('search.urls')),
     path('api/v1/products', include('products.urls')),
     
     #frontend
-    path('', include('pages.urls'))
+    path('page/', include('pages.urls'))
 
     # API schema and Documentation
     # path('project/docs/', include_docs_urls(title='BlogAPI')),

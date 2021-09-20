@@ -34,8 +34,7 @@ class ProductQuerySet(models.query.QuerySet):
     
     def search(self, query):
         lookups = (Q(name__icontains = query) | # na linha 38/39 esta dizendo que o usuário quando digitar algo na search
-                    Q(description__icontains = query)| 
-                     Q(category__icontains = query))# ele irá fazer uma busc pelo nome e pelas palavras da descrição do produto.
+                    Q(description__icontains = query)) # ele irá fazer uma busc pelo nome e pelas palavras da descrição do produto.
         return self.filter(lookups).distinct()
 
 

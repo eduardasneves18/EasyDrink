@@ -1,7 +1,6 @@
 from pathlib import Path
 import environ
 import datetime
-import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,7 +32,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'drf_yasg',
     'products',
-    # 'carts',
+    'carts',
     'users',
     'search',
     'pages',
@@ -54,9 +53,7 @@ ROOT_URLCONF = 'easydrink.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'templates')
-        ],
+        'DIRS': [BASE_DIR / 'static'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
