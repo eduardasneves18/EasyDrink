@@ -1,54 +1,8 @@
 {% extends 'base/base.html'%}
-
+{% include 'base/nav.html' %}
 {% block content %}
-<section class="home" id="home">
+<div id="app"></div>
 
-    <div class="swiper-container home-slider">
-
-        <div class="swiper-wrapper wrapper">
-
-            <div class="swiper-slide slide">
-                <div class="content">
-                    <span>our special Wine</span>
-                    <h3>Dyed</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
-                    <a href="#" class="btn">order now</a>
-                </div>
-                <div class="image">
-                    <img src="\pages\static\images\Logo2.png" alt="">
-                </div>
-            </div>
-
-            <div class="swiper-slide slide">
-                <div class="content">
-                    <span>our special dish</span>
-                    <h3>fried chicken</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
-                    <a href="#" class="btn">order now</a>
-                </div>
-                <div class="image">
-                    <img src="\pages\static\images\Logo2.png" alt="">
-                </div>
-            </div>
-
-            <div class="swiper-slide slide">
-                <div class="content">
-                    <span>our special dish</span>
-                    <h3>hot pizza</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
-                    <a href="#" class="btn">order now</a>
-                </div>
-                <div class="image">
-                    <img src="\pages\static\images\Logo2.png" alt="">
-                </div>
-            </div>
-            
-        </div>
-        <div class="swiper-pagination"></div>
-
-    </div>
-
-</section>
 
 
 <!-- Wines -->
@@ -162,7 +116,7 @@
 
 
 <!-- Specials -->
-<section class="menu" id="menu">
+<section class="menu" id="menu" style="background-color: rgb(226, 216, 216);">
 
     <h3 class="sub-heading"> our menu </h3>
     <h1 class="heading"> today's speciality </h1>
