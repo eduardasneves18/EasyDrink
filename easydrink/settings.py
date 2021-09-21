@@ -158,12 +158,3 @@ SIMPLE_JWT = {
 }
 
 
-#API PIX 
-URL_PROD = 'https://api-pix.gerencianet.com.br'
-CLIENT_ID = 'Client_Id_b80fbe5e2b1b0468f86e78a822b3d95322a77a8f'
-CLIENT_SECRET = 'Client_Secret_8946aea199fa228462e89c475cf08d00a699cd41'
-CERTIFICADO = 'EasyDrink/certificadopix.pem'
-
-
-
-
