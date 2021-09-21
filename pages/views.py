@@ -27,6 +27,9 @@ class ProductDetailPageView(TemplateView):
 class CartPageView(TemplateView):
     template_name = 'cart/cart_detail.html'
 
+class LoginPageView(TemplateView):
+    template_name = 'user/login.html'
+
 def get_products(request):
     response = requests.get('http://127.0.0.1:8000/api/v1/products/list/').json()
     return render (request, 'products/products_list.html', {'products':response})

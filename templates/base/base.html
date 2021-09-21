@@ -11,19 +11,16 @@
 
       <title>{% block title %}EasyDrink{% endblock title %}</title>
 
-      <!-- Swiper -->
-      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
      <!-- Font Awesome -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   
       <!--CSS-->
-
       <link rel="preconnect" href="https://fonts.gstatic.com">
 
-      <link rel="stylesheet" href="/pages/static/css/style_navbar.css" />
-      <link rel="stylesheet" href="/pages/static/css/style_login.css" />
-      <link rel="stylesheet" href="/pages/static/css/style_slider.css" />
+      <link rel="stylesheet" href="pages/static/css/style_navbar.css" />
+      <link rel="stylesheet" href="pages/static/css/style_login.css" />
+      
+      <link rel="stylesheet" href="pages/static/css/style_cart.css" />
     </head>
 
     <body>
@@ -38,7 +35,7 @@
         {% endblock content %}
       </main>
 
-      {% include 'base/footer.html'%}
+      
 
       <!-- LIBS JAVASCRIPT, NÃO REMOVER, JAVASCRIPT SEMPRE NO FINAL DA PAGINA. PARA QUE O VISUAL CARREGUE MAIS RAPIDO -->
       <script
@@ -52,17 +49,11 @@
       <script>
         feather.replace();
       </script>
-<!-- slider -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.production.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/classnames/2.2.6/index.min.js"></script>
-  
 
       <!-- external Javascript -->
 
-      <script src="pages\static\js\script_nav.js"></script>
-      <script src="pages\static\js\script_home.js"></script>
-      <script type="text/javascript" src="pages\static\js\script_slider.js"></script>
+      
+      <script type="text/javascript" src="pages/static/js/script_cart.js"></script>
     </body>
   </html>
 </html>
