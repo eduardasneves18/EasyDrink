@@ -1,7 +1,7 @@
 {% extends 'base/base.html'%}
 {% include 'base/nav.html' %}
 {% block content %}
-<div id="app"></div>
+{% include 'slider.html' %}
 
 
 
@@ -9,8 +9,8 @@
 
 <section class="dishes" id="dishes">
 
-    <h3 class="sub-heading"> our dishes </h3>
-    <h1 class="heading"> popular dishes </h1>
+    <h3 class="sub-heading"> our wines </h3>
+    <h1 class="heading"> popular wines </h1>
 
     <div class="box-container">
 
@@ -118,7 +118,7 @@
 <!-- Specials -->
 <section class="menu" id="menu" style="background-color: rgb(226, 216, 216);">
 
-    <h3 class="sub-heading"> our menu </h3>
+    <h3 class="sub-heading"> our wines menu </h3>
     <h1 class="heading"> today's speciality </h1>
 
     <div class="box-container">
@@ -307,5 +307,6 @@
 
 </section>
 
+{% include 'base/footer.html'%}
 
 {% endblock content%}
