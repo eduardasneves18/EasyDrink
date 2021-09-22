@@ -19,8 +19,8 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-    #def get_absolute_url(self):
-    #    return reverse("products:list_by_category", kwargs={"slug": self.slug})
+    def get_absolute_url(self):
+       return reverse("products:list_by_category", kwargs={"slug": self.slug})
 
 
 # classe para trazer os produtos referentes a busca do cliente         
