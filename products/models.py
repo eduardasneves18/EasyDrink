@@ -64,7 +64,8 @@ class Product(models.Model):
     available = models.BooleanField(default= False)
     image = models.ImageField(upload_to="media", blank=True)
     featured = models.BooleanField(default = False)
-    
+    quantity = models.IntegerField()
+
     #Available = models.Manager()
     objects = ProductManager()
 
