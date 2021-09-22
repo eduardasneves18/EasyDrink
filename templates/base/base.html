@@ -1,77 +1,79 @@
-<!DOCTYPE html>
+{% load static %}
+
 <html lang="pt-BR">
-  <!DOCTYPE html>
-  <html lang="pt-BR">
-    <head>
-      <meta charset="utf-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
-      <!-- carregando imagens para a guia no browser -->
-      <link rel="apple-touch-icon" sizes="57x57" href="pages/static/images/apple-icon-57x57.png">
-      <link rel="apple-touch-icon" sizes="60x60" href="pages/static/images/apple-icon-60x60.png">
-      <link rel="apple-touch-icon" sizes="72x72" href="pages/static/images/apple-icon-72x72.png">
-      <link rel="apple-touch-icon" sizes="76x76" href="pages/static/images/apple-icon-76x76.png">
-      <link rel="apple-touch-icon" sizes="114x114" href="pages/static/images/apple-icon-114x114.png">
-      <link rel="apple-touch-icon" sizes="120x120" href="pages/static/images/apple-icon-120x120.png">
-      <link rel="apple-touch-icon" sizes="144x144" href="pages/static/images/apple-icon-144x144.png">
-      <link rel="apple-touch-icon" sizes="152x152" href="pages/static/images/apple-icon-152x152.png">
-      <link rel="apple-touch-icon" sizes="180x180" href="pages/static/images/apple-icon-180x180.png">
-      <link rel="icon" type="image/png" sizes="192x192"  href="pages/static/images/android-icon-192x192.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="pages/static/images/favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="96x96" href="pages/static/images/favicon-96x96.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="pages/static/images/favicon-16x16.png">
-      <link rel="manifest" href="pages/static/images/manifest.json">
-      <meta name="msapplication-TileColor" content="#ffffff">
-      <meta name="msapplication-TileImage" content="pages/static/images/ms-icon-144x144.png">
-      <meta name="theme-color" content="#ffffff">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- carregando imagens para a guia no browser -->
+    <link rel="apple-touch-icon" sizes="57x57" href="pages/static/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="pages/static/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="pages/static/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="pages/static/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="pages/static/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="pages/static/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="pages/static/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="pages/static/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="pages/static/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="pages/static/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="pages/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="pages/static/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="pages/static/images/favicon-16x16.png">
+    <link rel="manifest" href="{% static 'images/manifest.json'%}">
+    {% static 'image/manifest.json'%}
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="pages/static/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-      <title>{% block title %}EasyDrink{% endblock title %}</title>
+    <title>{% block title %}EasyDrink{% endblock title %}</title>
 
-     <!-- Font Awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  
-      <!--CSS-->
-      <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-      <link rel="stylesheet" href="pages/static/css/style_navbar.css" />
-      <link rel="stylesheet" href="pages/static/css/style_login.css" />
+    <!--CSS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link rel="stylesheet" href="{% static 'css/style_navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style_login.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style_cart.css' %}" />
+
+  </head>
+
+  <body>
+    <!-- AQUI USAMOS PARA CRIAR O HEADER DA APLICACAO -->
+    {% include 'base/nav.html' %}
+
+
+    <!-- TODO O CORPO PASSA AQUI-->
+
+    <main>
+      {% block content %} 
       
-      <link rel="stylesheet" href="pages/static/css/style_cart.css" />
-    </head>
+      {% endblock content %}
+    </main>
 
-    <body>
-      <!-- AQUI USAMOS PARA CRIAR O HEADER DA APLICACAO -->
+    {% include 'base/footer.html' %}
+    
+    <!-- LIBS JAVASCRIPT, NÃO REMOVER, JAVASCRIPT SEMPRE NO FINAL DA PAGINA. PARA QUE O VISUAL CARREGUE MAIS RAPIDO -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
 
-      {% include 'base/nav.html' %}
-      <!-- TODO O CORPO PASSA AQUI-->
 
-      <main>
-        {% block content %} 
-        
-        {% endblock content %}
-      </main>
+    <!-- ADD ICONS TO APP -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
 
-      
 
-      <!-- LIBS JAVASCRIPT, NÃO REMOVER, JAVASCRIPT SEMPRE NO FINAL DA PAGINA. PARA QUE O VISUAL CARREGUE MAIS RAPIDO -->
-      <script
-        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"
-      ></script>
+    <!-- external Javascript -->
+    <script type="text/javascript" src="{% static 'js/script_cart.js' %}"></script>
 
-      <!-- ADD ICONS TO APP -->
-      <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-      <script>
-        feather.replace();
-      </script>
-
-      <!-- external Javascript -->
-
-      
-      <script type="text/javascript" src="pages/static/js/script_cart.js"></script>
-    </body>
-  </html>
+  </body>
 </html>
+

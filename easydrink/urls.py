@@ -44,13 +44,14 @@ urlpatterns = [
     # Documentation
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+
     # Authentication
     # path('auth/', include('drf_social_oauth2.urls', namespace='drf')),
-    path ('api/v1/auth/', include ('users.urls')),
 
     # Admin
     path ('admin/', admin.site.urls),
     #API endpoints
+    path('api/v1/auth/', include ('users.urls')),
     path('api/v1/search/', include('search.urls')),
     path('api/v1/products/', include('products.urls')),
     path('api/v1/carts/', include('carts.urls')), 

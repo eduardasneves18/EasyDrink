@@ -1,3 +1,4 @@
+from products.models import Product
 from django.views.generic import TemplateView
 from django.shortcuts import get_object_or_404, redirect, render
 import requests
@@ -18,18 +19,21 @@ class ContactsPageView(TemplateView):
 class WishesPageView(TemplateView):
     template_name = 'wishes_list.html'
 
-class ProductsPageView(TemplateView):
-    template_name = 'products/products_list.html'
-
-class ProductDetailPageView(TemplateView):
-    template_name = 'products/product_detail.html'
 
 class CartPageView(TemplateView):
     template_name = 'cart/cart_detail.html'
 
+
 class LoginPageView(TemplateView):
     template_name = 'user/login.html'
 
+
 def get_products(request):
-    response = requests.get('http://127.0.0.1:8000/api/v1/products/list/').json()
+    response = requests.get('http://127.0.0.1:8000/api/v1/products/').json()
     return render (request, 'products/products_list.html', {'products':response})
+
+
+def get_product_detail(request, pk):
+    url = 'http://127.0.0.1:8000/api/v1/products/{}'.format(pk)
+    response = requests.get(url).json()
+    return render (request, 'products/product_detail.html', {'product':response})
