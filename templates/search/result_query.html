@@ -1,0 +1,69 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+<style>
+    .card {
+        margin-bottom: 10px;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    .button-link {
+        text-decoration: none
+    }
+</style>
+
+<div class='row mb-3'>
+    {% if query %}
+    <div class='col 12'>
+        Resultado para <b>{{ query }}</b>
+        <hr />
+    </div>
+    {% else %}
+    <div class='col-12 col-md-8 mx-auto py-5'>
+        {% include 'templates/base/nav.html' %}
+    </div>
+    <div class='col-12'>
+        <hr>
+    </div>
+    {% endif %}
+</div>
+
+
+<div style="margin-top: 80px">
+    <div class="row">
+        {% if products %}
+        {% for product in products %}
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <a href="media/static/product/01.pg" class="popup-link">
+                        <img src="https://content.paodeacucar.com/wp-content/uploads/2019/06/o-que-%C3%A9-vinho-de-mesa3.jpg"
+                            class="img-fluid mb-2" />
+                    </a>
+                    <h5>{{ product.name}}</h5>
+                    <p>3x de R$10,83</p>
+                    <div class="item-preco">
+                        <span>R$ {{ product.price}}</span>
+                    </div>
+                    <div class="main-button">
+                        <button type="button" class="btn-primary btn-info btn">
+                            <a class="button-link" href="{{product.my_absolute_url }}">
+                                Details 
+                            </a>
+                        </button>
+                        <button type="button" class="btn-primary btn-success btn">
+                            <a class="button-link" href="{{product.my_absolute_url }}">
+                            Buy now
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

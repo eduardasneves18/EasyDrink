@@ -1,6 +1,7 @@
-{% load static%}
+<head>
+    <link rel="stylesheet" href="pages/static/css/style_login.css" />
+</head>
 
-    
 <header>
     <a href="{% url 'pages:home' %}" class="logo">EasyDrink</a>
     
@@ -14,13 +15,9 @@
     <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>
         <i class="fas fa-search" id="search-icon"></i>
-        {% comment %} <a href="{% url 'pages:wishes' %}" class="fas fa-heart"></a>
-        <a href="{% url 'carts:cart' %}" class="fas fa-shopping-cart"></a>
-        <a href="{%url 'users:login'%}" id="login" class="fas fa-user-circle"></a> {% endcomment %}
-    
-        <a href="#" class="fas fa-heart"></a>
-        <a href="#" class="fas fa-shopping-cart"></a>
-        <a href="#" id="login" class="fas fa-user-circle"></a>
+        <a href="{% url 'pages:wishes' %}" class="fas fa-heart"></a>
+        <a href="{% url 'pages:cart' %}" class="fas fa-shopping-cart"></a>
+        <a href="{%url 'pages:login'%}" id="login" class="fas fa-user-circle"></a> 
     
     </div>
 </header>
@@ -28,10 +25,13 @@
 <!-- header section ends -->
 
 <!-- search form -->
-<form action="" id="search-form">
-    <input type="search" placeholder="Search Here ..." name="" id="search-box">
+<form method="GET" action='{% url "search:query"%}' id="search-form">
+    <input type="search" placeholder="Search Here ..." name="q" id="search-box", value="{{ request.GET.q }}">
     <label for="search-box" class="fas fa-search"></label>
     <i class="fa fa-times" id="close" aria-hidden="true"></i>
 </form>
+
+
+<script src="pages/static/js/script_nav.js"></script>
 
 
