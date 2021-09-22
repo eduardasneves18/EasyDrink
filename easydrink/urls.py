@@ -46,16 +46,17 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     # Authentication
     # path('auth/', include('drf_social_oauth2.urls', namespace='drf')),
-    path ('auth/', include ('users.urls')),
+    path ('api/v1/auth/', include ('users.urls')),
 
     # Admin
     path ('admin/', admin.site.urls),
     #API endpoints
     path('api/v1/search', include('search.urls')),
     path('api/v1/products', include('products.urls')),
-    
+    path('api/v1/carts', include('carts.urls')), 
+
     #frontend
-    path('page/', include('pages.urls'))
+    path('', include('pages.urls'))
 
     # API schema and Documentation
     # path('project/docs/', include_docs_urls(title='BlogAPI')),

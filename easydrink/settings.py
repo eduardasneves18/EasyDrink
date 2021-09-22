@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'products',
     'carts',
+    'discounts',
     'users',
     'search',
     'pages',
@@ -155,3 +156,7 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=4400),
     'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
 }
+
+
+CART_SESSION_ID = "cart"
+CART_ITEM_MAX_QUANTITY = 100
