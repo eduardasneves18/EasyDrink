@@ -1,7 +1,7 @@
 {% extends 'base/base.html' %}
 
 
-{% block content %}
+{% block content %} {% include 'base/nav.html' %}
 <style>
     .card {
         margin-bottom: 10px;
@@ -22,7 +22,7 @@
     </div>
     {% else %}
     <div class='col-12 col-md-8 mx-auto py-5'>
-        {% include 'templates/base/nav.html' %}
+        {% include 'search/search_form.html' %}
     </div>
     <div class='col-12'>
         <hr>
@@ -33,7 +33,6 @@
 
 <div style="margin-top: 80px">
     <div class="row">
-        {% if products %}
         {% for product in products %}
         <div class="col-lg-3 col-md-6">
             <div class="card">
@@ -42,10 +41,10 @@
                         <img src="https://content.paodeacucar.com/wp-content/uploads/2019/06/o-que-%C3%A9-vinho-de-mesa3.jpg"
                             class="img-fluid mb-2" />
                     </a>
-                    <h5>{{ product.name}}</h5>
+                    <h5>{{product.name}}</h5>
                     <p>3x de R$10,83</p>
                     <div class="item-preco">
-                        <span>R$ {{ product.price}}</span>
+                        <span>R$ {{product.price}}</span>
                     </div>
                     <div class="main-button">
                         <button type="button" class="btn-primary btn-info btn">
@@ -55,7 +54,7 @@
                         </button>
                         <button type="button" class="btn-primary btn-success btn">
                             <a class="button-link" href="{{product.my_absolute_url }}">
-                            Buy now
+                                Buy now
                             </a>
                         </button>
                     </div>
@@ -63,7 +62,9 @@
             </div>
         </div>
         {% endfor %}
-        {% endif %}
     </div>
 </div>
-{% endblock content %}
+
+{% include 'base/footer.html'%} 
+
+{% endblock content%}

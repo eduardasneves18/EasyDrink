@@ -1,0 +1,12 @@
+<form method='GET' action='{% url "search:query" %}' id="search-form">
+    <input
+      type="search"
+      placeholder="Search Here ..."
+      name='q'
+      id="search-box"
+      value='{{ request.GET.q }}'
+    />
+    <label for="search-box" class="fas fa-search"></label>
+    <i class="fa fa-times" id="close" aria-hidden="true"></i>
+  </form>
+
