@@ -19,6 +19,9 @@ class ContactsPageView(TemplateView):
 class WishesPageView(TemplateView):
     template_name = 'wishes_list.html'
 
+class OrdersPageView(TemplateView):
+    template_name = 'orders.html'
+
 
 class CartPageView(TemplateView):
     template_name = 'cart/cart_detail.html'
@@ -27,6 +30,11 @@ class CartPageView(TemplateView):
 class LoginPageView(TemplateView):
     template_name = 'user/login.html'
 
+class RegisterPageView(TemplateView):
+    template_name = 'user/register.html'
+
+class ResetPasswordPageView(TemplateView):
+    template_name = 'user/reset_password.html'
 
 def get_products(request):
     response = requests.get('http://127.0.0.1:8000/api/v1/products/').json()
