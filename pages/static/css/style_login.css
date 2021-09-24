@@ -12,3 +12,11 @@
     justify-items: center;
 }
 
+
+.verify-confirm-email h1 {
+    color:rgb(25, 87, 146);
+    font-size: 32px;
+    text-align: center;
+    margin-top: 30px;
+}
+

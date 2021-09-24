@@ -84,13 +84,11 @@ class VerifyEmail(views.APIView):
             if not user.is_verified:
                 user.is_verified = True # definindo a verificação do usuário. Esse campo não é obtido por padrão, nesse caso foi definida no 'User models'.
                 user.save() 
-            return Response({'email': 'Successfully activated'}, status=status.HTTP_200_OK)
+            return render(request, 'user/verify_confirmed_email.html', {'message': 'Successfully activated'}) 
         except jwt.ExpiredSignatureError as identifier:
-            return Response({'error': 'Activation link expired'}, status=status.HTTP_400_BAD_REQUEST)
+            return render(request, 'user/verify_confirmed_email.html', {'message': 'Activation link expired'}) 
         except jwt.exceptions.DecodeError as identifier:
-            return Response({'error': 'Invalid token'}, status=status.HTTP_400_BAD_REQUEST)
-
-
+            return render(request, 'user/verify_confirmed_email.html', {'message': 'Invalid token'}) 
 
 class LoginAPIView(generics.GenericAPIView):
     serializer_class = LoginSerializer
