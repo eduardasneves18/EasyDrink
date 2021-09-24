@@ -2,7 +2,7 @@ from typing import final
 from django.urls import path
 from drf_yasg import views
 
-from .views import  HomePageView, AboutPageView, ContactsPageView, WishesPageView, OrdersPageView,  CartPageView, get_products, get_product_detail, post_register, ResetPasswordPageView, post_login
+from .views import  HomePageView, AboutPageView, ContactsPageView, WishesPageView, OrdersPageView,  CartPageView, get_products, get_product_detail, post_register, post_reset_password, ResetPasswordPageView, post_login
 from pages import views
 
 app_name = "pages"
@@ -18,5 +18,5 @@ urlpatterns = [
     path("cart/", CartPageView.as_view(), name="cart"),
     path("login/", post_login, name="login"),
     path("register/", post_register, name="register"),
-    path("reset-password/", ResetPasswordPageView.as_view(), name="reset-password"),
+    path("reset-password/", post_reset_password, name="reset-password"),
 ]

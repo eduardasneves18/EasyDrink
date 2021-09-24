@@ -1,6 +1,9 @@
-{% extends 'base/base.html' %}
+{%extends 'base/base.html'%}
+{% load static %}
 
-{% block content %}
+
+{%block content %}
+{% include 'base/nav.html' %} 
 <style>
     .title {
         font-weight: bold;
@@ -9,7 +12,7 @@
 
 <div>
     {% if product.id %}
-    <div class="row">
+    <div class="row" style="padding-top: 3%; padding-left: 1%">
         <div class="col-md-6">
             <div id="galeria" class="carousel slide" data-ride="carousel">
                 <ul class="carousel-indicators">
@@ -24,7 +27,7 @@
                             src="https://content.paodeacucar.com/wp-content/uploads/2019/06/o-que-%C3%A9-vinho-de-mesa3.jpg"
                             alt="Los Angeles">
                     </div>
-                    <div class="carousel-item">
+                    {% comment %} <div class="carousel-item">
                         <img class="d-block w-100"
                             src="https://content.paodeacucar.com/wp-content/uploads/2019/06/o-que-%C3%A9-vinho-de-mesa5.jpg"
                             alt="Chicago">
@@ -33,7 +36,7 @@
                         <img class="d-block w-100"
                             src="https://content.paodeacucar.com/wp-content/uploads/2019/06/o-que-%C3%A9-vinho-de-mesa5.jpg"
                             alt="New York">
-                    </div>
+                    </div> {% endcomment %}
                 </div>
 
                 <a class="carousel-control-prev" href="#galeria" data-slide="prev">
