@@ -1,7 +1,8 @@
+from requests.models import CaseInsensitiveDict
 from users.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
-# from django.shortcuts import render, redirect
+
 
 class LoginForm(forms.Form):
     email = forms.EmailField(max_length = 200, widget = forms.EmailInput())     
@@ -24,8 +25,5 @@ class RegisterForm(forms.Form):
                 user.save()
             return user
 
-# class RegisterForm(forms.ModelForm):
-
-#     class Meta:
-#         model = User
-#         fields = ('username', 'email', 'password') 
+class ResetPasswordForm(forms.Form):
+    email = forms.EmailField(max_length = 200, widget = forms.EmailInput())    

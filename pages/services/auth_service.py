@@ -21,3 +21,12 @@ def register(email, password, username):
     response = requests.post(url, data=payload)
     
     return response.json()
+
+def reset_password(email):
+    url = "http://127.0.0.1:8000/api/v1/auth/request-reset-email/"
+    payload = {
+        "email": email
+    }
+    response = requests.post(url, data=payload)
+    
+    return response.json()
