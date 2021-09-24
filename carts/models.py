@@ -1,12 +1,13 @@
-   
+# import uuid   
 from django.db import models
 from django.db.models.deletion import CASCADE
 from products.models import Product
 from users.models import User
 
 PRODUCT_QUANTITY_CHOICES = [(i, str(i)) for i in range(1, 100)]
-
 class Cart(models.Model):
+    # id = models.UUIDField(default=uuid.uuid4, unique=True, 
+    #                             primary_key=True, editable=False
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     item = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True)
     quantity = models.IntegerField( choices=PRODUCT_QUANTITY_CHOICES,

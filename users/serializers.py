@@ -91,7 +91,7 @@ class LoginSerializer(serializers.ModelSerializer):
 class ResetPasswordEmailRequestSerializer(serializers.Serializer):
     email = serializers.EmailField(min_length=2)
 
-    redirect_url = serializers.CharField(max_length=500, required=False)
+    # redirect_url = serializers.CharField(max_length=500, required=False)
 
     class Meta:
         fields = ['email']
@@ -101,9 +101,9 @@ class SetNewPasswordSerializer(serializers.Serializer):
     password = serializers.CharField(
         min_length=6, max_length=68, write_only=True)
     token = serializers.CharField(
-        min_length=1, write_only=True)
+        min_length=1, write_only=True)  #gerador de reset senha
     uidb64 = serializers.CharField(
-        min_length=1, write_only=True)
+        min_length=1, write_only=True)   #codificação do import base64, criando a ideia de user e seu id
 
     class Meta:
         fields = ['password', 'token', 'uidb64']
@@ -116,7 +116,7 @@ class SetNewPasswordSerializer(serializers.Serializer):
 
             id = force_str(urlsafe_base64_decode(uidb64))
             user = User.objects.get(id=id)
-            if not PasswordResetTokenGenerator().check_token(user, token):
+            if not PasswordResetTokenGenerator().check_token(user, token):     #verificação para que não forneça a redefinição, caso tenha sido usada antes. para isso instanciei 'USER' que vou verificar e 'TOKEN' que vai ser enviado.
                 raise AuthenticationFailed('The reset link is invalid', 401)
 
             user.set_password(password)
