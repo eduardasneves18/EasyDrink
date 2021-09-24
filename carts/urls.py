@@ -4,8 +4,8 @@ from rest_framework import routers
 from . import views
 
 router = routers.DefaultRouter()
-router.register(r'cart', views.CartViewSet)
-router.register(r'delivery-cost', views.DeliveryCostViewSet)
+router.register('', views.CartViewSet)
+router.register('delivery-cost', views.DeliveryCostViewSet)
 
 urlpatterns = [
     path('', include((router.urls, 'shopping_cart_api.cart'))),

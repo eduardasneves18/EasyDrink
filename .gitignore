@@ -57,7 +57,7 @@ drf_example
 db.sqlite3
 
 # Environments
-# .env
+.env
 .venv
 env/
 venv/
