@@ -1,17 +1,11 @@
-{% load static %}
-
-
-{%block style %}
-<link rel="stylesheet" href="/pages/static/css/style_navbar.css">
-<link rel="stylesheet" href="/pages/static/css/style_login.css">
-<link rel="stylesheet" href="/pages/static/css/style_home.css">
-{%endblock style%}
+{%extends 'base/base.html'%}
 
 {% include 'base/nav.html' %}
 
 {%block content %}
 
 {% load crispy_forms_tags %}
+
 
 <div class="login-style login">
         <!--Login--> 
