@@ -55,7 +55,7 @@ section:nth-child(even){
     background: var(--black);
     border-radius: .5rem;
     cursor: pointer;
-    padding:.8rem 3rem;
+    padding:.8rem 5rem;
 }
 
 .btn:hover{

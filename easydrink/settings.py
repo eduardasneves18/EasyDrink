@@ -43,6 +43,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -127,15 +130,16 @@ env = environ.Env()
 environ.Env.read_env()
 
 STATIC_URL = 'pages/static/'
-
+MEDIA_URL = 'static/images/'
 
 STATICFILES_DIRS =[ 
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'pages/static'),
 ]
 
-MEDIA_ROOT = [
-    os.path.join(BASE_DIR, 'static/images')
-]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')#Run on terminal 'python manage.py collectstatic' this command line will bring all the static files when we come to production to a specified directory already set, on settings.py. 
+
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
