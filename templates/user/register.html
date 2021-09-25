@@ -1,14 +1,6 @@
 {%extends 'base/base.html'%}
 {% load static %}
 
-
-{%block style %}
-<link rel="stylesheet" href="/pages/static/css/style_navbar.css">
-<link rel="stylesheet" href="/pages/static/css/style_login.css">
-<link rel="stylesheet" href="/pages/static/css/style_home.css">
-{%endblock style%}
-
-
 {% block content %}
     {% include 'base/nav.html' %}
     {% load crispy_forms_tags %}
@@ -29,6 +21,5 @@
             </div>
     </div>
     
-    <script src="pages\static\js\script_nav.js"></script>
-
+    
 {% endblock content %}

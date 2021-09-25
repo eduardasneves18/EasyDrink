@@ -6,22 +6,23 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
     {% include 'base/logo_image.html' %}
-
-    <title>{% block title %}EasyDrink{% endblock title %}</title>
-
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
 
+    <!-- taillwind css
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+
     <!-- External Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
   <!--CSS-->
-    <link rel="stylesheet" href="{% static 'css/style_navbar.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/style_login.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/uikit.css' %}" />
+    
+
+    <title>{% block title %}EasyDrink{% endblock title %}</title>
   </head>
 
   <body>
@@ -47,5 +48,6 @@
     <!-- external Javascript -->
 
     <script src="{% static 'js/script_nav.js' %}"></script>
+
   </body>
 </html>
