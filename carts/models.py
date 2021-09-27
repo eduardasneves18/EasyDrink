@@ -3,6 +3,7 @@ from django.db import models
 from django.db.models.deletion import CASCADE
 from products.models import Product
 from users.models import User
+from django.urls import reverse
 
 PRODUCT_QUANTITY_CHOICES = [(i, str(i)) for i in range(1, 100)]
 class Cart(models.Model):
@@ -22,7 +23,8 @@ class Cart(models.Model):
                                                self.quantity,
                                                self.created_at,
                                                self.updated_at)
-
+    def get_absolute_url(self):
+       return reverse("carts:list_by_user", kwargs={"slug": self.slug})
 
 class DeliveryCost(models.Model):
     status = models.CharField(max_length=7,

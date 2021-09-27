@@ -3,8 +3,8 @@ from products.models import Product
 from django.views.generic import TemplateView
 from django.shortcuts import redirect, render
 from .forms import LoginForm, RegisterForm, ResetPasswordForm
-from .services import auth_service, products_service
-
+from services import auth_service, products_service, cart_service
+from utils import verify_is_email_reseted, verify_is_user, verify_is_user_registered, handler_login_error,handler_register_error, handler_reset_password_error
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
@@ -29,32 +29,6 @@ class OrdersPageView(TemplateView):
 class CartPageView(TemplateView):
     template_name = 'cart/cart_detail.html'
 
-
-class ResetPasswordPageView(TemplateView):
-    template_name = 'user/reset_password.html'
-
-
-#utils  
-def verify_is_user(response):
-    return 'username' in response
-
-def verify_is_user_registered(resposne):
-    return 'errors' not in resposne
-
-def verify_is_email_reseted(resposne):
-    return 'success' in resposne
-
-def handler_login_error(response, form):
-    for error in response:
-        form.add_error('password', response[error])
-
-def handler_register_error(response, form):
-    for error in response['errors']:
-        form.add_error('password', response['errors'][error])
-
-def handler_reset_password_error(response, form):
-    for error in response:
-        form.add_error('email', response[error])
 
 def get_products(request):
     response = products_service.get_products(request)
@@ -119,3 +93,12 @@ def post_reset_password(request):
         form = ResetPasswordForm()
 
     return render(request=request, template_name="user/reset_password.html", context={"reset_password_form": form})
+
+
+
+
+def get_cart(request):
+    response = cart_service.get_cart(request, 1)
+    cart = response['checkout_details']
+    print('cart', cart)
+    return render(request=request, template_name='cart/cart_detail.html', context={'cart': cart})

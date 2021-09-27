@@ -1,12 +1,106 @@
 {% extends 'base/base.html' %}
 {% load static %}
+
 <link rel="stylesheet" href="{% static 'css/style_cart.css' %}" />
-{% block title %} Cart {% endblock title %}
-
-{% block content %} 
 
 
+{% block title %}My cart{% endblock title %}
+
+{% block content %}
+{% load widget_tweaks %}
 
 
-<script type="text/javascript" src="{% static 'js/script_cart.js' %}"></script>
+    <div class="container my-3 table-responsive" >
+        <h1 class="font-weight-bold">My cart</h1>
+
+        {% comment %} Verificando se o carrinho está vazio {% endcomment %}
+        {% if cart %}
+            <table class="table">
+                <thead>
+                    <tr class="bg-light">
+                        <th scope="col">Product</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Total Price</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in cart.products %}
+
+                    <tr>
+                        <td class="align-middle">
+                            {% comment %} <a target="_blank" class="text-decoration-none" href="{{ product.get_absolute_url }}"> {% endcomment %}
+                            <a target="_blank" class="text-decoration-none" href="#">
+                                {{ product.product_name }}
+                            </a>
+                        </td>
+                        {% comment %} <td class="align-middle">
+                            <form action="{% url 'cart:add' product.id %}" method="post">
+                                {% csrf_token %}
+                                <div class="form-row">
+                                    <div class="col">
+                                        {% render_field item.update_quantity_form.quantity class+="form-control" %}
+                                    </div>
+                                    <div class="col">
+                                        <input class="btn btn-info" type="submit" value="Atualizar">
+                                    </div>
+                                </div>
+                                {{ item.update_quantity_form.override }}
+                            </form>
+                        </td> {% endcomment %}
+                        <td class="align-middle"> {{ product.quantity }}</td>
+                        <td class="align-middle">R$ {{ product.unit_price }}</td>
+                        {% comment %} <td class="align-middle text-right"> {% endcomment %}
+                            {% comment %} <form action="{% url 'cart:remove' product.id %}" method="post">
+                                {% csrf_token %}
+                                <input class="btn btn-danger" type="submit" value="Remover">
+                            </form>
+                        </td> {% endcomment %}
+                    </tr>
+
+                    {% endfor %}
+                    <tr class="bg-light">
+                        <td class="font-weight-bold">Desconto</td>
+                        <td></td>
+                        <td></td>
+                         {% for total in cart.total %}
+                            <td class="font-weight-bold">R$ {{ total.total_discount }}</td>
+                         {% endfor %}
+                        <td></td>
+                    </tr>
+
+                    <tr class="bg-light">
+                        <td class="font-weight-bold">Total</td>
+                        <td></td>
+                        <td></td>
+                         {% for total in cart.total %}
+                            <td class="font-weight-bold">R$ {{ total.total_price }}</td>
+                         {% endfor %}
+                        <td></td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        {% else %}
+            <p>Unfortunately your cart is still empty! :( </p>
+        {% endif %}
+
+        <p class="text-right">
+            <a class=" btn btn-primary" href="{% url 'pages:products' %}">
+                Keep Shopping
+            </a>
+
+            <a class="btn btn-success {% if not cart %}disabled{% endif %}" >
+                Checkout
+            </a>
+        </p>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/script_cart.js' %}"></script>
 {% endblock content %}
+
+
+
+

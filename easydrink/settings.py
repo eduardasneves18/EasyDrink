@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'drf_yasg',
     'crispy_forms',
+    'widget_tweaks',
     'products',
     'carts',
     'discounts',

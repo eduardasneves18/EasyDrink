@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    {% include 'base/logo_image.html' %}
+    {% comment %} {% include 'base/logo_image.html' %} {% endcomment %}
 
     <title>{% block title %}EasyDrink{% endblock title %}</title>
 
@@ -21,15 +21,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
   <!--CSS-->
     <link rel="stylesheet" href="{% static 'css/style_navbar.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/style_login.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'css/style_login.css' %}" /> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/style_base.css' %}" />
   </head>
 
   <body>
     <!-- AQUI USAMOS PARA CRIAR O HEADER DA APLICACAO -->
 
     <!-- TODO O CORPO PASSA AQUI-->
-
-    <main>{% block content %} {% endblock content %}</main>
+    <main>
+      {% include 'base/nav.html' %} 
+      {% block content %} 
+      {% endblock content %}
+    </main>
 
     <!-- LIBS JAVASCRIPT, NÃO REMOVER, JAVASCRIPT SEMPRE NO FINAL DA PAGINA. PARA QUE O VISUAL CARREGUE MAIS RAPIDO -->
     <script
