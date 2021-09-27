@@ -1,3 +1,4 @@
+from django.db.models.query_utils import Q
 from django.views.generic import ListView
 from products.models import Product
 
@@ -17,5 +18,5 @@ class SearchProductView(ListView):
         result = request.GET
         query = result.get('q',None)
         if query is not None:
-            return Product.objects.search(query) # n sei se isso ta funcionando perfeitamente 
-        return Product.objects.featured() # n sei se isso ta funcionando perfeitamente 
+            return Product.Objects.search(query)
+        return Product.Objects.featured() # n sei se isso ta funcionando perfeitamente 
