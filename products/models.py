@@ -65,7 +65,7 @@ class Product(models.Model):
     featured = models.BooleanField(default = False)
     quantity = models.IntegerField()
 
-    #Available = models.Manager()
+    Objects = ProductManager()
     objects = ProductManager()
 
     class Meta: 
