@@ -22,7 +22,34 @@
 ## Descrição
 Com intuito de epreender, nós, a DreamTech, decidimos criar a nossa própria ferramenta de trabalho, na qual unia o objetivo individual de cada um e o objetivo do Entra21. A partir disso, desenvolvemos um e-commerce(comércio eletrônico) voltado para a distribuição de bebidas local e nacional. Visando alcançar aqueles que apreciam o lazer acompanhado de uma boa bebida, decidimos simplificar esse processo de descoberta de novos sabores e a sua aquisição. A EasyDrink busca apresentar ao consumidor o que há de melhor no mercado de bebidas, tornando a vida ainda mais alegre.
 
+## Layout
+- home - quem somos
+- login - cadastro -
 
+## Pré-Requisitos
+- Python 3.8
+- VSCode para edição dos codigos
+- Djago
+- Mysql
+- Trello para organização
+- Heroku para usar como banco de dados
+
+## Dependências e Libs Instaladas
+
+## Como rodar a aplicação na WEB
+
+## Como rodar os testes e desenvolvimento da app
+
+## Database
+
+## Solução de problemas
+
+- Em caso de qualquer problema entre em contato com um dos nossos contribuintes, através dos seguintes emails-contatos:
+
+    - amandarafaela1415@gmail.com
+    - 
+    - 
+    - 
 ## Ferramentas e tecnologias
 No desenvolvimento do EasyDrink usamos como ferramenta de gestão de tarefas o Trello, onde empregamos pequenas atividades e fomos criando um fluxo de trabalho produtivo e organizado. Com reuniões diárias de acompanhamento, relatávamos no que estávamos trabalhando e as dificuldades, dessa forma nos ajudávamos internamente e procurávamos formas de solucionar os problemas. Como repositório usamos o GitLab(gitlab.com), onde podemos trabalhar simuntaneamente.
 
@@ -73,11 +100,6 @@ A DreamTech foi criada e é composta por cinco colaboradores, que viram no proje
 ## Licença
  
 
-
-## Status do projeto
-Em andamento.
-
-## T
 
 ## TO DO
 Finalizar as funcionalidades do Pix
