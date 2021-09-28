@@ -5,14 +5,16 @@ import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# import easydrink.local_settings 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '#3)9h1ucmdu804#hcms@&5ozk6b%vl-ooz4)g8g4)sumiu10kk'
+# SECRET_KEY = '#3)9h1ucmdu804#hcms@&5ozk6b%vl-ooz4)g8g4)sumiu10kk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,12 +80,7 @@ WSGI_APPLICATION = 'easydrink.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# esta definição foi migrada para o local_setting.py 
 
 
 # Password validation
@@ -175,3 +172,6 @@ SIMPLE_JWT = {
 
 CART_SESSION_ID = "cart"
 CART_ITEM_MAX_QUANTITY = 100
+
+with open('easydrink/local_settings.py') as infile:
+    exec(infile.read())
