@@ -51,7 +51,7 @@ urlpatterns = [
     # path('auth/', include('drf_social_oauth2.urls', namespace='drf')),
 
     # Admin
-    path ('admin/', admin.site.urls),
+    # path ('admin/', admin.site.urls),
     #API endpoints
     path('api/v1/auth/', include ('users.urls')),
     path('api/v1/search/', include('search.urls',namespace='search')),
