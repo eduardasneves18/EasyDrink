@@ -2,6 +2,7 @@ from pathlib import Path
 import environ
 import datetime
 import os
+import django_heroku 
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -19,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.20']
 
 
 # Application definition
@@ -175,3 +176,5 @@ CART_ITEM_MAX_QUANTITY = 100
 
 with open('easydrink/local_settings.py') as infile:
     exec(infile.read())
+
+django_heroku.settings(locals())
