@@ -1,9 +1,11 @@
 from pathlib import Path
-import environ
-import datetime
 import os
 import django_heroku 
+import environ
+import datetime
 
+
+FILE_CHARSET='UTF8'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -20,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.20']
+ALLOWED_HOSTS = ['192.168.0.20', 'https://easydrink-one.herokuapp.com/', '127.0.0.1' ]
 
 
 # Application definition
