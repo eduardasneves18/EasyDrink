@@ -44,8 +44,7 @@ Com intuito de empreender, nós, a DreamTech, decidimos criar a nossa própria f
   -> cd (nome do ambiente virtual)
   -> Scripts/activate
   
-- Agora é a hora de fazer o clone do projeto no GitHub (https://github.com/eduardasneves18/EasyDrink).Apos acessar o link anterior do nosso repositório, clicar em "clone" e copiar o caminho HTTPS, como mostrado na seguinte imagem: 
-- <img src="https://user-images.githubusercontent.com/86806534/135764669-e47f0b95-8e4e-402f-a044-284609ce7de9.PNG" width="15%"></img> <img                                                                                                                          
+- Agora é a hora de fazer o clone do projeto no GitHub (https://github.com/eduardasneves18/EasyDrink).Apos acessar o link anterior do nosso repositório, clicar em "clone" e copiar o caminho HTTPS, como mostrado na seguinte imagem:  <img src="https://user-images.githubusercontent.com/86806534/135764669-e47f0b95-8e4e-402f-a044-284609ce7de9.PNG" width="15%"></img>                                                                                                                
 -  No repositório escolhido, caso seja uma pasta nova é necessário fazer um 'GIT INIT' antes de realizar o "GIT CLONE".                                                                      
 - Ainda no seu terminal local: fazer o comando git "GIT CLONE" e adicionar o caminho HTTPS copiado anteriormente.
 
