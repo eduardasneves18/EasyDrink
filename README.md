@@ -44,7 +44,8 @@ Com intuito de empreender, nós, a DreamTech, decidimos criar a nossa própria f
   -> cd (nome do ambiente virtual)
   -> Scripts/activate
   
-- Agora é a hora de fazer o clone do projeto no GitHub (https://github.com/eduardasneves18/EasyDrink).Apos acessar o link anterior do nosso repositório, clicar em "clone" e copiar o caminho HTTPS, como mostrado na seguinte imagem:  <img src="https://user-images.githubusercontent.com/86806534/135764669-e47f0b95-8e4e-402f-a044-284609ce7de9.PNG" width="15%"></img>                                                                                                                
+- Agora é a hora de fazer o clone do projeto no GitHub (https://github.com/eduardasneves18/EasyDrink). Apos acessar o link anterior do nosso repositório, clicar em "clone" e copiar o caminho HTTPS, como mostrado na seguinte imagem:  <img src="https://user-images.githubusercontent.com/86806534/135764669-e47f0b95-8e4e-402f-a044-284609ce7de9.PNG" width="5%"></img>   
+                                                                                                             
 -  No repositório escolhido, caso seja uma pasta nova é necessário fazer um 'GIT INIT' antes de realizar o "GIT CLONE".                                                                      
 - Ainda no seu terminal local: fazer o comando git "GIT CLONE" e adicionar o caminho HTTPS copiado anteriormente.
 
@@ -57,6 +58,8 @@ Com intuito de empreender, nós, a DreamTech, decidimos criar a nossa própria f
 - Em seguida "python mange.py migrate" para aplicar os comandos realizados. 
 
 - Depois de de concluir deve-se executar "python mange.py runserver"
+
+- Com o servidor rodando, pode acessar o nosso projeto pelo seguinte link: http://127.0.0.1:8000/
 
 
 
@@ -108,14 +111,6 @@ A DreamTech foi criada e é composta por cinco colaboradores, que viram no proje
 -  Filtros pela avaliação do usuário
 - Página de rastreamento de produtos
 - Destaques
-
-
-
-
-
-## Em andamento
- - D
-
 
 
 
