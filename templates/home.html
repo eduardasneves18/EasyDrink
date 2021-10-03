@@ -1,33 +1,33 @@
-{% extends 'base/base.html'%} {% block content %} {% include 'slider.html' %}
+{% extends 'base/base.html'%} 
+{% block content %} 
+{% include 'slider.html' %}
 
 <!-- Wines -->
-
 <section class="dishes" id="dishes">
   <h3 class="sub-heading">our wines</h3>
   <h1 class="heading">popular wines</h1>
 
+
+
   <div class="box-container">
-  {% if products %}
-    {% for product in products%}
-        <div class="box">
-          <a href="#" class="fas fa-heart"></a>
-          <a href="#" class="fas fa-eye"></a>
-          <img src="images/dish-1.png" alt="" />
-          <h3>{{ products.title}}</h3>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-          <span>${{products.price}}</span>
-          <a href="#" class="btn">add to cart</a>
-    {% endfor %} 
-  {% endif %}
-        </div>
-    {% comment %}
     <div class="box">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-eye"></a>
+      <img src="images/dish-1.png" alt="" />
+      <h3>bourboun</h3>
+      <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </div>
+      <span>$ 25.55</span>
+      <a href="#" class="btn">add to cart</a>
+    </div>
+    
+
+      <div class="box">
       <a href="#" class="fas fa-heart"></a>
       <a href="#" class="fas fa-eye"></a>
       <img src="#" alt="" />
@@ -107,7 +107,7 @@
       <a href="#" class="btn">add to cart</a>
     </div>
   </div>
-  {% endcomment %}
+ 
 </section>
 
 <!-- Specials -->
@@ -324,5 +324,7 @@
     </div>
   </div>
 </section>
+
+
 
 {% include 'base/footer.html'%} {% endblock content%}
