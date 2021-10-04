@@ -1,11 +1,11 @@
 from django.urls import path
-from .views import  HomePageView, CartPageView, AboutPageView, ContactsPageView, WishesPageView, OrdersPageView,  get_cart, get_products, get_product_detail, post_register, post_reset_password, post_login
+from .views import AboutPageView, ContactsPageView, WishesPageView, OrdersPageView,  home_page, get_cart, get_products, get_product_detail, post_register, post_reset_password, post_login
 
 
 app_name = "pages"
 
 urlpatterns = [
-    path("", HomePageView.as_view(), name="home"),
+    path("", home_page, name="home"),
     path("about/", AboutPageView.as_view(), name="about"),
     path("contacts/", ContactsPageView.as_view(), name="contacts"),
     path("wishes/", WishesPageView.as_view(), name="wishes"),
