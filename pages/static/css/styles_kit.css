@@ -1,0 +1,8 @@
+/*  External Fonts  */
+@import url("https://fonts.gstatic.com");
+
+@import url('./styles/style_base.css');
+@import url('./styles/style_cart.css');
+@import url('./styles/style_login.css');
+@import url('./styles/style_navbar.css');
+@import url('./styles/style_slider.css');
