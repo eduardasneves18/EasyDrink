@@ -39,7 +39,6 @@ class ProductViewSet(viewsets.ModelViewSet):
     products = Product.objects.all()
     return products
 
-# criando essa classe para testar o search;
-class ProductListView(ListView):
-    #traz todos os produtos do banco de dados sem filtrar nada 
-    queryset = Product.objects.all()
+"""
+Nesta area irei adicionar as funções que farão a pesquisa do nosso site.
+"""
