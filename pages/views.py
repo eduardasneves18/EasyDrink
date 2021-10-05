@@ -5,9 +5,12 @@ from django.shortcuts import redirect, render
 from .forms import LoginForm, RegisterForm, ResetPasswordForm
 from services import auth_service, products_service, cart_service
 from utils import verify_is_email_reseted, verify_is_user, verify_is_user_registered, handler_login_error,handler_register_error, handler_reset_password_error
+from users.models import User
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework import viewsets, permissions
 
-class HomePageView(TemplateView):
-    template_name = 'home.html'
+# class HomePageView(TemplateView):
+#     template_name = 'home.html'
 
 
 class AboutPageView(TemplateView):
@@ -26,9 +29,9 @@ class OrdersPageView(TemplateView):
     template_name = 'orders.html'
 
 
-class CartPageView(TemplateView):
-    template_name = 'cart/cart_detail.html'
-
+def home_page(request):
+    response = auth_service.access_session(request)
+    return render(request, 'home.html', {'user': response})
 
 def get_products(request):
     response = products_service.get_products(request)
@@ -40,6 +43,7 @@ def get_product_detail(request, pk):
     return render(request, 'products/product_detail.html', {'product': response})
 
 
+
 def post_login(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
@@ -49,6 +53,7 @@ def post_login(request):
             response = auth_service.login(email, password)
 
             if response is not None and verify_is_user(response):
+                auth_service.save_session(request, response)
                 return redirect("pages:home")
             else:
                 handler_login_error(response, form)
@@ -96,9 +101,13 @@ def post_reset_password(request):
 
 
 
-
 def get_cart(request):
-    response = cart_service.get_cart(request, 1)
-    cart = response['checkout_details']
-    print('cart', cart)
-    return render(request=request, template_name='cart/cart_detail.html', context={'cart': cart})
+    response = cart_service.get_cart()
+    if response is not None:
+        cart = response['checkout_details']
+        print('cart', cart)
+        return render(request=request, template_name='cart/cart_detail.html', context={'cart': cart})
+    else: 
+        return render(request=request, template_name='cart/cart_detail.html') 
+
+# def add_product():

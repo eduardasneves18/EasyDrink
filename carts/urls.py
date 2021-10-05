@@ -9,6 +9,6 @@ router.register('', views.CartViewSet)
 router.register('delivery-cost', views.DeliveryCostViewSet)
 
 urlpatterns = [
-    path('checkout/<str:userID>',checkout, name="checkout"),
+    path('checkout',checkout, name="checkout"),
     path('', include((router.urls, 'shopping_cart_api.cart'))),
 ]
