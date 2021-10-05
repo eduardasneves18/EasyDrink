@@ -1,13 +1,12 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
-
 {% block title %}Adicionando item{% endblock title %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/styles/style_cart.css' %}" />
-{% load widget_tweaks %}
-{% load crispy_forms_tags %}
+    <link rel="stylesheet" href="{% static 'css/styles/style_cart.css' %}" />
+    {% load widget_tweaks %}
+    {% load crispy_forms_tags %}
 
 
     <div class="container product-buy" >
@@ -30,7 +29,7 @@
                     {% csrf_token %}
                     {{ cart_add_detail|crispy }}
                     <button class="btn btn-primary" type="submit">Confirm</button>
-                </form>
+            </form>
         </div>
 
     </div>

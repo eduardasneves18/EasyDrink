@@ -13,10 +13,11 @@
 
 
     <div class="container my-3 table-responsive" >
-        <h1 class="font-weight-bold">My cart</h1>
+        <h1 class="personalize">My cart</h1>
 
         {% comment %} Verificando se o carrinho está vazio {% endcomment %}
         {% if cart %}
+
             <table class="table">
                 <thead>
                     <tr class="bg-light">
@@ -27,16 +28,16 @@
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="personalize">
                     {% for product in cart.products %}
 
-                    <tr>
-                        <td class="align-middle">
+                    <tr class="personalize">
+                        <td class="personalize">
                             <a target="_blank" class="text-decoration-none" href="{{ product.get_absolute_url }}">
                                 {{ product.product_name }}
                             </a>
                         </td>
-                        {% comment %} <td class="align-middle">
+                        {% comment %} <td class="personalize">
                             <form action="{% url 'cart:add' product.id %}" method="post">
                                 {% csrf_token %}
                                 <div class="form-row">
@@ -50,9 +51,9 @@
                                 {{ item.update_quantity_form.override }}
                             </form>
                         </td> {% endcomment %}
-                        <td class="align-middle"> {{ product.quantity }}</td>
-                        <td class="align-middle">R$ {{ product.unit_price }}</td>
-                        {% comment %} <td class="align-middle text-right"> {% endcomment %}
+                        <td class="personalize"> {{ product.quantity }}</td>
+                        <td class="personalize">R$ {{ product.unit_price }}</td>
+                        {% comment %} <td class="personalize text-right"> {% endcomment %}
                             {% comment %} <form action="{% url 'cart:remove' product.id %}" method="post">
                                 {% csrf_token %}
                                 <input class="btn btn-danger" type="submit" value="Remover">

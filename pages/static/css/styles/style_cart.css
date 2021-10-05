@@ -1,13 +1,12 @@
 .product-buy {
     display: flex;
     align-items: center;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
+    justify-content: space-between;
     width: 100%;
-    height: auto;
-
+    height: 100%;
+    flex-wrap: nowrap;
     flex-direction: column;
+    padding-bottom: 10px;
 }
 
 .product-buy-image {
@@ -16,5 +15,17 @@
 }
 .product-buy-description {
     font-size: large;
-    margin: 100px;
+}
+
+
+.table {
+    border-radius: 3%;
+    align-items: center;
+    align-content: center;
+    padding: 2%;
+}
+
+.personalize {
+    padding: 2%;
+    background-color: brown;
 }

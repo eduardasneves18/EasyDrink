@@ -1,8 +1,4 @@
-
-from django.contrib.auth.models import User
-import products
 from products.models import Product
-
 from django.views.generic import TemplateView
 from django.shortcuts import redirect, render
 from .forms import LoginForm, RegisterForm, ResetPasswordForm, CartAddProductForm
@@ -106,10 +102,13 @@ def get_cart(request):
     response = cart_service.get_cart(request)
 
     if response is not None:
-        if 'error_login' not in response:
-            cart = response['checkout_details']
+        if 'error_login' not in response :
 
-            return render(request=request, template_name="cart/cart_detail.html", context={'cart': cart})
+            if 'error' not in response:
+                cart = response['checkout_details']
+                return render(request=request, template_name="cart/cart_detail.html", context={'cart': cart})
+            else:
+                return render(request=request, template_name="cart/cart_detail.html", context={'cart': None})
         else:
             return redirect('pages:login_cart')
     else: 
@@ -125,13 +124,13 @@ def add_cart(request):
 
 def buy(request):
     product = products_service.access_item_to_buy(request)
-    # products_service.clear_item_to_buy(request)
     if request.method == "POST":
         form = CartAddProductForm(request.POST)
         if form.is_valid():
             quantity = form.cleaned_data.get('quantity')
-            response = cart_service.post_cart(quantity)
-            return  render(request=request, template_name="cart/cart_add_detail.html", context={"message": response['success']})  
+            response = cart_service.post_cart(request, product, quantity)
+            products_service.clear_item_to_buy(request)
+            return redirect('pages:products') 
     else:
         form = CartAddProductForm()    
     return render(request=request, template_name="cart/cart_add_detail.html", context={'cart_add_detail': form, 'product': product})    
