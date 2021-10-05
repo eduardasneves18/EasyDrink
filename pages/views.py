@@ -26,8 +26,7 @@ class LoginCartPageView(TemplateView):
     template_name = 'user/login_cart.html'
     
 
-def home_page(request):
-    
+def home_page(request):    
     data = Product.objects.all().values    
     response = auth_service.access_session(request)
     return render(request, 'home.html', {'user': response, 'data': data})
