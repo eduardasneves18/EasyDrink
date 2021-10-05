@@ -51,35 +51,6 @@ Com intuito de empreender, nós, a DreamTech, decidimos criar a nossa própria f
 
 
 
-# Instalações:
-- Primeiramente é necessário fazer a intalação do Python (versão utilizada: 3.9.16).
-- 
-- Em seguida instalação do django através do comando "pip install django" (versão utilizada: 3.2.6).
-- 
-- No seu terminal local você vai criar seu ambiente virtual e ativa-lo através dos seguintes comandos na ordem descrita:
-  -> python -m venv (nome do seu ambiente virtual)
-  -> cd (nome do ambiente virtual)
-  -> Scripts/activate
-  
-- Agora é a hora de fazer o clone do projeto no GitHub (https://github.com/eduardasneves18/EasyDrink). Apos acessar o link anterior do nosso repositório, clicar em "clone" e copiar o caminho HTTPS, como mostrado na seguinte imagem:  <img src="https://user-images.githubusercontent.com/86806534/135764669-e47f0b95-8e4e-402f-a044-284609ce7de9.PNG" width="5%"></img>   
-                                                                                                             
--  No repositório escolhido, caso seja uma pasta nova é necessário fazer um 'GIT INIT' antes de realizar o "GIT CLONE".                                                                      
-- Ainda no seu terminal local: fazer o comando git "GIT CLONE" e adicionar o caminho HTTPS copiado anteriormente.
-
-- Depois de clonar o repositório por padrão o git vai estar na BRANCH "MAIN". 
-                                  
-- Agora que seu ambiente virtual já está ativado, você deve fazer o download de todas a bibliotecas co projeto através do comando "pip install requirements.txt".
-                                                                                                                                           
-- Após o termino da instalação deve-se executar o comando "python mange.py mekemigratios" para satualizar o banco de dados e os modelos.
-
-- Em seguida "python mange.py migrate" para aplicar os comandos realizados. 
-
-- Depois de de concluir deve-se executar "python mange.py runserver"
-
-- Com o servidor rodando, pode acessar o nosso projeto pelo seguinte link: http://127.0.0.1:8000/
-
-
-
 ## Ferramentas e tecnologias
 No desenvolvimento do EasyDrink usamos como ferramenta de gestão de tarefas o Trello, onde empregamos pequenas atividades e fomos criando um fluxo de trabalho produtivo e organizado. Com reuniões diárias de acompanhamento, relatávamos no que estávamos trabalhando e as dificuldades, dessa forma nos ajudávamos internamente e procurávamos formas de solucionar os problemas. Como repositório usamos o GitLab(gitlab.com), onde podemos trabalhar simuntaneamente.
 
@@ -152,10 +123,41 @@ No desenvolvimento do EasyDrink usamos como ferramenta de gestão de tarefas o T
 - wrapt==1.12.1
 
 ## Como rodas a aplicação teste na WEB
+http://projeto-teste-212.heroku.com
+Faça seu cadastro
+Apos se logar voce pode navegar nas categorias de produtos.
+Selecione os produtos....
 
 ## Como rodar a aplicação no seu PC
+- Primeiramente é necessário fazer a intalação do Python (versão utilizada: 3.9.16).
+- Em seguida instalação do django através do comando "pip install django" (versão utilizada: 3.2.6).
+- No seu terminal local você vai criar seu ambiente virtual e ativa-lo através dos seguintes comandos na ordem descrita:
+  -> python -m venv (nome do seu ambiente virtual)
+  -> cd (nome do ambiente virtual)
+  -> Scripts/activate
+  
+- Agora é a hora de fazer o clone do projeto no GitHub (https://github.com/eduardasneves18/EasyDrink). Apos acessar o link anterior do nosso repositório, clicar em "clone" e copiar o caminho HTTPS, como mostrado na seguinte imagem:  <img src="https://user-images.githubusercontent.com/86806534/135764669-e47f0b95-8e4e-402f-a044-284609ce7de9.PNG" width="5%"></img>   
+                                                                                                             
+-  No repositório escolhido, caso seja uma pasta nova é necessário fazer um 'GIT INIT' antes de realizar o "GIT CLONE".                                                                      
+- Ainda no seu terminal local: fazer o comando git "GIT CLONE" e adicionar o caminho HTTPS copiado anteriormente.
+
+- Depois de clonar o repositório por padrão o git vai estar na BRANCH "MAIN". 
+                                  
+- Agora que seu ambiente virtual já está ativado, você deve fazer o download de todas a bibliotecas co projeto através do comando "pip install requirements.txt".
+                                                                                                                                           
+- Após o termino da instalação deve-se executar o comando "python mange.py mekemigratios" para atualizar o banco de dados e os modelos.
+
+- Em seguida "python mange.py migrate" para aplicar os comandos realizados. 
+
+- Depois de de concluir deve-se executar "python mange.py runserver"
+
+- Com o servidor rodando, pode acessar o nosso projeto pelo seguinte link: http://127.0.0.1:8000/
+
 
 ## Databases
+Inicialmente utilizamos o gerenciador de banco de dados SqLite.
+Na versão de apresentação utilizamos o GDB Mysql Server na Gogole Cloud fornecido pelo instrutor Adriano Machado, que é o responsável pelo projeto.
+Endereços de conexão: Server.IP DatabaseName: DbE21G1
 
 ## Solução de problemas
 Caso você tenha alguma dúvida ou encontrou algum problema em nossa aplicação, fique a vontade para entrar em contato com nossos colaboradores atráves dos seguintes contatos:
@@ -181,9 +183,9 @@ A DreamTech foi criada e é composta por cinco colaboradores, que viram no proje
 
 
 ## Licença
+Nós estamos utilizando a licença: GNU General Public License v3.0
+Caso queira consultar acesse: https://github.com/Machado-tec/readme/blob/main/LICENSE
  
-
-
 
 
 ## TO DO
