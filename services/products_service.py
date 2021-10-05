@@ -10,3 +10,13 @@ def get_product_detail(request, pk):
     response = requests.get(url)
     return response.json()
     
+def save_item_to_buy(request, product):
+    request.session['item_to_buy'] = product
+
+def clear_item_to_buy(request):
+    if request.session.get('item_to_buy'):
+        del request.session['item_to_buy']
+
+def access_item_to_buy(request):
+    if request.session.get('item_to_buy'):
+        return request.session.get('item_to_buy')

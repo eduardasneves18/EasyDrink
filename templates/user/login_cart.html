@@ -1,0 +1,20 @@
+{%extends 'base/base.html'%}
+{% load static %}
+
+{%block content %}
+
+{% load crispy_forms_tags %}
+<link rel="stylesheet" href="{% static 'css/styles/style_login.css' %}" />
+
+    <div class="login-style-cart">
+            <!--Login--> 
+            <div class="container py-5 login-text-center">
+                <h1>Cart</h1>
+                <h3> You aren't logged, make your login to add items!</h3>
+                <button class="btn" type="submit" onclick="window.location = {% url 'pages:login' %} ">Go to new login</button>
+                
+    </div>
+    
+    <script src="{% static 'js/script_nav.js' %}"></script>
+
+{%endblock content%}

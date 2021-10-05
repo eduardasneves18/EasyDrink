@@ -2,12 +2,12 @@
 {% load static %}
 
 {%block content %}
-
 {% load crispy_forms_tags %}
+<link rel="stylesheet" href="{% static 'css/styles/style_login.css' %}" />
 
-    <div class="login-style login">
+    <div class="login">
             <!--Login--> 
-            <div class="container py-5 ">
+            <div class="box-login">
                 <h1>Login</h1>
                 <form  method="POST">
                     {% csrf_token %}
