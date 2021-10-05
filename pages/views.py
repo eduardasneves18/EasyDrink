@@ -44,7 +44,8 @@ def get_product_detail(request, pk):
 
 
 
-def post_login(request):
+def post_login(request, page=None):
+    print('pageSelected', page)
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -54,10 +55,14 @@ def post_login(request):
 
             if response is not None and verify_is_user(response):
                 auth_service.save_session(request, response)
-                return redirect("pages:home")
+                if page is None:
+                    return redirect("pages:home")
+                else:
+                    return redirect(page)
             else:
                 handler_login_error(response, form)
     else:
+        auth_service.clear_session(request)
         form = LoginForm()
 
     return render(request=request, template_name="user/login.html", context={"login_form": form})
@@ -102,12 +107,15 @@ def post_reset_password(request):
 
 
 def get_cart(request):
-    response = cart_service.get_cart()
+    response = cart_service.get_cart(request)
+
     if response is not None:
-        cart = response['checkout_details']
-        print('cart', cart)
-        return render(request=request, template_name='cart/cart_detail.html', context={'cart': cart})
+        if 'error_login' not in response:
+            cart = response['checkout_details']
+
+            return render(request=request, template_name='cart/cart_detail.html', context={'cart': cart})
+        else:
+            return redirect('pages:login')
     else: 
         return render(request=request, template_name='cart/cart_detail.html') 
 
-# def add_product():
