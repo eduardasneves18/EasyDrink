@@ -8,8 +8,11 @@
   <h3 class="sub-heading">our wines</h3>
   <h1 class="heading">popular wines</h1>
 
-
-  
+  {% for key in data %}                                    
+    <button type="button" formmethod="POST" class="btn btn-Light">
+      <a href="?id={{ key.id }}" > {{ key.title }} </a>
+    </button>  
+  {% endfor %} 
 
   <div class="box-container">
     <div class="box">
@@ -17,6 +20,9 @@
       <a href="#" class="fas fa-eye"></a>
       <img src="" alt="" />
       <h3>Bourboun</h3>
+
+
+
       <div class="stars">
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
