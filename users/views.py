@@ -1,10 +1,9 @@
-from django.shortcuts import render, redirect
 from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.urls import reverse
 from django.conf import settings
 from django.http import HttpResponsePermanentRedirect
-from django.utils.encoding import smart_str, force_str, smart_bytes, DjangoUnicodeDecodeError
+from django.utils.encoding import smart_str, smart_bytes, DjangoUnicodeDecodeError
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
 from rest_framework import generics, status, views, permissions
@@ -55,13 +54,7 @@ class RegisterView(generics.GenericAPIView):
         email_body = 'Hi '+user.username + \
             '. Use the link below to verify your email \n' + absurl
 
-        # aqui dentro desse dicionário estou definindo que o primeiro vai ser o domínio que executamos, pois o objetivo é criar um link no qual se clicka e um e-mail é enviado para a pessoa. 
-        # data = {'email_body': email_body, 'to_email': user.email,
-        #         'email_subject': 'Verify your email'}
-
         Util.send_email('Verification email', email_body, user.email)
-
-        # Util.send_email(data) # aqui estou definindo que o email deve ser enviado, instanciando data como método estático (estatic method)
 
         # está retornando dados do usuário 
         return Response(user_data, status=status.HTTP_201_CREATED)
@@ -157,8 +150,6 @@ class PasswordTokenCheckAPI(generics.GenericAPIView):
            
             if not PasswordResetTokenGenerator().check_token(user, token):
 
-                print('user', user)
-                print('redirect_url', redirect_url)
                 if redirect_url is not None and len(redirect_url) > 3:
                     return CustomRedirect(redirect_url+'?token_valid=False')
                 else:

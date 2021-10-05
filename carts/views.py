@@ -43,7 +43,7 @@ def checkout(request):
 
     
 
-@permission_classes([permissions.IsAuthenticated])
+# @permission_classes([permissions.IsAuthenticated])
 class CartViewSet(viewsets.ModelViewSet):
     queryset = Cart.objects.all().order_by('id')
     serializer_class = CartSerializer

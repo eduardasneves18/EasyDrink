@@ -18,3 +18,14 @@ def get_cart(request):
             'error_login': "not logged"
         }
 
+def post_cart (item):
+    print('item', item)
+    # url = "http://127.0.0.1:8000/api/v1/carts/"
+    # payload = {
+    #     "user": user,  
+    #     "item": item,
+    #     "quantity": quantity
+    # }
+    # response = requests.post(url, data=payload)
+
+    # return response.json()
