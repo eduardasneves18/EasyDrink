@@ -5,6 +5,7 @@ from django.conf import settings
 from django.http import HttpResponsePermanentRedirect
 from django.utils.encoding import smart_str, smart_bytes, DjangoUnicodeDecodeError
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from django.shortcuts import render
 
 from rest_framework import generics, status, views, permissions
 from rest_framework.response import Response

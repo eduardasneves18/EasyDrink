@@ -1,5 +1,6 @@
-import re
 import requests
+import jwt
+from easydrink import local_settings
 
 def login(email, password):
     url = "http://127.0.0.1:8000/api/v1/auth/login/"
@@ -46,3 +47,10 @@ def clear_session(request):
 def access_session(request):
     if request.session.get('user'):
         return request.session.get('user')
+
+
+def get_id_by_token(user):
+    secret_key = local_settings.SECRET_KEY
+    header_token = user['tokens']['access']
+    payload = jwt.decode(jwt=header_token, key=secret_key, algorithms=['HS256'])
+    return  payload['user_id']

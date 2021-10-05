@@ -1,3 +1,4 @@
+from django.http import response
 from django.shortcuts import redirect
 import requests
 from services import auth_service
@@ -18,14 +19,18 @@ def get_cart(request):
             'error_login': "not logged"
         }
 
-def post_cart (item):
-    print('item', item)
-    # url = "http://127.0.0.1:8000/api/v1/carts/"
-    # payload = {
-    #     "user": user,  
-    #     "item": item,
-    #     "quantity": quantity
-    # }
-    # response = requests.post(url, data=payload)
+def post_cart (request, item, quantity):
+    user = auth_service.access_session(request)
+    userID = auth_service.get_id_by_token(user)
+    itemID = item['id']
 
-    # return response.json()
+    url = "http://127.0.0.1:8000/api/v1/carts/"
+
+    payload = {
+        "user": userID,  
+        "item": itemID,
+        "quantity": quantity
+    }
+    response = requests.post(url, data=payload)
+
+    return response.json()
