@@ -137,13 +137,13 @@ def buy(request):
             response = auth_service.reset_password(email)
         
             if response is not None and verify_is_email_reseted(response):
-                 return  render(request=request, template_name="products/products_list.html", context={"message": response['success']})
+                 return  render(request=request, template_name="cart/cart_add_detail.html", context={"message": response['success']})
             else:
                 handler_reset_password_error(response, form)
     else:
         form = CartAddProductForm()
 
-    return render(request=request, template_name="products/products_list.html", context={"cart_add_detail": form,
+    return render(request=request, template_name="cart/cart_add_detail.html", context={'cart_add_detail': form,
                                                                                        'product': product})
 
     
