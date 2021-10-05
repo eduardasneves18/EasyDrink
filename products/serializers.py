@@ -13,7 +13,7 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = '__all__'
         absolute_url = serializers.URLField(source='get_absolute_url', read_only=True)
         
-    my_absolute_url = serializers.SerializerMethodField() # define a SerializerMethodField        
+    my_absolute_url = serializers.SerializerMethodField() # define a SerializerMethodField        ine a SerializerMethodField        
 
     def get_my_absolute_url(self, obj):
         return obj.get_absolute_url() # return the absolute url of the object

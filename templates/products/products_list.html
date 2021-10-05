@@ -1,57 +1,21 @@
 {% extends 'base/base.html' %}
+{% load static %}
 
 {% block content %} 
-<style>
-    .card {
-        margin-bottom: 10px;
-        justify-content: space-between;
-        text-align: center;
-    }
-
-    .button-link {
-        text-decoration: none
-    }
-</style>
 
 
-<div>
-    <div class="row">
-        {% if products %}
-        {% for product in products %}
-        <div class="col-lg-3 col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <a href="{{ products.get_absolute_url }}" class="popup-link">
-                        <img src="{{ product.image }}" alt="{{ product.title }}"
-                            class="img-fluid mb-2" />
-                    </a>
-                    <h5>{{ product.title }}</h5>
-                    <p>3x de R$10,83</p>
-                    <div class="item-preco">
-                        <span>R$ {{ product.price }}</span>
-                    </div>
-                    <div class="main-button">
-                        <button type="button" class="btn-primary btn-info btn">
 
-                            <a class="button-link" href="{{product.my_absolute_url}}">
-
-                            <a class="button-link" href="{{product.my_absolute_url }}">
-                              Details 
-                            </a>
-                        </button>
-                        <button type="button" class="btn-primary btn-success btn">
-                            <a class="button-link" href="{{product.my_absolute_url }}">
-                              Buy now
-                            </a>
-                        </button>
-                    </div>
-                </div>
-            </div>
+<div class="product-container">
+   {% for product in products %}
+      <div class="card">
+        <div class="title">{{product.title}}</div>
+        <div class="image">
+          <img src="{{product.image}}" alt="{{product.description}}" />
         </div>
-        {% endfor %}
-        {% endif %}
-    </div>
-</div>
-{% include 'base/footer.html'%} 
+        <div class="text">{{product.description|slice:"150"}}</div>
 
+        <button class="buy-button">Buy now</button>
+      </div>
+    {% endfor %}
+</div>
 {% endblock content %}

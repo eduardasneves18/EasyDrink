@@ -2,8 +2,7 @@
 {% load static %}
 
 {%block content %}
-
-
+{% load crispy_forms_tags %}
 <style>
     .title {
         font-weight: bold;
@@ -13,41 +12,14 @@
 <div>
     {% if product.id %}
     <div class="row" style="padding-top: 3%; padding-left: 1%">
-        <div class="col-md-6">
-            <div id="galeria" class="carousel slide" data-ride="carousel">
-                <ul class="carousel-indicators">
-                    <li data-target="#galeria" data-slide-to="0" class="active"></li>
-                    <li data-target="#galeria" data-slide-to="1"></li>
-                    <li data-target="#galeria" data-slide-to="2"></li>
-                </ul>
+       
+            <div id="galeria" data-ride="carousel">
 
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100"
-                            src="https://content.paodeacucar.com/wp-content/uploads/2019/06/o-que-%C3%A9-vinho-de-mesa3.jpg"
-                            alt="Los Angeles">
+                    <div>
+                        {{product.image}}
                     </div>
-                    {% comment %} <div class="carousel-item">
-                        <img class="d-block w-100"
-                            src="https://content.paodeacucar.com/wp-content/uploads/2019/06/o-que-%C3%A9-vinho-de-mesa5.jpg"
-                            alt="Chicago">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100"
-                            src="https://content.paodeacucar.com/wp-content/uploads/2019/06/o-que-%C3%A9-vinho-de-mesa5.jpg"
-                            alt="New York">
-                    </div> {% endcomment %}
-                </div>
-
-                <a class="carousel-control-prev" href="#galeria" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#galeria" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
             </div>
-        </div>
-
+        
         <div class="container col-md-6">
             <div class="row">
                 <div class="col-12">
@@ -71,6 +43,13 @@
                         </span>
                     </div>
                 </div>
+                <div>
+                    <form  method="POST">
+                        {% csrf_token %}
+                        {{ cart_add_detail|crispy }}
+             
+                    </form>
+                </div>
                 <div class="col-12">
                     <div class="preco">
                         <div class="preco-valor">
@@ -78,6 +57,7 @@
                             {{ product.price }} 
                         </div>
                     </div>
+
                     <div class="desconto-a-avista">
                         <div class="valor">
                             <span class="desconto-a-vista">
@@ -94,15 +74,8 @@
             <div class="row mt-3">
                 <div class="col-md-6">
                     <button type="button" class="btn btn-info btn-lg w-100">
-                        <a  href="{% url 'pages:cart' %}">
+                        <a  href="{% url 'pages:buy' %}">
                             Add to cart
-                        </a>
-                    </button>
-                </div>
-                <div class="col-md-6">
-                    <button type="button" class="btn btn-success btn-lg w-100">
-                        <a  href="{% url 'pages:cart' %}">
-                            Buy now
                         </a>
                     </button>
                 </div>
