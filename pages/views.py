@@ -124,28 +124,17 @@ def add_cart(request):
 
 
 def buy(request):
-
-    
     product = products_service.access_item_to_buy(request)
-    print('Product', product)
     # products_service.clear_item_to_buy(request)
-
     if request.method == "POST":
         form = CartAddProductForm(request.POST)
         if form.is_valid():
-            email = form.cleaned_data.get('email')
-            response = auth_service.reset_password(email)
-        
-            if response is not None and verify_is_email_reseted(response):
-                 return  render(request=request, template_name="cart/cart_add_detail.html", context={"message": response['success']})
-            else:
-                handler_reset_password_error(response, form)
+            quantity = form.cleaned_data.get('quantity')
+            response = cart_service.post_cart(quantity)
+            return  render(request=request, template_name="cart/cart_add_detail.html", context={"message": response['success']})  
     else:
-        form = CartAddProductForm()
+        form = CartAddProductForm()    
+    return render(request=request, template_name="cart/cart_add_detail.html", context={'cart_add_detail': form, 'product': product})    
 
-    return render(request=request, template_name="cart/cart_add_detail.html", context={'cart_add_detail': form,
-                                                                                       'product': product})
-
-    
 
 
