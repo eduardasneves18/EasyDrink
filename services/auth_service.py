@@ -40,7 +40,8 @@ def save_session(request, response):
     }
 
 def clear_session(request):
-    del request.session['user']
+    if request.session.get('user'):
+        del request.session['user']
 
 def access_session(request):
     if request.session.get('user'):
