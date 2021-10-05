@@ -7,22 +7,14 @@
 <section class="dishes" id="dishes">
   <h3 class="sub-heading">our wines</h3>
   <h1 class="heading">popular wines</h1>
-
-  {% for key in data %}                                    
-    <button type="button" formmethod="POST" class="btn btn-Light">
-      <a href="?id={{ key.id }}" > {{ key.title }} </a>
-    </button>  
-  {% endfor %} 
-
+                                  
+  {% for key in data %} 
   <div class="box-container">
     <div class="box">
       <a href="#" class="fas fa-heart"></a>
       <a href="#" class="fas fa-eye"></a>
-      <img src="" alt="" />
-      <h3>Bourboun</h3>
-
-
-
+      <a href="#"><img src="{{key.image}}" alt="{{key.description}}" /></a>
+      <h3>{{key.title}}</h3>
       <div class="stars">
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
@@ -30,10 +22,10 @@
         <i class="fas fa-star"></i>
         <i class="fas fa-star-half-alt"></i>
       </div>
-      <span>$ 25.55</span>
+      <span>$ {{key.price}}</span>
       <a href="#" class="btn" method="post">add to cart</a>
     </div>
-
+    {% endfor %} 
     
 
 </section>
@@ -185,6 +177,4 @@
   </div>
 </section>
 
-
-
-{% include 'base/footer.html'%} {% endblock content%}
+{% endblock content%}

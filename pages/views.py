@@ -34,7 +34,8 @@ def home_page(request):
 
 def get_products(request):
     response = products_service.get_products(request)
-    return render(request, 'products/products_list.html', {'products': response})
+    product = Product.objects.all().values
+    return render(request, 'products/products_list.html', {'products': response, 'product': product})
 
 
 def get_product_detail(request, pk):
