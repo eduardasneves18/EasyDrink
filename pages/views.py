@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+import products
 from products.models import Product
 from django.views.generic import TemplateView
 from django.shortcuts import redirect, render
@@ -118,4 +119,5 @@ def get_cart(request):
             return redirect('pages:login')
     else: 
         return render(request=request, template_name='cart/cart_detail.html') 
+
 

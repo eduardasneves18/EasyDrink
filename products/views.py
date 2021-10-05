@@ -1,6 +1,5 @@
 from django.http import Http404
 from rest_framework import status
-
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 
@@ -34,10 +33,12 @@ class ProductViewSet(viewsets.ModelViewSet):
   permission_classe = [permissions.IsAuthenticated]
   queryset = Product.objects.all()
   serializer_class = ProductSerializer
+  
 
   def get_queryset(self):
     products = Product.objects.all()
     return products
+
 
 """
 Nesta area irei adicionar as funções que farão a pesquisa do nosso site.
