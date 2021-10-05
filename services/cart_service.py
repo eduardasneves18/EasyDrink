@@ -1,19 +1,20 @@
+from django.shortcuts import redirect
 import requests
 from services import auth_service
+from django.urls import reverse
 
 
 def get_cart(request):
-    # access_token = auth_service.access_session(request)
+    session = auth_service.access_session(request)
 
-    # if access_token is not None: 
+    if session is not None:
+        access_token = session['tokens']['access']
+        header_authorization = {'Authorization': 'Bearer ' + access_token}
         url = 'http://127.0.0.1:8000/api/v1/carts/checkout'
-        response = requests.get(url )
+        response = requests.get(url, headers=header_authorization)
         return response.json()
-
-def get_cart(request, userID):
-    url = 'http://127.0.0.1:8000/api/v1/carts/checkout/{}'.format(userID)
-    response = requests.get(url)
-    return response.json()
-
-
+    else:
+        return {
+            'error_login': "not logged"
+        }
 

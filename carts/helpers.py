@@ -111,7 +111,8 @@ class CartHelper:
                                                       'product_id': cart_item.item.id,
                                                       'product_name': cart_item.item.title,
                                                       'quantity': cart_item.quantity,
-                                                      'unit_price': cart_item.item.price})
+                                                      'unit_price': cart_item.item.price,
+                                                      'get_absolute_url': cart_item.item.get_absolute_url(),})
 
         self.checkout_details['total'].append({'total_price': self.cart_base_total_amount,
                                                'total_discount':

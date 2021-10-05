@@ -23,10 +23,8 @@ def get_id_by_token(request):
 @api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
 def checkout(request):
-    
-    userID = get_id_by_token(request)
 
-    print('userId', userID)
+    userID = get_id_by_token(request)
 
     try:
         user = User.objects.get(pk=userID)
@@ -45,6 +43,7 @@ def checkout(request):
 
     
 
+@permission_classes([permissions.IsAuthenticated])
 class CartViewSet(viewsets.ModelViewSet):
     queryset = Cart.objects.all().order_by('id')
     serializer_class = CartSerializer
