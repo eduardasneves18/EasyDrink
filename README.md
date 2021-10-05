@@ -28,12 +28,29 @@
 Com intuito de empreender, nós, a DreamTech, decidimos criar a nossa própria ferramenta de trabalho, na qual unia o objetivo individual de cada um e o objetivo do Entra21. A partir disso, desenvolvemos um e-commerce(comércio eletrônico) voltado para a distribuição de bebidas local e nacional. Visando alcançar aqueles que apreciam o lazer acompanhado de uma boa bebida, decidimos simplificar esse processo de descoberta de novos sabores e a sua aquisição. A EasyDrink busca apresentar ao consumidor o que há de melhor no mercado de bebidas, tornando a vida ainda mais alegre.
 
 ## Layout
+- Home
+- Página do usuário 
+- Login
+- Carrinho
+- Finalização do pedido
+- Produtos
+- Produto e suas especificações
+
 
 
 ## Deploy 
 
 
 ## Pré-Requisitos 
+- Python 3.9.4
+- Django 3.2.7
+- Mysql 4.1.6 
+- VSCode para edição dos códigos
+- Trello para a organização
+- Discord para as reunões
+
+
+
 # Instalações:
 - Primeiramente é necessário fazer a intalação do Python (versão utilizada: 3.9.16).
 - 
@@ -67,6 +84,72 @@ Com intuito de empreender, nós, a DreamTech, decidimos criar a nossa própria f
 No desenvolvimento do EasyDrink usamos como ferramenta de gestão de tarefas o Trello, onde empregamos pequenas atividades e fomos criando um fluxo de trabalho produtivo e organizado. Com reuniões diárias de acompanhamento, relatávamos no que estávamos trabalhando e as dificuldades, dessa forma nos ajudávamos internamente e procurávamos formas de solucionar os problemas. Como repositório usamos o GitLab(gitlab.com), onde podemos trabalhar simuntaneamente.
 
 ## Dependências e Libs Instaladas
+- appdirs==1.4.4
+- appnope==0.1.2
+- asgiref==3.2.10
+- autopep8==1.5.4
+- backcall==0.2.0
+- certifi==2020.6.20
+- cffi==1.14.3
+- chardet==3.0.4
+- charset-normalizer==2.0.4
+- colorama==0.4.4
+- coreapi==2.3.3
+- coreschema==0.0.4
+- cryptography==3.1.1
+- decorator==5.0.9
+- defusedxml==0.7.0rc1
+- Deprecated==1.2.12
+- distlib==0.3.2
+- Django==3.1.1
+- django-autoslug==1.9.8
+- django-braces==1.14.0
+- django-cors-headers==3.5.0
+- django-environ==0.4.5
+- django-oauth-toolkit==1.3.2
+- django-rest-framework-social-oauth2==1.1.0
+- djangorestframework==3.11.1
+- drf-social-oauth2==1.0.8
+- filelock==3.0.12
+- idna==2.10
+- ipython==7.26.0
+- ipython-genutils==0.2.0
+- itypes==1.2.0
+- jedi==0.18.0
+- Jinja2==2.11.2
+- jwcrypto==1.0
+- MarkupSafe==1.1.1
+- matplotlib-inline==0.1.2
+- numpy==1.20.3
+- oauthlib==3.1.0
+- parso==0.8.2
+- pexpect==4.8.0
+- pickleshare==0.7.5
+- Pillow==8.3.1
+- prompt-toolkit==3.0.19
+- ptyprocess==0.7.0
+- pycodestyle==2.6.0
+- pycparser==2.20
+- Pygments==2.10.0
+- PyJWT==1.7.1
+- python-social-auth==0.2.21
+- python3-openid==3.2.0
+- pytz==2020.1
+- requests==2.24.0
+- requests-oauthlib==1.3.0
+- six==1.15.0
+- social-auth-app-django==4.0.0
+- social-auth-core==3.3.3
+- sqlparse==0.3.1
+- toml==0.10.1
+- traitlets==5.0.5
+- typing-extensions==3.10.0.0
+- Unidecode==1.2.0
+- uritemplate==3.0.1
+- urllib3==1.25.10
+- virtualenv==20.4.7
+- wcwidth==0.2.5
+- wrapt==1.12.1
 
 ## Como rodas a aplicação teste na WEB
 
@@ -491,4 +574,5 @@ pages
 └───__pycache__
         utils.cpython-39.pyc
 
+Muito obrigada por ter lido a nossa documentação. Caso queira conversar com a nossa equipe ou tirar alguma dúvida entre em contato conosco atráves dos nossos e-mails de contato.
 
