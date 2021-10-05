@@ -157,8 +157,14 @@ No desenvolvimento do EasyDrink usamos como ferramenta de gestão de tarefas o T
 
 ## Databases
 
-## Suporte
-Em nosso site temos a página de ajuda na qual se pode tirar dúvidas com base em perguntas frequentes ou se necessário fazer entrar em contato, basta enviar um e-mail para a empresa. Todos os meios de comunicação estão dispoíveis na nossa página de contato. 
+## Solução de problemas
+Caso você tenha alguma dúvida ou encontrou algum problema em nossa aplicação, fique a vontade para entrar em contato com nossos colaboradores atráves dos seguintes contatos:
+
+        - amandarafaela1415@gmail.com / (47) 9 8418 9821
+        - eduardasneves18@gmail.com / (47) 9 9620 4693
+        - matheusmedeiros2003@gmail.com / (47) 9 9606 5225
+        - luigicleiffi674@gmail.com / (47) 9 9699 0424
+        - darafrancinipinheiro@gmail.com / (47) 9 9656 3080
 
 ## Contribuintes
 A DreamTech foi criada e é composta por cinco colaboradores, que viram no projeto do Entra21 uma oportunidade para empreender utilizando os conhecimentos adquiridos durante esses seis meses de curso. Com base nisso pensamos em como iriamos dividir a nossa equipe para que funcionasse da melhor forma, realçando e se baseando nas qualidades e facilidades de cada um. Nossa equipe se resume em:
