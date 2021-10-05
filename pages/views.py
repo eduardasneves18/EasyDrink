@@ -1,3 +1,8 @@
+
+from django.contrib.auth.models import User
+import products
+from products.models import Product
+
 from django.views.generic import TemplateView
 from django.shortcuts import redirect, render
 from .forms import LoginForm, RegisterForm, ResetPasswordForm, CartAddProductForm
@@ -140,4 +145,5 @@ def buy(request):
                                                                                        'product': product})
 
     
+
 
