@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 import requests
 from services import auth_service
 from django.urls import reverse
+from carts.models import Cart
 
 
 def get_cart(request):
@@ -24,7 +25,7 @@ def post_cart (request, item, quantity):
     userID = auth_service.get_id_by_token(user)
     itemID = item['id']
 
-    url = "http://127.0.0.1:8000/api/v1/carts/"
+    url = 'http://127.0.0.1:8000/api/v1/carts/'
 
     payload = {
         "user": userID,  
@@ -34,3 +35,8 @@ def post_cart (request, item, quantity):
     response = requests.post(url, data=payload)
 
     return response.json()
+
+def delete_item_cart (request, pk):
+    url =  'http://127.0.0.1:8000/api/v1/carts/{}'.format(pk)
+    response = requests.delete(url)
+    return response

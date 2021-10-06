@@ -51,3 +51,4 @@ class CartViewSet(viewsets.ModelViewSet):
 class DeliveryCostViewSet(viewsets.ModelViewSet):
     queryset = DeliveryCost.objects.all().order_by('id')
     serializer_class = DeliveryCostSerializer
+
