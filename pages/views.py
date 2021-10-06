@@ -101,15 +101,33 @@ def post_reset_password(request):
 def delete_cart(request, pk):
     cart_service.delete_item_cart(request, pk)
 
+def increase_product_quantity(request, pk):
+    product = cart_service.get_item_by_pk(request, pk)
+    quantity = int(product['quantity'])
+
+    if quantity > 0:
+        quantity += 1
+        cart_service.update_cart(request, pk, quantity)
+
+
+def decrease_product_quantity(request, pk):
+    product= cart_service.get_item_by_pk(request, pk)
+    quantity = int(product['quantity'])
+    if quantity > 1:
+        quantity -= 1
+        cart_service.update_cart(request, pk, quantity)
+
 def get_cart(request):
     if request.method == "POST":
         if request.POST.get("delete"):
             pk = request.POST.get("delete")
             delete_cart(request, pk)
-
-        elif request.POST.get('update'):
-            cart = request.POST.get("update")
-            print('cart Update', cart)
+        elif request.POST.get('increase_product_quantity'):
+            pk = request.POST.get("increase_product_quantity")
+            increase_product_quantity(request, pk)
+        elif request.POST.get('decrease_product_quantity'):
+            pk = request.POST.get("decrease_product_quantity")
+            decrease_product_quantity(request, pk)
 
     response = cart_service.get_cart(request)
 
@@ -117,7 +135,6 @@ def get_cart(request):
         if 'error_login' not in response :
             if 'error' not in response:
                 carts = response['checkout_details']
-
                 return render(request, "cart/cart_detail.html", {'cart': carts })
             else:
                 return render(request=request, template_name="cart/cart_detail.html", context={'cart': None})
@@ -142,10 +159,3 @@ def buy(request):
     return render(request=request, template_name="cart/cart_add_detail.html", context={'cart_add_detail': form, 'product': product})    
 
 
-# def delete(request):
-#     cart = cart_service.delete_item_cart(request)
-#     item = cart.pk
-#     request.method == 'DELETE':
-
-
-#     return render(request=request, template_name="cart/cart_detail.html", context={'cart': cart})

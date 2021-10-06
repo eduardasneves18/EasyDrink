@@ -27,5 +27,36 @@
 
 .personalize {
     padding: 2%;
-    
+}
+
+.btn-product-quantity {
+    width: 20px;
+    height: 20px;
+    color: #192A56;
+    background-color: transparent;
+}
+
+.btn-product-remove {
+    width: 20px;
+    height: 20px;
+    color: #a01111;
+    background-color: transparent;
+}
+
+.update-cart {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 0  8%;
+}
+
+.update-cart-fields{
+    flex:1
+}
+
+.input-quantity {
+    width: 25%;
 }

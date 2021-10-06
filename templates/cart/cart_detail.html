@@ -7,106 +7,177 @@
 
 {% block title %}My cart{% endblock title %}
 
+
+
+
 {% block content %}
 {% load widget_tweaks %}
 {% load crispy_forms_tags %}
+<style>
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .update-cart {
+        cursor: pointer;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .quantidade-input {
+        max-width: 100%;
+    }
+</style>
 
 
-    <div class="container my-3 table-responsive" >
-        <h1 class="personalize">My cart</h1>
-
-        {% comment %} Verificando se o carrinho está vazio {% endcomment %}
-        {% if cart %}
-
-            <table class="table">
-                <thead>
-                    <tr class="bg-light">
-                        <th scope="col">Product</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Unit Price</th>
-                        <th scope="col">Total Price</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody class="personalize">
+<div class="row">
+    {% if cart %}
+        <aside class="col-lg-9">
+            <div class="table-reponsive">
+                <table class="table ">
+                    <thead>
+                        <tr class="small text-uppercase">
+                            <th>Products</th>
+                            <th>Quantily</th>
+                            <th>Price</th>
+                            <th>Total Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     {% for product in cart.products %}
+                        <tr>
+                            <td>
+                                <figure class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img src={{product.product_image}}
+                                            width="60" alt="Product">
+                                    </div>
+                                    <figcaption class="info col-auto">
+                                        <label class="text-dark"  href="{{ product.get_absolute_url }}" data-abc="true">{{ product.product_name}}</label>
+                                        <p class="text-muted small">
+                                            {{product.category_name}}
+                                            <br>
+                                        </p>
+                                    </figcaption>
+                                </figure>
+                            </td>
+                            <td>
+                                <div class="update-cart">
+                                    <form  method="post" class="update-cart">
+                                        {% csrf_token %}
+                                            <button name="decrease_product_quantity" class="btn-product-quantity" type="submit" value="{{ product.cart_id }}">
+                                                <i data-feather="chevron-left"></i>
+                                            </button>
 
-                    <tr class="personalize">
-                        <td class="personalize">
-                            <a target="_blank" class="text-decoration-none" href="{{ product.get_absolute_url }}">
-                                {{ product.product_name }}
-                            </a>
-                        </td>
-                        <td class="personalize">
-                            
-                            <form  method="POST">
-                                {% csrf_token %}
-                                <div class="form-row">
-                                    <div class="col">
-                                        {% render_field item.update_quantity_form.quantity class+="form-control" %}
-                                    </div>
-                                    <div class="col">
-                                        <form  method="post">
-                                            {% csrf_token %}
-                                           <button name="update" class="btn btn-danger" type="submit" value="{{ product.cart_id }}">Atualizar</button>
-                                     </form>
-                                    </div>
+                                            <input type="text" readonly class="form-control input-quantity" placeholder="Quantity"
+                                                value={{ product.quantity }}>
+            
+                                            <button name="increase_product_quantity" class="btn-product-quantity" type="submit" value="{{ product.cart_id }}">
+                                                <i data-feather="chevron-right"></i>
+                                            </button>
+                                    </form>
                                 </div>
-                            </form>
-                        </td> 
-                        <td class="personalize"> {{ product.quantity }}</td>
-                        <td class="personalize">R$ {{ product.unit_price }}</td>
-                        {% comment %} <td class="personalize">R$ {{ product.total_price }}</td> {% endcomment %}
-                        <td class="personalize">
-                            <form  method="post">
-                                {% csrf_token %}
-                                <button name="delete" class="btn btn-danger" type="submit" value="{{ product.cart_id }}">Remover</button>
-                            </form>
-                        </td>
-                    </tr>
-
+                            </td>
+                            <td>
+                                <div class="price-wrap">
+                                    <p class="price">
+                                        R$ {{ product.unit_price }}
+                                    </p>
+                                </div>
+                            </td>
+                                                        <td>
+                                <div class="price-wrap">
+                                    <p class="price">
+                                        R$ {{ product.product_total_price }}
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex justify-content-end align-items-center" style="min-height: 100%;">
+                                    <form  method="post">
+                                    {% csrf_token %}
+                                        <button name="delete" class="btn-product-remove" type="submit" value="{{ product.cart_id }}">
+                                        <i data-feather="trash"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                    {% endfor %}   
+                    </tbody>
+                </table>
+            </div>
+        </aside>
+        <aside class="col-sm-12 col-lg-3">
+            <div class="card md-3">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Have Coupon?</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control coupon" name placeholder="coupon code" />
+                            <span class="input-group-append">
+                                <button class="btn btn-primary btn-apply coupon">Apply</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <dl class="row">
+                    {% for total in cart.total %}
+                        <div class="col-auto d-flex">
+                            <dt>Total Price: </dt>
+                            <dd class="text-right text-dark b ml-3">R$ {{ total.total_price }}</dd>
+                        </div>
                     {% endfor %}
-                    <tr class="bg-light">
-                        <td class="font-weight-bold">Desconto</td>
-                        <td></td>
-                        <td></td>
-                         {% for total in cart.total %}
-                            <td class="font-weight-bold">R$ {{ total.total_discount }}</td>
+                    </dl>
+
+                    <dl class="row">
+                    {% for total in cart.total %}
+                        <div class="col-auto d-flex">
+                            <dt>Discount:</dt>
+                            <dd class="text-right text-danger ml-3 ">
+                                - R${{ total.total_discount }}
+                            </dd>
+                        </div>
                          {% endfor %}
-                        <td></td>
-                    </tr>
+                    </dl>
 
-                    <tr class="bg-light">
-                        <td class="font-weight-bold">Total</td>
-                        <td></td>
-                        <td></td>
-                         {% for total in cart.total %}
-                            <td class="font-weight-bold">R$ {{ total.total_price }}</td>
-                         {% endfor %}
-                        <td></td>
-                    </tr>
+                    <dl class="row">
+                        <div class="col-auto d-flex">
+                            <dt>Total:</dt>
+                            <dd class="text-right text-dark b ml-3">
+                                <strong>R$ {{ total.total_price }}</strong>
+                            </dd>
+                        </div>
+                    </dl>
+                    <hr>
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="{% url 'pages:products' %}" class="d-flex justify-content-center btn btn-out btn-primary "
+                                data-abc="true">Continue
+                                shopping</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="#" class="d-flex justify-content-center btn btn-out btn-success " data-abc="true">
+                                Checkout</a>
+                        </div>
 
 
-                </tbody>
-            </table>
-        {% else %}
-            <p>Unfortunately your cart is still empty! :( </p>
-        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </aside>
+    {% else %}
+        <p>Unfortunately your cart is still empty! :( </p>
+    {% endif %}    
+</div>
 
-        <p class="text-right">
-            <a class=" btn btn-primary" href="{% url 'pages:products' %}">
-                Keep Shopping
-            </a>
 
-            <a class="btn btn-success {% if not cart %}disabled{% endif %}" >
-                Checkout
-            </a>
-        </p>
-    </div>
+<script type="text/javascript" src="{% static 'js/script_cart.js' %}"></script>
 
-    <script type="text/javascript" src="{% static 'js/script_cart.js' %}"></script>
 {% endblock content %}
-
-
-
-
