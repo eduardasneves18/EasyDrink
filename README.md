@@ -204,7 +204,7 @@ Caso queira consultar acesse: https://github.com/Machado-tec/readme/blob/main/LI
 - Página de rastreamento de produtos
 - Destaques
 
-
+teste
 
 Descrição dos Arquivos e Diretorios deste projeto.
 ├── easydrink = contém a pasta do backend e do frontend do projeto
