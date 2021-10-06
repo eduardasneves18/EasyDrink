@@ -20,7 +20,9 @@
     
   <!--CSS-->
     <link rel="stylesheet" href="{% static 'css/styles_kit.css' %}" />
-
+    <style>
+      body{ text-transform: capitalize;}
+      </style>
   </head>
 
   <body>
@@ -34,18 +36,6 @@
     </main>
 
     <!-- LIBS JAVASCRIPT, NÃO REMOVER, JAVASCRIPT SEMPRE NO FINAL DA PAGINA. PARA QUE O VISUAL CARREGUE MAIS RAPIDO -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- ADD ICONS TO APP -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script>
-      feather.replace();
-    </script>
-
     <!-- external Javascript -->
 
     <script src="{% static 'js/script_nav.js' %}"></script>
