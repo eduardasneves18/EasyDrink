@@ -17,6 +17,10 @@
     transition: all .2s linear;
 }
 
+a {
+    text-decoration: none;
+}
+
 html{
     font-size: 62.5%;
     overflow-x: hidden;

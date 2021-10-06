@@ -103,12 +103,19 @@ class CartHelper:
                     self.campaign_discount_amount + self.coupon_discount_amount)
 
         return self.cart_final_total_amount
-
+    
+    def get_total_price_product(self, cart_item):
+        return cart_item.item.price * cart_item.quantity
+        
     def prepare_checkout_details(self):
         for cart_item in self.cart_items:
+
+            print('Image', cart_item.item.image.url)
             self.checkout_details['products'].append({'category_id': cart_item.item.category.id,
                                                       'category_name': cart_item.item.category.title,
                                                       'product_id': cart_item.item.id,
+                                                      'product_image': cart_item.item.image.url,
+                                                      'product_total_price': self.get_total_price_product(cart_item),
                                                       'cart_id':  cart_item.id,
                                                       'product_name': cart_item.item.title,
                                                       'quantity': cart_item.quantity,

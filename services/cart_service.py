@@ -8,7 +8,6 @@ from carts.models import Cart
 
 def get_cart(request):
     session = auth_service.access_session(request)
-
     if session is not None:
         access_token = session['tokens']['access']
         header_authorization = {'Authorization': 'Bearer ' + access_token}
@@ -40,3 +39,24 @@ def delete_item_cart (request, pk):
     url =  'http://127.0.0.1:8000/api/v1/carts/{}'.format(pk)
     response = requests.delete(url)
     return response
+
+
+def get_item_by_pk(request, pk):
+    url =  'http://127.0.0.1:8000/api/v1/carts/{}'.format(pk)
+    response = requests.get(url)
+    return response.json()
+
+
+def update_cart(request, pk, quantity):
+    url =  'http://127.0.0.1:8000/api/v1/carts/{}/'.format(pk)
+
+    payload = {
+        "quantity": quantity
+    }
+
+    print('Quantity', quantity)
+    print('pk', pk)
+    response = requests.put(url, data=payload)
+    print('response', response.json())
+
+    return response.json()
