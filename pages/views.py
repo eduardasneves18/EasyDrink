@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from .forms import LoginForm, RegisterForm, ResetPasswordForm, CartAddProductForm
 from services import auth_service, products_service, cart_service
 from utils import verify_is_email_reseted, verify_is_user, verify_is_user_registered, handler_login_error,handler_register_error, handler_reset_password_error
+from django.http.response import JsonResponse
 
 
 class AboutPageView(TemplateView):
@@ -29,8 +30,8 @@ def home_page(request):
 
 def get_products(request):
     response = products_service.get_products(request)
-    product = Product.objects.all().values
-    return render(request, 'products/products_list.html', {'products': response, 'product': product})
+    # product = Product.objects.all().values
+    return render(request, 'products/products_list.html', {'products': response })
 
 
 def get_product_detail(request, pk):
@@ -97,16 +98,27 @@ def post_reset_password(request):
 
     return render(request=request, template_name="user/reset_password.html", context={"reset_password_form": form})
 
+def delete_cart(request, pk):
+    cart_service.delete_item_cart(request, pk)
 
 def get_cart(request):
+    if request.method == "POST":
+        if request.POST.get("delete"):
+            pk = request.POST.get("delete")
+            delete_cart(request, pk)
+
+        elif request.POST.get('update'):
+            cart = request.POST.get("update")
+            print('cart Update', cart)
+
     response = cart_service.get_cart(request)
 
     if response is not None:
         if 'error_login' not in response :
-
             if 'error' not in response:
-                cart = response['checkout_details']
-                return render(request=request, template_name="cart/cart_detail.html", context={'cart': cart})
+                carts = response['checkout_details']
+
+                return render(request, "cart/cart_detail.html", {'cart': carts })
             else:
                 return render(request=request, template_name="cart/cart_detail.html", context={'cart': None})
         else:
@@ -114,12 +126,6 @@ def get_cart(request):
     else: 
         return render(request=request, template_name="cart/cart_detail.html")
 
-
-def add_cart(request):
-    if request.method == "POST":
-
-        response = cart_service.post_cart(request.POST)
-    return render(request=request, template_name="cart/cart_detail.html")
 
 
 def buy(request):
@@ -136,4 +142,10 @@ def buy(request):
     return render(request=request, template_name="cart/cart_add_detail.html", context={'cart_add_detail': form, 'product': product})    
 
 
+# def delete(request):
+#     cart = cart_service.delete_item_cart(request)
+#     item = cart.pk
+#     request.method == 'DELETE':
 
+
+#     return render(request=request, template_name="cart/cart_detail.html", context={'cart': cart})

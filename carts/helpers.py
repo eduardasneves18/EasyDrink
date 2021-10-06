@@ -109,6 +109,7 @@ class CartHelper:
             self.checkout_details['products'].append({'category_id': cart_item.item.category.id,
                                                       'category_name': cart_item.item.category.title,
                                                       'product_id': cart_item.item.id,
+                                                      'cart_id':  cart_item.id,
                                                       'product_name': cart_item.item.title,
                                                       'quantity': cart_item.quantity,
                                                       'unit_price': cart_item.item.price,
@@ -120,3 +121,6 @@ class CartHelper:
 
         self.checkout_details['amount'].append({'total_amount': self.cart_final_total_amount,
                                                 'delivery_cost': self.delivery_cost})
+
+
+

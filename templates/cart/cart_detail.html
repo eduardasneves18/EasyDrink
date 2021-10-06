@@ -9,7 +9,7 @@
 
 {% block content %}
 {% load widget_tweaks %}
-
+{% load crispy_forms_tags %}
 
 
     <div class="container my-3 table-responsive" >
@@ -37,28 +37,32 @@
                                 {{ product.product_name }}
                             </a>
                         </td>
-                        {% comment %} <td class="personalize">
-                            <form action="{% url 'cart:add' product.id %}" method="post">
+                        <td class="personalize">
+                            
+                            <form  method="POST">
                                 {% csrf_token %}
                                 <div class="form-row">
                                     <div class="col">
                                         {% render_field item.update_quantity_form.quantity class+="form-control" %}
                                     </div>
                                     <div class="col">
-                                        <input class="btn btn-info" type="submit" value="Atualizar">
+                                        <form  method="post">
+                                            {% csrf_token %}
+                                           <button name="update" class="btn btn-danger" type="submit" value="{{ product.cart_id }}">Atualizar</button>
+                                     </form>
                                     </div>
                                 </div>
-                                {{ item.update_quantity_form.override }}
                             </form>
-                        </td> {% endcomment %}
+                        </td> 
                         <td class="personalize"> {{ product.quantity }}</td>
                         <td class="personalize">R$ {{ product.unit_price }}</td>
-                        {% comment %} <td class="personalize text-right"> {% endcomment %}
-                            {% comment %} <form action="{% url 'cart:remove' product.id %}" method="post">
+                        {% comment %} <td class="personalize">R$ {{ product.total_price }}</td> {% endcomment %}
+                        <td class="personalize">
+                            <form  method="post">
                                 {% csrf_token %}
-                                <input class="btn btn-danger" type="submit" value="Remover">
+                                <button name="delete" class="btn btn-danger" type="submit" value="{{ product.cart_id }}">Remover</button>
                             </form>
-                        </td> {% endcomment %}
+                        </td>
                     </tr>
 
                     {% endfor %}
