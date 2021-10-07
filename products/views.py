@@ -37,7 +37,3 @@ class ProductViewSet(viewsets.ModelViewSet):
     products = Product.objects.all()
     return products
 
-
-"""
-Nesta area irei adicionar as funções que farão a pesquisa do nosso site.
-"""
