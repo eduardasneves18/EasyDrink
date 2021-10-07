@@ -1,12 +1,15 @@
-<form method='GET' action='' id="search-form">
-    <input
-      type="search"
-      placeholder="Search Here ..."
-      name='q'
-      id="search-box"
-      value=''
+<form method='GET' action='{% url "search:query" %}' class="form my-2 my-lg-0" id="search-form">
+  <div class="input_group">
+    <input class="form-control"
+    type="search"
+    placeholder="Search Here ..."
+    name='q'
+    aria-label="Search"
+    id="search-box"
+    value='{{ request.GET.q }}'
     />
-    <label for="search-box" class="fas fa-search"></label>
-    <i class="fa fa-times" id="close" aria-hidden="true"></i>
-  </form>
+  </div>
+  <label for="search-box" class="fas fa-search"></label>
+  <i class="fa fa-times" id="close" aria-hidden="true"></i>
+</form>
 

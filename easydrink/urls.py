@@ -49,6 +49,7 @@ urlpatterns = [
     path('api/v1/products/', include('products.urls')),
     path('api/v1/carts/', include('carts.urls')), 
     path('api/v1/discounts/', include('discounts.urls')), 
+    path('api/v1/search/', include("search.urls")),
     
 
     #frontend
