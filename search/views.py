@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from products.models import Product
+from services import products_service
+
 
 class SearchProductView(ListView):
     template_name = "search/result_query.html"
@@ -8,21 +10,21 @@ class SearchProductView(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         query = self.request.GET.get('q')
+
+        if query is not None:
+            request = self.request
+            products = products_service.get_products_search(request, query)
+            context['products'] = products
+            
         context['query'] = query
-        #SearchQuery.objects.create(query=query)
         return context
 
     def get_queryset(self, *args, **kargs):
         request = self.request
-        print('Solicitação', request)
         result = request.GET
-        print('Resultado:', result)
-        query = result.get('q', None) # result['q']
-        print('Consulta', query)
+        query = result.get('q', None)  # result['q']
         if query is not None:
-            product = Product.Objects.search(query)
-            print(product)
-            return render(request,"search/result_query.html",{'product':product}) 
-        product = Product.Objects.all()
-        print(product)
-        return render(request,"search/result_query.html",{'product':product})
+            products = products_service.get_products_search(request, query)
+            return render(request, "search/result_query.html", context={'query': query, 'products': products})
+        products = products_service.get_products(request)
+        return render(request, "search/result_query.html", context={'query': query, 'products': products})

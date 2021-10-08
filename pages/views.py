@@ -30,14 +30,40 @@ def home_page(request):
 
 def get_products(request):
     response = products_service.get_products(request)
-    # product = Product.objects.all().values
     return render(request, 'products/products_list.html', {'products': response })
 
 
 def get_product_detail(request, pk):
-    response = products_service.get_product_detail(request, pk)
-    products_service.save_item_to_buy(request, response)
-    return render(request, 'products/product_detail.html', {'product': response})
+    product = products_service.get_product_detail(request, pk)
+    if request.method == "POST":
+        form = CartAddProductForm(request.POST)
+        if form.is_valid():
+            quantity = form.cleaned_data.get('quantity')
+            try:
+                cart_service.post_cart(request, product, quantity)
+            except:
+                return redirect('pages:login') 
+            return redirect('pages:products') 
+    else:
+        form = CartAddProductForm()  
+
+    return render(request, 'products/product_detail.html', {'cart_add_detail': form, 'product': product})
+
+def buy(request):
+    product = products_service.access_item_to_buy(request)
+
+    if request.method == "POST":
+        form = CartAddProductForm(request.POST)
+        if form.is_valid():
+            quantity = form.cleaned_data.get('quantity')
+            response = cart_service.post_cart(request, product, quantity)
+            products_service.clear_item_to_buy(request)
+            return redirect('pages:products') 
+    else:
+        form = CartAddProductForm()    
+    return render(request=request, template_name="cart/cart_add_detail.html", context={'cart_add_detail': form, 'product': product})    
+
+
 
 
 def post_login(request, page=None):
@@ -142,20 +168,5 @@ def get_cart(request):
             return redirect('pages:login_cart')
     else: 
         return render(request=request, template_name="cart/cart_detail.html")
-
-
-
-def buy(request):
-    product = products_service.access_item_to_buy(request)
-    if request.method == "POST":
-        form = CartAddProductForm(request.POST)
-        if form.is_valid():
-            quantity = form.cleaned_data.get('quantity')
-            response = cart_service.post_cart(request, product, quantity)
-            products_service.clear_item_to_buy(request)
-            return redirect('pages:products') 
-    else:
-        form = CartAddProductForm()    
-    return render(request=request, template_name="cart/cart_add_detail.html", context={'cart_add_detail': form, 'product': product})    
 
 

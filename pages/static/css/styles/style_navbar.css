@@ -52,13 +52,16 @@ section:nth-child(even){
 
 .btn{
     margin-top: 1rem;
-    display: inline-block;
-    font-size: 1.7rem;
+    display: flex;
+    /* display: inline-block; */
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
     color:#fff;
     background: var(--black);
     border-radius: .5rem;
     cursor: pointer;
-    padding:.8rem 5rem;
+    padding:.5rem 5rem;
 }
 
 .btn:hover{

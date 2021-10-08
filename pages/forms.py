@@ -36,7 +36,7 @@ PRODUCT_QUANTITY_CHOICES = [(i, str(i)) for i in range(1, 21)]
 #classe criada para adicionar opção de escolha da quantidade de produtos.
 class CartAddProductForm(forms.Form):
     quantity = forms.TypedChoiceField(
-        label = 'Quantidade', choices = PRODUCT_QUANTITY_CHOICES, coerce = int
+        label = 'Quantity', choices = PRODUCT_QUANTITY_CHOICES, coerce = int
     )
     override = forms.BooleanField(
                     required = False, 
