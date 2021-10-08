@@ -30,8 +30,8 @@
     </div>
 
     <div class="product-container">
-        {% if product %}
-        {% for product in products.get_queryset %}
+        {% if products %}
+        {% for product in products %}
            <div class="card">
              <div class="title">{{product.title}}</div>
              <div class="image">

@@ -26,6 +26,10 @@ def post_cart (request, item, quantity):
 
     url = 'http://127.0.0.1:8000/api/v1/carts/'
 
+    print('User', userID)
+    print('item', item)
+    print('quantity', quantity)
+    
     payload = {
         "user": userID,  
         "item": itemID,

@@ -12,9 +12,17 @@ from rest_framework import viewsets, permissions
 
 #filtro pra criar uma excessão de busca, no caso trazer itens de uma categoria específica
 @api_view(['GET'])
-@permission_classes([permissions.IsAuthenticated])
+@permission_classes([permissions.AllowAny])
 def get_products_by_category(request, cat):
     products = Product.objects.filter(category=cat)
+    serializer = ProductSerializer(products, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+@permission_classes([permissions.AllowAny])
+def get_products_search(request, query):
+    products = Product.objects.search(query)
     serializer = ProductSerializer(products, many=True)
     return Response(serializer.data)
 

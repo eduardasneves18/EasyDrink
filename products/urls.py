@@ -1,5 +1,5 @@
 from django.urls import path, include
-from products.views import CategoryViewSet, ProductViewSet, get_products_by_category
+from products.views import CategoryViewSet, ProductViewSet, get_products_by_category, get_products_search
 from rest_framework.routers import DefaultRouter
 
 
@@ -9,6 +9,7 @@ router.register('', ProductViewSet)
 
 #forma utilizada prara trazer items de uma categoria especifica 
 urlpatterns = [
-    path('products/category/<str:cat>', get_products_by_category, name="get_products_by_category"),
+    path('category/<str:cat>', get_products_by_category, name="get_products_by_category"),
+    path('search/<str:query>', get_products_search, name="get_products_search"),
     path('', include(router.urls))
 ]

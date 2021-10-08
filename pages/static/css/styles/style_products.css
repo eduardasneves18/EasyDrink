@@ -16,8 +16,10 @@
     font-size: 18px;
     font-weight: bold;
 }
+
 .card img{
     max-width: 100%;
+    height: 100%;
     border-radius: 5px;
 }
 .card .text{
@@ -44,9 +46,13 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap:20px;
     grid-row-gap:25px;
-
 }
 
 .page-title{
     text-align: center;
+}
+
+.image-detail {
+    width: fit-content;
+    height: fit-content;
 }

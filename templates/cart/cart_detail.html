@@ -119,7 +119,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control coupon" name placeholder="coupon code" />
                             <span class="input-group-append">
-                                <button class="btn btn-primary btn-apply coupon">Apply</button>
+                                <button class="btn btn-primary btn-checkout">Apply</button>
                             </span>
                         </div>
                     </div>
@@ -158,12 +158,11 @@
                     <hr>
                     <div class="row">
                         <div class="col-6">
-                            <a href="{% url 'pages:products' %}" class="d-flex justify-content-center btn btn-out btn-primary "
-                                data-abc="true">Continue
-                                shopping</a>
+                            <a href="{% url 'pages:products' %}" class="btn btn-out btn-primary btn-checkout"
+                                data-abc="true">Continue shopping</a>
                         </div>
                         <div class="col-6">
-                            <a href="#" class="d-flex justify-content-center btn btn-out btn-success " data-abc="true">
+                            <a href="#" class="btn btn-success btn-checkout" data-abc="true">
                                 Checkout</a>
                         </div>
 
