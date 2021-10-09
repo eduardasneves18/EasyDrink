@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- CSS only -->
+<link rel="stylesheet" href="{% static 'css/style_cart.css' %}" />
+{% block title %}Compra Finalizada{% endblock title %}
+
+
+{% block content %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+<style>
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .update-cart {
+        cursor: pointer;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .quantidade-input {
+        max-width: 100%;
+    }
+    .h1{
+        text-align: center;
+        size: 20px;
+    }
+</style>
+<div class="row">
+    <h1>Obrigado por adquirir nossos produtos</h1>
+    {% if cart %}
+        <aside class="col-lg-9">
+            <div class="table-reponsive">
+                <table class="table ">
+                    <thead>
+                        <tr class="small text-uppercase">
+                            <th>Products</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for product in cart.products %}
+                        <tr>
+                            <td>
+                                <figure class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img src={{product.product_image}}
+                                            width="60" alt="Product">
+                                    </div>
+                                    <figcaption class="info col-auto">
+                                        <label class="text-dark"  href="{{ product.get_absolute_url }}" data-abc="true">{{ product.product_name}}</label>
+                                        <p class="text-muted small">
+                                            {{product.category_name}}
+                                            <br>
+                                        </p>
+                                    </figcaption>
+                                </figure>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </aside>
+    {% else %}
+    <h1>ALGO DEU ERRADO</h1>                    
+</div>
+{% endif %}
+{% endblock %}

@@ -170,3 +170,33 @@ def get_cart(request):
         return render(request=request, template_name="cart/cart_detail.html")
 
 
+## Criei esse metodo para utilizar o mesmo dicionario que armazena os produtos do carrinho para poder fazer a pagina de 
+# agredecimento pela compra
+ 
+def template_payment(request):
+    if request.method == "POST":
+        if request.POST.get("delete"):
+            pk = request.POST.get("delete")
+            delete_cart(request, pk)
+        elif request.POST.get('increase_product_quantity'):
+            pk = request.POST.get("increase_product_quantity")
+            increase_product_quantity(request, pk)
+        elif request.POST.get('decrease_product_quantity'):
+            pk = request.POST.get("decrease_product_quantity")
+            decrease_product_quantity(request, pk)
+
+    response = cart_service.get_cart(request)
+
+    if response is not None:
+        if 'error_login' not in response :
+            if 'error' not in response:
+                carts = response['checkout_details']
+                return render(request, "payments/payments.html", {'cart': carts })
+            else:
+                return render(request=request, template_name="payments/payments.html", context={'cart': None})
+        else:
+            return redirect('pages:login_cart')
+    else: 
+        return render(request=request, template_name="payments/payments.html")
+
+
