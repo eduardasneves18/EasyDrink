@@ -66,3 +66,16 @@
     width: 50px;
     height: 35px;
 }
+.card {
+    margin-bottom: 1rem;
+}
+
+.update-cart {
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+
+.quantidade-input {
+    max-width: 100%;
+}

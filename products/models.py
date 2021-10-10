@@ -60,6 +60,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="categories")
     description = models.TextField(max_length=250)
     price = models.DecimalField(max_digits=9,decimal_places=2)
+    old_price = models.DecimalField(max_digits=9,decimal_places=2, default= 89.25)
     available = models.BooleanField(default= False)
     image = models.ImageField(upload_to="media", blank=True)
     featured = models.BooleanField(default = False)

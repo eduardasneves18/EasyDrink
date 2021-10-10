@@ -1,10 +1,6 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
-<!-- CSS only -->
-<link rel="stylesheet" href="{% static 'css/style_cart.css' %}" />
-
-
 {% block title %}My cart{% endblock title %}
 
 
@@ -13,21 +9,7 @@
 {% block content %}
 {% load widget_tweaks %}
 {% load crispy_forms_tags %}
-<style>
-    .card {
-        margin-bottom: 1rem;
-    }
 
-    .update-cart {
-        cursor: pointer;
-        text-decoration: none;
-        color: #000;
-    }
-
-    .quantidade-input {
-        max-width: 100%;
-    }
-</style>
 
 
 <div class="row">
@@ -177,6 +159,6 @@
 </div>
 
 
-<script type="text/javascript" src="{% static 'js/script_cart.js' %}"></script>
+
 
 {% endblock content %}

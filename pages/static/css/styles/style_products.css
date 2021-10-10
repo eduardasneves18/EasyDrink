@@ -1,58 +1,163 @@
-.product-list{
-    background-color: #dfe6e9;
-    padding: 3rem;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #444444;
 }
 
-.product-list .card{
-    background-color: white;
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: 0px 10px 5px #b2bec3;
+a,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.section-products {
+    padding: 80px 0 54px;
+}
+
+.section-products .header {
+    margin-bottom: 50px;
+    padding-top: 15px;
+}
+
+.section-products .header h3 {
+    font-size: 2rem;
+    color: #fe302f;
+    font-weight: 500;
+}
+
+.section-products .header h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #444444; 
+}
+
+.section-products .single-product {
+    margin-bottom: 26px;
+}
+
+.section-products .single-product .part-1 {
+    position: relative;
+    height: 290px;
+    max-height: 290px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-size:contain!important;
+}
+
+.section-products .single-product .part-1::before {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		transition: all 0.3s;
+}
+
+.section-products .single-product:hover .part-1::before {
+		transform: scale(1.2,1.2) rotate(5deg);
+}
+
+.section-products #product-1 .part-1::before {
+
+    background-size: cover;
+		transition: all 0.3s;
+}
+
+.section-products .single-product .part-1 .discount,
+.section-products .single-product .part-1 .new {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: #ffffff;
+    background-color: #fe302f;
+    padding: 2px 8px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.section-products .single-product .part-1 .new {
+    left: 0;
+    background-color: #444444;
+}
+
+.section-products .single-product .part-1 ul {
+    position: absolute;
+    bottom: -41px;
+    left: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+    transition: bottom 0.5s, opacity 0.5s;
+}
+
+.section-products .single-product:hover .part-1 ul {
+    bottom: 30px;
+    opacity: 1;
+}
+
+.section-products .single-product .part-1 ul li {
+    margin-right: 4px;
+}
+
+.section-products .single-product .part-1 ul li a {
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    line-height: 40px;
+    background-color: transparent;
+    color: #444444;
     text-align: center;
-    font-family: "Poppins";
-   
-}
-.card .title{
-    font-size: 18px;
-    font-weight: bold;
+    transition: color 0.2s;
 }
 
-.card img{
-    max-width: 100%;
-    height: 100%;
-    border-radius: 5px;
+.section-products .single-product .part-1 ul li a:hover {
+    color: #fe302f;
 }
-.card .text{
-    text-align: left;
-    margin-left: 2em;
-    margin-bottom: 0.5em;
-    font-size: 12px;
+
+.section-products .single-product .part-2 .product-title {
+    font-size: 1.5rem;
 }
-.buy-button{
-    background-color: #eb7616;
-    border: none;
-    padding: 1em;
-    border-radius: 5px;
-    font-weight: bold;
+
+.section-products .single-product .part-2 h4 {
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.section-products .single-product .part-2 .product-old-price {
+    position: relative;
+    padding: 0 7px;
+    margin-right: 2px;
+    opacity: 0.6;
+}
+
+.section-products .single-product .part-2 .product-old-price::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
     width: 100%;
-}
-.buy-button:hover{
-    background-color: rgb(83, 214, 83);
-    box-shadow: 0px 5px 5px #b2bec3;
-}
-
-.product-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap:20px;
-    grid-row-gap:25px;
+    height: 1px;
+    background-color: #444444;
+    transform: translateY(-50%);
 }
 
-.page-title{
-    text-align: center;
+.fas {
+    font-size: 12px;
+    padding: 2px;
 }
 
-.image-detail {
-    width: fit-content;
-    height: fit-content;
+.part-1:hover{
+    transform:scale(1.1);
+}
+.row{
+    margin-left: 2%;
+    margin-right: 1.8%;
+
+}
+.main{
+    padding-top: 2rem;
 }
