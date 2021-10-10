@@ -12,6 +12,7 @@ body{ text-transform: capitalize;}
   <h1 class="heading">popular wines</h1>
                                   
   {% for key in data %} 
+    {% if forloop.counter < 7 %}
   <div class="box-container">
     <div class="box">
       <a href="#" class="fas fa-heart"></a>
@@ -28,6 +29,7 @@ body{ text-transform: capitalize;}
       <span>$ {{key.price}}</span>
       <a href="#" class="btn" method="post">add to cart</a>
     </div>
+      {% endif %}
     {% endfor %} 
     
 
