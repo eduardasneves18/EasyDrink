@@ -7,7 +7,7 @@
             <a href="#" class="list-group-item list-group-item-action">Mais vendidos</a>
 
             <div class="bs_box">
-                <a href="{% url products:products_detail %}"><img src="{{product.image}}" alt="image"
+                <a href="{% url 'products:products_detail' %}"><img src="{{product.image}}" alt="image"
                         style="width:50%; height: 25px" /></a>
                 <h4><a href="#">{{product.title}}</a></h4>
                 <p class="price">${{product.price}}</p>

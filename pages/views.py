@@ -200,4 +200,30 @@ def template_payment(request):
     else: 
         return render(request=request, template_name="payments/payments.html")
 
+def favorite_products(request):
+    if request.method == "POST":
+        if request.POST.get("delete"):
+            pk = request.POST.get("delete")
+            delete_cart(request, pk)
+        elif request.POST.get('increase_product_quantity'):
+            pk = request.POST.get("increase_product_quantity")
+            increase_product_quantity(request, pk)
+        elif request.POST.get('decrease_product_quantity'):
+            pk = request.POST.get("decrease_product_quantity")
+            decrease_product_quantity(request, pk)
+
+    response = cart_service.get_cart(request)
+
+    if response is not None:
+        if 'error_login' not in response :
+            if 'error' not in response:
+                carts = response['checkout_details']
+                return render(request, "products/products_favorites.html", {'cart': carts })
+            else:
+                return render(request=request, template_name="products/products_favorites.html", context={'cart': None})
+        else:
+            return redirect('pages:login_cart')
+    else: 
+        return render(request=request, template_name="products/products_favorites.html")
+
 

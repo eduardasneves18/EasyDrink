@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import buy, AboutPageView, ContactsPageView, WishesPageView, OrdersPageView, LoginCartPageView,  home_page, get_cart, get_products, get_product_detail, post_register, post_reset_password, post_login,template_payment
+from .views import buy, AboutPageView, ContactsPageView, WishesPageView, OrdersPageView, LoginCartPageView,  home_page, get_cart, get_products, get_product_detail, post_register, post_reset_password, post_login,template_payment,favorite_products
 
 
 app_name = "pages"
@@ -20,4 +20,5 @@ urlpatterns = [
     path("register/", post_register, name="register"),
     path("reset-password/", post_reset_password, name="reset-password"),
     path("payments/",template_payment, name="payments"),
+    path("favorites/",favorite_products, name="favorites"),
 ]

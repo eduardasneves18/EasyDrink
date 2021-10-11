@@ -10,8 +10,20 @@
 {% load widget_tweaks %}
 {% load crispy_forms_tags %}
 
+<style>
+    body{
+        margin-top: 85px;
+    }
+    .card{
+        margin-top: 50px;
+    }
+    .card-body-1{
+        margin-top: 20px;
+    }
+</style>
 
-
+<body>
+    
 <div class="row">
     {% if cart %}
         <aside class="col-lg-9">
@@ -28,7 +40,7 @@
                     </thead>
                     <tbody>
                     {% for product in cart.products %}
-                        <tr>
+                        <tr class="products">
                             <td>
                                 <figure class="row align-items-center">
                                     <div class="col-auto">
@@ -95,7 +107,7 @@
         </aside>
         <aside class="col-sm-12 col-lg-3">
             <div class="card md-3">
-                <div class="card-body">
+                <div class="card-body-1">
                     <div class="form-group">
                         <label>Have Coupon?</label>
                         <div class="input-group">
@@ -157,7 +169,7 @@
         <p>Unfortunately your cart is still empty! :( </p>
     {% endif %}    
 </div>
-
+</body>
 
 
 

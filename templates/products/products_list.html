@@ -30,7 +30,10 @@
                       </ul>
                   </div>
                   <div class="part-2">
-                      <h3 class="product-title">{{product.title}}</h3>
+                      <h3 class="product-title">
+                        {{product.title}}
+                        <!-- <a href="{% url 'pages:product_detail' %}">{{product.title}}</a> -->
+                      </h3>
                     {% if product.old_price.get.all %}
                       <h4 class="product-old-price">$ {{product.old_price}}</h4>
                     {% endif %}
