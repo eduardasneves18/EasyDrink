@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import buy, AboutPageView, ContactsPageView, WishesPageView, OrdersPageView, LoginCartPageView,  home_page, get_cart, get_products, get_product_detail, post_register, post_reset_password, post_login,template_payment,favorite_products
+from .views import buy, get_products_category, AboutPageView, ContactsPageView, WishesPageView, OrdersPageView, LoginCartPageView,  home_page, get_cart, get_products, get_product_detail, post_register, post_reset_password, post_login,template_payment,favorite_products
 
 
 app_name = "pages"
@@ -12,7 +12,7 @@ urlpatterns = [
     path("orders/", OrdersPageView.as_view(), name="orders"),
     path("login_cart/",  LoginCartPageView.as_view(), name="login_cart"),
     path("products/", get_products, name="products"),
-    path("products/(?P<query>\w{0,100})/", get_products, name="products"),
+    path(r'products/category/<str:id>/', get_products_category, name='products_category'),
     path("products/<str:pk>/",get_product_detail, name="product_detail"),
     path("product-buy/",buy, name="buy"),
     path("cart/", get_cart, name="cart"),

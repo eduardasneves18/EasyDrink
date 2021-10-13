@@ -12,10 +12,8 @@
 {% block content %}
     {% load crispy_forms_tags %}
 
-
-    <div class="login-style login">
-    
-            <div class="container py-5">
+    <div class="login">
+        <div class="box-login">
             <h1>Register</h1>
                 <form method="POST">
                     {% csrf_token %}
@@ -23,9 +21,7 @@
 
                     <button class="btn btn-primary" type="submit">Register</button>
                 </form>
-
-
-            </div>
+        </div>
     </div>
     
     <script src="pages\static\js\script_nav.js"></script>
