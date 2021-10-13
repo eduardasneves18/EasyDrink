@@ -3,7 +3,7 @@
 
 <!-- CSS only -->
 <link rel="stylesheet" href="{% static 'css/style_cart.css' %}" />
-{% block title %}Compra Finalizada{% endblock title %}
+{% block title %}completed purchase{% endblock title %}
 
 
 {% block content %}
@@ -27,9 +27,11 @@
         text-align: center;
         size: 20px;
     }
+    .row{
+        margin-top: 75px;
+    }
 </style>
 <div class="row">
-    <h1>Obrigado por adquirir nossos produtos</h1>
     {% if cart %}
         <aside class="col-lg-9">
             <div class="table-reponsive">
@@ -63,6 +65,14 @@
                 </table>
             </div>
         </aside>
+        <h1>
+            Thank you for shopping on our website.
+        </h1>
+        <div class="col-6">
+            <h2>Keep shopping here:</h2>
+            <a href="{% url 'pages:products' %}" class="btn btn-out btn-primary btn-checkout"
+                data-abc="true">Continue shopping</a>
+        </div>
     {% else %}
     <h1>ALGO DEU ERRADO</h1>                    
 </div>

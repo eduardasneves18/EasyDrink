@@ -190,7 +190,7 @@ Caso queira consultar acesse: https://github.com/Machado-tec/readme/blob/main/LI
 
 
 ## TO DO
-- Finalizar as funcionalidades do Pix
+
 - Desenvolver a área administrativa do site 
         ° Dashboard do administrador
         ° Painel de metas
