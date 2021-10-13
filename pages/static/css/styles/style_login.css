@@ -1,6 +1,6 @@
 
 .mg-tp{
-    margin-top: 60px!important;
+    margin-top: 70px!important;
 }
 .login {
     text-align: center;
@@ -12,11 +12,13 @@
     height: 60vh;
     align-items: center;
     justify-items: center;
-    text-transform: lowercase;
+    
+
+    
 }
 
 .box-login {
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(212, 204, 204);
     padding: 2%;
     border-radius: 3%;
     font-size: 1.4rem;
