@@ -6,10 +6,9 @@
 /*  External Fonts  */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
+
 @import url('./styles/style_navbar.css');
-@import url('./styles/style_about.css');
 @import url('./styles/style_base.css');
 @import url('./styles/style_cart.css');
 @import url('./styles/style_login.css');
-@import url('./styles/style_slider.css');
 @import url('./styles/style_products.css');

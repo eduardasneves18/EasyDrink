@@ -4,11 +4,9 @@
 {%block content %}
 
 {% load crispy_forms_tags %}
-<link rel="stylesheet" href="{% static 'css/styles/style_login.css' %}" />
-
-    <div class="login-style-cart">
+    <div class="login-style-cart mg-tp">
             <!--Login--> 
-            <div class="container py-5 login-text-center">
+            <div class="container py-5 login-text-center mg-tp">
                 <h1>Cart</h1>
                 <h3> You aren't logged, make your login to add items!</h3>
                 <button class="btn" type="submit" onclick="window.location = {% url 'pages:login' %} ">Go to new login</button>
