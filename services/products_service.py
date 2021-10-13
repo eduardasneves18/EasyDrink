@@ -25,3 +25,15 @@ def clear_item_to_buy(request):
 def access_item_to_buy(request):
     if request.session.get('item_to_buy'):
         return request.session.get('item_to_buy')
+
+def get_categories (request):
+    url = "http://127.0.0.1:8000/api/v1/products/categories"
+    response = requests.get(url)
+    return response.json()
+
+def get_products_by_category (request, cat):
+    url = "http://127.0.0.1:8000/api/v1/products/category/{}".format(cat)
+    response = requests.get(url)
+    return response.json()
+    
+

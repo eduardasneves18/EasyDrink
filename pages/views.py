@@ -26,14 +26,25 @@ class LoginCartPageView(TemplateView):
     
 
 def home_page(request):    
-    data = Product.objects.all().values    
+    data = products_service.get_products(request)  
     response = auth_service.access_session(request)
     return render(request, 'home.html', {'user': response, 'data': data})
 
+
+def get_categories(request):
+    return products_service.get_categories(request)
+
+
+def get_products_category(request, id):
+    categories = get_categories(request)
+    response = products_service.get_products_by_category(request, id)
+    return render(request, 'products/products_list.html', {'products': response, 'categories': categories })
+
 def get_products(request):
+    categories = get_categories(request)
     response = products_service.get_products(request)
-    data = Product.objects.all().values
-    return render(request, 'products/products_list.html', {'products': response, 'data':data })
+
+    return render(request, 'products/products_list.html', {'products': response, 'categories': categories })
 
 
 def get_product_detail(request, pk):

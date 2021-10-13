@@ -3,10 +3,8 @@
     margin-top: 70px!important;
 }
 .login {
-    /* background: url(../images/vinhos.jpg) no-repeat; */
-    /* background-size: cover; */
     text-align: center;
-    color: rgb(87, 2, 32);
+    color:#192a56;
     display: flex;
     justify-items: center;
     justify-content: center;
@@ -23,9 +21,22 @@
     background-color: rgb(212, 204, 204);
     padding: 2%;
     border-radius: 3%;
+    font-size: 1.4rem;
 }
+
+.box-login {
+    background-color: #EEEEEE;
+    padding: 2%;
+    border-radius: 3%;
+    font-size: 1.4rem;
+    margin-top: 25rem;
+}
+.box-login button{
+    border-style: none;
+}
+
 .verify-confirm-email h1 {
-    color:rgb(25, 87, 146);
+    color:#192a56;
     font-size: 32px;
     text-align: center;
     margin-top: 30px;
