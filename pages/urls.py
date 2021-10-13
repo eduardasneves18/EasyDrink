@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import buy, get_products_category, AboutPageView, ContactsPageView, WishesPageView, OrdersPageView, LoginCartPageView,  home_page, get_cart, get_products, get_product_detail, post_register, post_reset_password, post_login,template_payment,favorite_products
+from .views import buy, get_products_category, AboutPageView, ContactsPageView, WishesPageView, OrdersPageView, LoginCartPageView,  home_page, get_cart, get_products, get_product_detail, post_register, post_reset_password, post_login,template_payment,favorite_products, about_us
 
 app_name = "pages"
 

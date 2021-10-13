@@ -10,6 +10,11 @@
     .row{
         margin-top: 35px;
     }
+    .card-detail{
+       
+    margin-top: 120px;
+    font-size: 1.8rem;
+    }
 </style>
     <link rel="stylesheet" href="{% static 'css/styles/style_cart.css' %}" />
     <link rel="stylesheet" href="{% static 'css/styles/style_products.css' %}" />
@@ -18,7 +23,7 @@
 
 
 
-    <div>
+    <div class="card-detail">
         {% if product.id %}
         <div class="row">
             <div class="image-detail  col-md-3 row">
@@ -74,7 +79,7 @@
                         <form  method="POST">
                             {% csrf_token %}
                             {{ cart_add_detail|crispy }}
-                            <button class="btn btn-primary" type="submit">Add to cart</button>
+                            <button class="btn btn-warning h3" type="submit" style="margin-top: 10px; width: 100%">Add to cart</button>
                         </form>
                     </div>
                 </div>
