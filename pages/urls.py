@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import buy, AboutPageView, ContactsPageView, WishesPageView, OrdersPageView, LoginCartPageView,  home_page, get_cart, get_products, get_product_detail, post_register, post_reset_password, post_login,template_payment,favorite_products
+from .views import buy, AboutPageView, ContactsPageView, WishesPageView, OrdersPageView, LoginCartPageView,  home_page, get_cart, get_products, get_product_detail, post_register, post_reset_password, post_login,template_payment,favorite_products, about_us
 
 
 app_name = "pages"
@@ -21,4 +21,5 @@ urlpatterns = [
     path("reset-password/", post_reset_password, name="reset-password"),
     path("payments/",template_payment, name="payments"),
     path("favorites/",favorite_products, name="favorites"),
+    path("about_us/", about_us, name="about_us")
 ]
