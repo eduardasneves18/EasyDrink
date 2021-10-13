@@ -1,80 +1,116 @@
-{% extends 'base/base.html' %}
-{% load static %}
+{% extends 'base/base.html' %} {% load static %}
 
 <!-- CSS only -->
 <link rel="stylesheet" href="{% static 'css/style_cart.css' %}" />
-{% block title %}completed purchase{% endblock title %}
-
-
-{% block content %}
-{% load widget_tweaks %}
-{% load crispy_forms_tags %}
+{% block title %}completed purchase{% endblock title %} {% block content %} {%
+load widget_tweaks %} {% load crispy_forms_tags %}
 <style>
-    .card {
-        margin-bottom: 1rem;
-    }
+  .main {
+    font-family: Nunito, sans-serif;
+  }
+  .card {
+    margin-bottom: 1rem;
+  }
 
-    .update-cart {
-        cursor: pointer;
-        text-decoration: none;
-        color: #000;
-    }
+  .update-cart {
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+  }
 
-    .quantidade-input {
-        max-width: 100%;
-    }
-    .h1{
-        text-align: center;
-        size: 20px;
-    }
-    .row{
-        margin-top: 75px;
-    }
+  .quantidade-input {
+    max-width: 100%;
+  }
+  .h1 {
+    text-align: center;
+    size: 20px;
+  }
+  .row {
+    margin-top: 75px;
+  }
+  .product-row {
+    margin-top: 6px;
+  }
+  .title-products {
+    font-family: Nunito, sans-serif;
+    weight: 700;
+  }
+  .btn-st {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    font-size: small;
+    margin-top: 25px;
+  }
+  .btn-st:hover {
+    font-size: 1.16rem;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+  .shop-txt {
+    margin-top: 10px;
+  }
+  .greet-text{
+      margin-top: 100px;
+  }
 </style>
 <div class="row">
-    {% if cart %}
-        <aside class="col-lg-9">
-            <div class="table-reponsive">
-                <table class="table ">
-                    <thead>
-                        <tr class="small text-uppercase">
-                            <th>Products</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for product in cart.products %}
-                        <tr>
-                            <td>
-                                <figure class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img src={{product.product_image}}
-                                            width="60" alt="Product">
-                                    </div>
-                                    <figcaption class="info col-auto">
-                                        <label class="text-dark"  href="{{ product.get_absolute_url }}" data-abc="true">{{ product.product_name}}</label>
-                                        <p class="text-muted small">
-                                            {{product.category_name}}
-                                            <br>
-                                        </p>
-                                    </figcaption>
-                                </figure>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </aside>
-        <h1>
-            Thank you for shopping on our website.
-        </h1>
-        <div class="col-6">
-            <h2>Keep shopping here:</h2>
-            <a href="{% url 'pages:products' %}" class="btn btn-out btn-primary btn-checkout"
-                data-abc="true">Continue shopping</a>
-        </div>
+  {% if cart %}
+  <aside class="col-lg-9">
+    <div class="table-reponsive">
+      <table class="table">
+        <thead>
+          <tr class="small text-uppercase title-products">
+            <th>Products</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in cart.products %}
+          <tr>
+            <td>
+              <figure class="row align-items-center product-row">
+                <div class="col-auto">
+                  <img
+                    src="{{product.product_image}}"
+                    width="60"
+                    alt="Product"
+                  />
+                </div>
+                <figcaption class="info col-auto">
+                  <label
+                    class="text-dark"
+                    href="{{ product.get_absolute_url }}"
+                    data-abc="true"
+                    >{{ product.product_name}}</label
+                  >
+                  <p class="text-muted small">
+                    {{product.category_name}}
+                    <br />
+                  </p>
+                </figcaption>
+              </figure>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </aside>
+  <div class="greet-text">
+    <h1>Thank you for shopping on our website.</h1>
+    <div class="col-12 shop-txt">
+      <h2>Keep shopping here:</h2>
+      <a
+        href="{% url 'pages:products' %}"
+        class="btn btn-out btn-primary btn-checkout btn-st"
+        data-abc="true"
+        >Continue shopping</a
+      >
+    </div>
     {% else %}
-    <h1>ALGO DEU ERRADO</h1>                    
+    <h1>ALGO DEU ERRADO</h1>
+  </div>
 </div>
-{% endif %}
-{% endblock %}
+{% endif %} {% endblock %}

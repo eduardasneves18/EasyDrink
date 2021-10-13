@@ -52,8 +52,7 @@ section:nth-child(even){
 
 .btn{
     margin-top: 1rem;
-    display: flex;
-    /* display: inline-block; */
+    display: inline-block;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
