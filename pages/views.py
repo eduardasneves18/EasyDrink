@@ -10,7 +10,7 @@ from django.http.response import JsonResponse
 class AboutPageView(TemplateView):
     template_name = 'about.html'
 class AboutUsView(TemplateView):
-    template_nmae = 'about_us'
+    template_name = 'about_us'
 
 class ContactsPageView(TemplateView):
     template_name = 'contacts.html'
@@ -241,4 +241,6 @@ def favorite_products(request):
 
 def about_us(request):
     return render(request, template_name="about_us.html") 
+    
+
 
