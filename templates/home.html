@@ -3,6 +3,7 @@
 {% block content %} 
 {% include 'slider.html' %}
 
+
 <style>
 body{ text-transform: capitalize;}
 </style>
@@ -30,7 +31,8 @@ body{ text-transform: capitalize;}
         <i class="fas fa-star"></i>
         <i class="fas fa-star-half-alt"></i>
       </div>
-      <span>$ {{key.price}}</span>
+      <span>$ {{key.price}}</span><br>
+       <form  method="post">
       <a href="{{key.my_absolute_url}}" class="btn" method="post" >Add to cart</a>
 
     </div>
@@ -51,7 +53,7 @@ body{ text-transform: capitalize;}
     <div class="box " style="border:transparent; height:fit-content" >
       <div class="image"> 
         <img src="{{key.image}}" style="hight: 100px; width: 100px; margin-left: 100px"alt="" />
-        <a href="{{product.my_absolute_url }}" class="fas fa-heart"></a>
+        <a href="{{key.my_absolute_url}}" class="fas fa-heart"></a>
       </div>
       <center>
       <div class="content">
@@ -66,10 +68,8 @@ body{ text-transform: capitalize;}
         <p>
           {{key.description|slice:"24"}}
         </p>
-        <span class="price"> 
-          $ {{key.price}}
-        </span><br>
-        <a href="{{product.my_absolute_url }}" class="btn">
+        <span class="price">$ {{key.price}}</span><br>
+        <a href="{{key.my_absolute_url}}" class="btn">
           Add to cart
         </a>
       </div>

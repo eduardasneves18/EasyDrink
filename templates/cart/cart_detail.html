@@ -33,7 +33,7 @@
                         <tr class="small text-uppercase">
                             <th>Products</th>
                             <th style="text-align: center;">Quantity</th>
-                            <th>Price</th>
+                            <th>Unit Price</th>
                             <th>Total Price</th>
                             <th></th>
                         </tr>
@@ -44,14 +44,20 @@
                             <td>
                                 <figure class="row align-items-center">
                                     <div class="col-auto">
+                                    <a href="{{product.get_absolute_url}}">
                                         <img src={{product.product_image}}
-                                            width="60" alt="Product">
+                                            width="60" alt="Product" >
+                                    </a>
                                     </div>
                                     <figcaption class="info col-auto">
-                                        <label class="text-dark"  href="{{ product.get_absolute_url }}" data-abc="true">{{ product.product_name}}</label>
+                                        <label class="text-dark"  href="{{ product.get_absolute_url }}" data-abc="true">
+                                            <a href="{{product.get_absolute_url}}">{{ product.product_name|slice:'15'}}</a>
+                                        </label>
                                         <p class="text-muted small">
-                                            {{product.category_name}}
-                                            <br>
+                                            <a href="{% url 'pages:products_category' product.category_id %}">
+                                                {{product.category_name}}
+                                                <br>
+                                            </a>
                                         </p>
                                     </figcaption>
                                 </figure>
@@ -105,21 +111,21 @@
                 </table>
             </div>
         </aside>
-        <aside class="col-sm-12 col-lg-3">
-            <div class="card md-3">
+        <aside class="col-sm-12 col-lg-3 ">
+            <div class="card md-3 box-coupon">
                 <div class="card-body-1">
                     <div class="form-group">
-                        <label>Have Coupon?</label>
+                        <label class="items">Have Coupon?</label>
                         <div class="input-group">
-                            <input type="text" class="form-control coupon" name placeholder="coupon code" />
+                            <input type="text" class="form-control coupon input-size" name placeholder="coupon code" />
                             <span class="input-group-append">
-                                <button class="btn btn-primary btn-checkout">Apply</button>
+                                <button class="btn btn-apply">Apply</button>
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card box-coupon">
                 <div class="card-body">
                     <dl class="row">
                     {% for total in cart.total %}
@@ -140,23 +146,26 @@
                         </div>
                          {% endfor %}
                     </dl>
-
+                    
                     <dl class="row">
+                    {% for amount in cart.amount %}
                         <div class="col-auto d-flex">
                             <dt>Total:</dt>
                             <dd class="text-right text-dark b ml-3">
-                                <strong>R$ {{ total.total_price }}</strong>
+                                <strong> R$ {{ amount.total_amount }}</strong>
                             </dd>
                         </div>
+                    {% endfor %}
                     </dl>
+
                     <hr>
                     <div class="row">
                         <div class="col-6">
-                            <a href="{% url 'pages:products' %}" class="btn btn-out btn-primary btn-checkout" style="width: 70px;"
+                            <a href="{% url 'pages:products' %}" class="btn btn-checkout" style="width: 70px;"
                                 data-abc="true">Continue shopping</a>
                         </div>
                         <div class="col-6">
-                            <a href="{% url 'pages:payments' %}" class="btn btn-success btn-checkout" data-abc="true" style="width: 70px;">
+                            <a href="{% url 'pages:payments' %}" class="btn btn-checkout btn-finish" data-abc="true" style="width: 70px;">
                                 Check Purchases</a>
                         </div>
 

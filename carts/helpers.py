@@ -107,6 +107,7 @@ class CartHelper:
     def get_total_price_product(self, cart_item):
         return cart_item.item.price * cart_item.quantity
         
+        
     def prepare_checkout_details(self):
         for cart_item in self.cart_items:
 
