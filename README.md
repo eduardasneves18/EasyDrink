@@ -213,16 +213,16 @@ Caso queira consultar acesse: https://github.com/Machado-tec/readme/blob/main/LI
 - Avaliação dos produtos
 
 
-teste
 
-Descrição dos Arquivos e Diretorios deste projeto.
-├── easydrink = contém a pasta do backend e do frontend do projeto
-│   ├── carts = tem os códigos do carrinho
-│   │   └── migrations = envia as informações do carrinho para o banco de dados
+Descrição dos Arquivos e Diretorios deste projeto:
+
+├── easydrink = é a pasta principal do projeto onde consta os outros arquivos, como alguns apps, templates,media...
+│   ├── carts = possui os códigos do carrinho, cria excessões na busca e consegue levar os itens para o carrinho de usuários específicos
+│   │   └── migrations = envia as informações dos produtos no carrinho e a qual usuário ele está ligado para o banco de dados
 │   ├── easydrink = 
-│   ├── pages = 
-│   ├── products = 
-│   │   └── migrations = envia as funções dos products para o banco de dados
+│   ├── pages = possui as view de cada página do site como, lista de desejos, sobre, contatos, login, carrinho...
+│   ├── products = possui o modelo de categorias e dos produtos, classe para trazer os produtos conforme a busca do usuário utilizando palavras-chave, possui uma função que mostra os produtos disponíveis e em destaque
+│   │   └── migrations = envia as informações das categorias e dos produtos cadastrados para o banco de dados
 │   ├── search = possui os códigos da barra de pesquisa
 │   │   └── migrations = envia as informações de busca para o banco de dados
 │   ├── static =  

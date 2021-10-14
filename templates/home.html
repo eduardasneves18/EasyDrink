@@ -19,8 +19,10 @@ body{ text-transform: capitalize;}
     <div class="box" style="border:transparent">
       <a href="{{product.my_absolute_url }}" class="fas fa-heart"></a>
       <a href="{{key.my_absolute_url }}" class="fas fa-eye"></a>
+
       <a href="{{product.my_absolute_url }}"><img src="{{key.image}}" alt="{{key.description}}" /></a>
       <h3>{{key.title|slice:14}}</h3>
+
       <div class="stars">
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
@@ -28,8 +30,9 @@ body{ text-transform: capitalize;}
         <i class="fas fa-star"></i>
         <i class="fas fa-star-half-alt"></i>
       </div>
-      <span>$ {{key.price}}</span><br>
-      <a href="{{product.my_absolute_url }}" class="btn" method="post" >Add to cart</a>
+      <span>$ {{key.price}}</span>
+      <a href="{{key.my_absolute_url}}" class="btn" method="post" >Add to cart</a>
+
     </div>
       {% endif %}
     {% endfor %} 

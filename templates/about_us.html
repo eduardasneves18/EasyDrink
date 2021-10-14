@@ -1,18 +1,33 @@
-{% extends 'base/base.html' %}
+{% extends 'base/base.html' %} {% block content %} {% load static %}
+<style>
+*{
+  background-color:#fcfcff;
+}
+</style>
 
-{% block content %}
-<div class="about_us">
-<h1 class="about-title h1">About Us</h1>
-<p class="about-text">
-  Com intuito de empreender, nós, a DreamTech, decidimos criar a nossa própria
-  ferramenta de trabalho, na qual unia o objetivo individual de cada um e o
-  objetivo do Entra21. A partir disso, desenvolvemos um e-commerce(comércio
-  eletrônico) voltado para a distribuição de bebidas local e nacional. Visando
-  alcançar aqueles que apreciam o lazer acompanhado de uma boa bebida, decidimos
-  simplificar esse processo de descoberta de novos sabores e a sua aquisição. A
-  EasyDrink busca apresentar ao consumidor o que há de melhor no mercado de
-  bebidas, tornando a vida ainda mais alegre.
-</p>
+<div class="container" style="margin-top: 15rem">
+  <div class="row justify-content-md-left">
+    <h1 class="about-title h1">About Us</h1>
+
+    <div class="col" style="margin-top: 20px">
+      <div style="border-left: 6px solid; height: fit-content">
+        <p class="h4" style="margin-left: 8px">
+          In order to undertake, we, DreamTech, decided to create our work tool
+          itself, in which it united the individual objective of each one and
+          the objective of Entra21. From this, we have developed an e-commerce
+          ,a virtual platform for sales, focused on the distribution of beverages local and
+          national. Aiming to reach those who enjoy leisure accompanied by a
+          good drink, we decided to simplify this process of discovery of new
+          flavors and their acquisition. EasyDrink seeks present to the consumer
+          the best in the beverage market, making life even more joyful.
+        </p>
+      </div>
+    </div>
+
+    <div class="col" style="margin-top: -180">
+      <img src="{% static 'images/DreamTech.gif'%}" style="background-color:transparent" alt="" />
+    </div>
+  </div>
 </div>
 
 {% endblock %}
