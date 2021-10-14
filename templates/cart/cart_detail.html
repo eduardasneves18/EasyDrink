@@ -32,7 +32,7 @@
                     <thead>
                         <tr class="small text-uppercase">
                             <th>Products</th>
-                            <th>Quantily</th>
+                            <th style="text-align: center;">Quantity</th>
                             <th>Price</th>
                             <th>Total Price</th>
                             <th></th>
@@ -152,12 +152,12 @@
                     <hr>
                     <div class="row">
                         <div class="col-6">
-                            <a href="{% url 'pages:products' %}" class="btn btn-out btn-primary btn-checkout"
+                            <a href="{% url 'pages:products' %}" class="btn btn-out btn-primary btn-checkout" style="width: 70px;"
                                 data-abc="true">Continue shopping</a>
                         </div>
                         <div class="col-6">
-                            <a href="{% url 'pages:payments' %}" class="btn btn-success btn-checkout" data-abc="true">
-                                Checkout</a>
+                            <a href="{% url 'pages:payments' %}" class="btn btn-success btn-checkout" data-abc="true" style="width: 70px;">
+                                Check Purchases</a>
                         </div>
 
 
