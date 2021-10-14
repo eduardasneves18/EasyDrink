@@ -206,10 +206,8 @@ Caso queira consultar acesse: https://github.com/Machado-tec/readme/blob/main/LI
 - Opção de logout
 - Tratar quantidade de itens no carrinho conforme o estoque
 - linkar os detalhes do produto com a view 
-- Dar funcionalidade aos ícones dos produtos
 - Tela dos vinhos favoritos
 - Filtros para pesquisa
-- Imagens dos produtos na home
 - Avaliação dos produtos
 
 
