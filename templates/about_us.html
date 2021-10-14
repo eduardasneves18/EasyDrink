@@ -1,12 +1,16 @@
-{% extends 'base/base.html' %} {% block content %} {% load static %}
+{% extends 'base/base.html' %} 
+
+{% block content %}
+
+ {% load static %}
 <style>
-*{
+body{
   background-color:#fcfcff;
 }
 </style>
 
 <div class="container" style="margin-top: 15rem">
-  <div class="row justify-content-md-left">
+  <div class="row justify-content-md-left" >
     <h1 class="about-title h1">About Us</h1>
 
     <div class="col" style="margin-top: 20px">
@@ -22,12 +26,21 @@
           the best in the beverage market, making life even more joyful.
         </p>
       </div>
-    </div>
+      
+   <a href="https://github.com/eduardasneves18/EasyDrink/blob/main/README.md">
+  <button  class="btn btn-warning btn-lg active" type="button">
+  Get to Know our work
+  </button>
+  </a>
+  </div>
+  
 
     <div class="col" style="margin-top: -180">
       <img src="{% static 'images/DreamTech.gif'%}" style="background-color:transparent" alt="" />
     </div>
   </div>
+  
 </div>
+
 
 {% endblock %}

@@ -21,5 +21,5 @@ urlpatterns = [
     path("reset-password/", post_reset_password, name="reset-password"),
     path("payments/",template_payment, name="payments"),
     path("favorites/",favorite_products, name="favorites"),
-    path("about_us/", about_us, name="about_us")
-]
+    path("about_us/", about_us, name="about_us"),
+    ]
