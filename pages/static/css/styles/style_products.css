@@ -12,6 +12,7 @@ a:hover {
     color: inherit;
 }
 
+
 .section-products {
     padding: 80px 0 54px;
 }
@@ -35,6 +36,7 @@ a:hover {
 
 .section-products .single-product {
     margin-bottom: 26px;
+    padding: 0 2%;
 }
 
 .section-products .single-product .part-1 {
@@ -64,7 +66,8 @@ a:hover {
 .section-products #product-1 .part-1::before {
 
     background-size: cover;
-		transition: all 0.3s;
+	transition: all 0.3s;
+
 }
 
 .section-products .single-product .part-1 .discount,
@@ -122,7 +125,10 @@ a:hover {
 .section-products .single-product .part-2 .product-title {
     font-size: 1.5rem;
 }
-
+.section-products .single-product .part-2 .product-title:hover {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
 .section-products .single-product .part-2 h4 {
     display: inline-block;
     font-size: 1rem;

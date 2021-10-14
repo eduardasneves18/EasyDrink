@@ -8,6 +8,7 @@ class LoginForm(forms.Form):
     email = forms.EmailField(max_length = 200, widget = forms.EmailInput())     
     password = forms.CharField(widget = forms.PasswordInput())
 
+
 class RegisterForm(forms.Form):
     username = forms.CharField(max_length = 255, widget = forms.TextInput(), required=True)
     email = forms.EmailField(max_length = 255, widget = forms.EmailInput(), required=True) 
