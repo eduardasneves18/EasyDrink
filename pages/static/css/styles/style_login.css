@@ -13,26 +13,20 @@
     align-items: center;
     justify-items: center;
     
-
-    
 }
 
 .box-login {
-    background-color: rgb(212, 204, 204);
-    padding: 2%;
-    border-radius: 3%;
-    font-size: 1.4rem;
-}
-
-.box-login {
-    background-color: #EEEEEE;
+    background-color: #fff;
     padding: 2%;
     border-radius: 3%;
     font-size: 1.4rem;
     margin-top: 25rem;
+    box-shadow: 0 0 15px 1px rgb(202, 202, 202);
+    width: 30%;
 }
 .box-login button{
     border-style: none;
+    text-align: left;
 }
 
 .verify-confirm-email h1 {
@@ -51,5 +45,58 @@
 
 .login-text-center {
     text-align: center;
+}
+
+.labels {
+    /* background-color: #ffffff; */
+    padding: 3% 0% ;
+}
+
+
+
+.control-label{
+    text-align: left;
+    color: #192a56;
+    width: 90%;
+    /* padding: 0 30%; */
+    font-weight: 600;
+    margin-top: 5%;
+}
+
+.control-group input {
+    background: rgb(245, 245, 245);
+    height: 10%;
+    width: 90%;
+}
+
+.control-group input:f {
+    background: #FFF;
+    height: 10%;
+    width: 90%;
+}
+
+.btn-form {
+    background-color: #192a56!important;
+    color:#fff!important;
+    font-size: 1.4rem!important;
+
+}
+
+.btn-form:hover{
+    background-color:#27ae60!important;
+    color:#ffffff!important;
+    font-size: 1.4rem!important;
+    font-weight: 700;
+    
+}
+
+.link-login {
+    color: #1a45b3;
+}
+
+.link-login:hover{
+    color: #1a45b3;
+    font-weight:bold;
+    font-size: 1.4rem;
 }
 

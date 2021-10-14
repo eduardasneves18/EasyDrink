@@ -9,17 +9,19 @@
             <!--Login--> 
             <div class="box-login">
                 <h1>Login</h1>
-                <form  method="POST">
-                    {% csrf_token %}
-                    {{ login_form|crispy }}
-                    <button class="btn btn-primary" type="submit">Login</button>
-                </form>
+              
+                    <form  method="POST" class="labels">
+                        {% csrf_token %}
+                        {{ login_form|crispy }}
+                        <button class="btn btn-form" type="submit">Login</button>
+                    </form>
+            
 
                 <div style="margin:10px">
-                <p class="text-center">Forgot your password? <a href="{% url 'pages:reset-password' %}">Reset now</a>.</p>
+                <p class="text-center">Forgot your password? <a href="{% url 'pages:reset-password' %}" class="link-login">Reset now</a>.</p>
                 </div>
                 <div style="margin:10px">
-                    <p class="text-center">Don't have an account? <a href="{% url 'pages:register' %}">Create an account</a>.</p>
+                    <p class="text-center">Don't have an account? <a href="{% url 'pages:register' %}"  class="link-login">Create an account</a>.</p>
                 </div>
 
             </div>
