@@ -2,9 +2,12 @@ from pathlib import Path
 import environ
 import datetime
 import os
-
+import django_heroku 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -18,9 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = os.environ.get('DEBUG') == False 
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['https://easydrinkinc.herokuapp.com']
 
 # Application definition
 
@@ -171,5 +174,11 @@ SIMPLE_JWT = {
 CART_SESSION_ID = "cart"
 CART_ITEM_MAX_QUANTITY = 100
 
-with open('easydrink/local_settings.py') as infile:
-    exec(infile.read())
+# with open('easydrink/local_settings.py') as infile:
+#     exec(infile.read())
+
+try:
+    from easydrink.local_settings import *
+except ImportError:
+    pass
+
