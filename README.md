@@ -605,6 +605,14 @@ Muito obrigada por ter lido a nossa documentação. Caso queira conversar com a 
 4. Instalar a extenção SQLite Viewer no VS code para analisar o conteudo do db.sqlite3 
 5. Importar conteudo fornecipelo pelo instrutor no arquivo easydrink.json com o comando: 
         python manage.py loaddata easydrink.json
+        *** 
 
 6. Verificar se os dados foram importados corretamente para a sua base de dados local. (pelo vscode sqlite browser)
 7. rodar e verificar tudo pelo site. 
+
+
+*** Conteudo foi exportado da seguinte maneira:
+1. Conectado o local_settings no banco de dados em nuvem (mysql)
+2. Executar o comando de exportar para formato json
+        python manage.py dumpdata --all --output easy.json
+3. Copiar arquivo .json para o Luigi. 
