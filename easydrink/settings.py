@@ -2,6 +2,8 @@ from pathlib import Path
 # import environ
 import datetime
 import os
+
+from environ import environ
 import django_heroku 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
