@@ -17,12 +17,8 @@
 - 
 ## EasyDrink | E-Comerce de bebidas
 
-;;
 
 ## Este sistema está em desenvolvimento
-
-
-## Conteúdo
 
 
 ## Descrição
@@ -211,7 +207,9 @@ Caso queira consultar acesse: https://github.com/Machado-tec/readme/blob/main/LI
 - Filtros para pesquisa
 - Imagens dos produtos na home
 - Avaliação dos produtos
-
+- Sistema de atendimento
+- Na página about dar funcionalidade aos botões de: fast delivery, easy paymentes e 24/7Service
+- Criar classificação por país
 
 
 Descrição dos Arquivos e Diretorios deste projeto:
@@ -219,18 +217,18 @@ Descrição dos Arquivos e Diretorios deste projeto:
 ├── easydrink = é a pasta principal do projeto onde consta os outros arquivos, como alguns apps, templates,media...
 │   ├── carts = possui os códigos do carrinho, cria excessões na busca e consegue levar os itens para o carrinho de usuários específicos
 │   │   └── migrations = envia as informações dos produtos no carrinho e a qual usuário ele está ligado para o banco de dados
-│   ├── easydrink = 
+│   ├── easydrink 
 │   ├── pages = possui as view de cada página do site como, lista de desejos, sobre, contatos, login, carrinho...
 │   ├── products = possui o modelo de categorias e dos produtos, classe para trazer os produtos conforme a busca do usuário utilizando palavras-chave, possui uma função que mostra os produtos disponíveis e em destaque
 │   │   └── migrations = envia as informações das categorias e dos produtos cadastrados para o banco de dados
 │   ├── search = possui os códigos da barra de pesquisa
 │   │   └── migrations = envia as informações de busca para o banco de dados
-│   ├── static =  
-│   │   ├── css = 
-│   │   ├── images = 
-│   │   ├── js = 
-│   │   └── templates = possui os templates de cada página do projeto
-│   │       ├── base = possui os arquivos base para fazer os outros templates
+│   ├── static  
+│   │   ├── css 
+│   │   ├── images
+│   │   ├── js 
+│   │   └── templates 
+│   │       ├── base = é o arquivo com os templates básicos 
 │   │       ├── cart = possui o template do carrinho
 │   │       ├── categories = possui os templates das páginas com as categorias das bebidas
 │   │       ├── products = possui os templates da página dos produtos
@@ -238,359 +236,6 @@ Descrição dos Arquivos e Diretorios deste projeto:
 │   └── users
 │       └── migrations = envia as informações do usuário para o banco de dados
 
-
-pages
-│   │   admin.py
-│   │   apps.py
-│   │   forms.py
-│   │   models.py
-│   │   tests.py
-│   │   urls.py
-│   │   views.py
-│   │   __init__.py
-│   │
-│   ├───static
-│   │   ├───css
-│   │   │       style_base.css
-│   │   │       style_cart.css
-│   │   │       style_login.css
-│   │   │       style_navbar.css
-│   │   │       style_slider.css
-│   │   │
-│   │   ├───images
-│   │   │   │   android-icon-144x144.png
-│   │   │   │   android-icon-192x192.png
-│   │   │   │   android-icon-36x36.png
-│   │   │   │   android-icon-48x48.png
-│   │   │   │   android-icon-72x72.png
-│   │   │   │
-│   │   │   └───user
-│   │   │           default.jpg
-│   │   │
-│   │   └───js
-│   │           script_cart.js
-│   │           script_nav.js
-│   │           script_slider.js
-│   │
-│   └───__pycache__
-│           forms.cpython-39.pyc
-│           models.cpython-39.pyc
-│           urls.cpython-39.pyc
-│           views.cpython-39.pyc
-│           __init__.cpython-39.pyc
-│
-├───payments
-│   │   admin.py
-│   │   apps.py
-│   │   models.py
-│   │   tests.py
-│   │   views.py
-│   │   __init__.py
-│   │
-│   └───__pycache__
-│           models.cpython-39.pyc
-│           __init__.cpython-39.pyc
-│
-├───products
-│   │   admin.py
-│   │   apps.py
-│   │   models.py
-│   │   serializers.py
-│   │   tests.py
-│   │   urls.py
-│   │   views.py
-│   │   __init__.py
-│   │
-│   ├───migrations
-│   │   │   0001_initial.py
-│   │   │   __init__.py
-│   │   │
-│   │   └───__pycache__
-│   │           0001_initial.cpython-39.pyc
-│   │           __init__.cpython-39.pyc
-│   │
-│   └───__pycache__
-│           models.cpython-39.pyc
-│           serializers.cpython-39.pyc
-│           urls.cpython-39.pyc
-│           views.cpython-39.pyc
-│           __init__.cpython-39.pyc
-│
-├───search
-│   │   admin.py
-│   │   apps.py
-│   │   models.py
-│   │   tests.py
-│   │   urls.py
-│   │   views.py
-│   │   __init__.py
-│   │
-│   └───__pycache__
-│           models.cpython-39.pyc
-│           urls.cpython-39.pyc
-│           views.cpython-39.pyc
-│           __init__.cpython-39.pyc
-│
-├───services
-│   │   auth_service.py
-│   │   cart_service.py
-│   │   products_service.py
-│   │
-│   └───__pycache__
-│           auth_service.cpython-39.pyc
-│           cart_service.cpython-39.pyc
-│           products_service.cpython-39.pyc
-│
-├───static
-│   └───images
-│       └───media
-│               heineken.jfif
-│               Itaipava-Pilsen_350ml-_19---SUADA.jpg
-│               skolbeats.png
-│               skol_beats.jfif
-│
-├───staticfiles
-│   ├───admin
-│   │   ├───css
-│   │   │   │   autocomplete.css
-│   │   │   │   base.css
-│   │   │   │   changelists.css
-│   │   │   │   dashboard.css
-│   │   │   │   fonts.css
-│   │   │   │   forms.css
-│   │   │   │   login.css
-│   │   │   │   nav_sidebar.css
-│   │   │   │   responsive.css
-│   │   │   │   responsive_rtl.css
-│   │   │   │   rtl.css
-│   │   │   │   widgets.css
-│   │   │   │
-│   │   │   └───vendor
-│   │   │       └───select2
-│   │   │               LICENSE-SELECT2.md
-│   │   │               select2.css
-│   │   │               select2.min.css
-│   │   │
-│   │   ├───fonts
-│   │   │       LICENSE.txt
-│   │   │       README.txt
-│   │   │       Roboto-Bold-webfont.woff
-│   │   │       Roboto-Light-webfont.woff
-│   │   │       Roboto-Regular-webfont.woff
-│   │   │
-│   │   ├───img
-│   │   │   │   calendar-icons.svg
-│   │   │   │   icon-addlink.svg
-│   │   │   │   icon-alert.svg
-│   │   │   │   icon-calendar.svg
-│   │   │   │   icon-changelink.svg
-│   │   │   │   
-│   │   │   └───gis
-│   │   │           move_vertex_off.svg
-│   │   │           move_vertex_on.svg
-│   │   │
-│   │   └───js
-│   │       │   actions.js
-│   │       │   actions.min.js
-│   │       │   autocomplete.js
-│   │       │   calendar.js
-│   │       │   cancel.js
-│   │       │   change_form.js
-│   │       │
-│   │       ├───admin
-│   │       │       DateTimeShortcuts.js
-│   │       │       RelatedObjectLookups.js
-│   │       │
-│   │       └───vendor
-│   │           ├───jquery
-│   │           │       jquery.js
-│   │           │       jquery.min.js
-│   │           │       LICENSE.txt
-│   │           │
-│   │           ├───select2
-│   │           │   │   LICENSE.md
-│   │           │   │   select2.full.js
-│   │           │   │   select2.full.min.js
-│   │           │   │
-│   │           │   └───i18n
-│   │           │           af.js
-│   │           │           ar.js
-│   │           │           az.js
-│   │           │           bg.js
-│   │           │           bn.js
-│   │           │
-│   │           └───xregexp
-│   │                   LICENSE.txt
-│   │                   xregexp.js
-│   │                   xregexp.min.js
-│   │
-│   ├───css
-│   │       style_cart.css
-│   │       style_login.css
-│   │       style_navbar.css
-│   │       style_slider.css
-│   │
-│   ├───drf-yasg
-│   │   │   immutable.min.js
-│   │   │   insQ.min.js
-│   │   │   redoc-init.js
-│   │   │   style.css
-│   │   │   swagger-ui-init.js
-│   │   │   url-polyfill.min.js
-│   │   │   
-│   │   ├───redoc
-│   │   │       redoc-logo.png
-│   │   │       redoc.min.js
-│   │   │
-│   │   ├───redoc-old
-│   │   │       redoc.min.js
-│   │   │
-│   │   └───swagger-ui-dist
-│   │           absolute-path.js
-│   │           favicon-32x32.png
-│   │           index.js
-│   │           oauth2-redirect.html
-│   │           swagger-ui-bundle.js
-│   │           swagger-ui-es-bundle-core.js
-│   │           swagger-ui-es-bundle.js
-│   │           swagger-ui-standalone-preset.js
-│   │           swagger-ui.css
-│   │
-│   ├───images
-│   │   │   android-icon-144x144.png
-│   │   │   android-icon-192x192.png
-│   │   │   android-icon-36x36.png
-│   │   │   android-icon-48x48.png
-│   │   │   android-icon-72x72.png
-│   │   │   
-│   │   └───user
-│   │           default.jpg
-│   │
-│   ├───js
-│   │       script_cart.js
-│   │       script_nav.js
-│   │       script_slider.js
-│   │
-│   └───rest_framework
-│       ├───css
-│       │       bootstrap-theme.min.css
-│       │       bootstrap-tweaks.css
-│       │       bootstrap.min.css
-│       │       default.css
-│       │       font-awesome-4.0.3.css
-│       │       prettify.css
-│       │
-│       ├───docs
-│       │   ├───css
-│       │   │       base.css
-│       │   │       highlight.css
-│       │   │       jquery.json-view.min.css
-│       │   │
-│       │   ├───img
-│       │   │       favicon.ico
-│       │   │       grid.png
-│       │   │
-│       │   └───js
-│       │           api.js
-│       │           highlight.pack.js
-│       │           jquery.json-view.min.js
-│       │
-│       ├───fonts
-│       │       fontawesome-webfont.eot
-│       │       fontawesome-webfont.svg
-│       │       fontawesome-webfont.ttf
-│       │       fontawesome-webfont.woff
-│       │       glyphicons-halflings-regular.eot
-│       │       glyphicons-halflings-regular.svg
-│       │       glyphicons-halflings-regular.ttf
-│       │       glyphicons-halflings-regular.woff
-│       │       glyphicons-halflings-regular.woff2
-│       │
-│       ├───img
-│       │       glyphicons-halflings-white.png
-│       │       glyphicons-halflings.png
-│       │       grid.png
-│       │
-│       └───js
-│               ajax-form.js
-│               bootstrap.min.js
-│               coreapi-0.1.1.js
-│               csrf.js
-│               default.js
-│               jquery-3.4.1.min.js
-│               prettify-min.js
-│
-├───templates
-│   │   about.html
-│   │   contacts.html
-│   │   home.html
-│   │   orders.html
-│   │   pagination.html
-│   │   slider.html
-│   │   wishes_list.html
-│   │
-│   ├───base
-│   │       aside.html
-│   │       base.html
-│   │       footer.html
-│   │       logo_image.html
-│   │       nav.html
-│   │
-│   ├───cart
-│   │       cart_detail.html
-│   │
-│   ├───categories
-│   │       category_list.html
-│   │
-│   ├───products
-│   │       products_bestsellers.html
-│   │       products_list.html
-│   │       product_detail.html
-│   │
-│   ├───search
-│   │       result_query.html
-│   │       search_form.html
-│   │
-│   └───user
-│           login.html
-│           logout.html
-│           register.html
-│           reset_password.html
-│           reset_password_confirmed.html
-│           verify_confirmed_email.html
-│           verify_email.html
-│
-├───users
-│   │   admin.py
-│   │   apps.py
-│   │   models.py
-│   │   renderers.py
-│   │   serializers.py
-│   │   tests.py
-│   │   urls.py
-│   │   utils.py
-│   │   views.py
-│   │   __init__.py
-│   │
-│   ├───migrations
-│   │   │   0001_initial.py
-│   │   │   __init__.py
-│   │   │
-│   │   └───__pycache__
-│   │           0001_initial.cpython-39.pyc
-│   │           __init__.cpython-39.pyc
-│   │
-│   └───__pycache__
-│           models.cpython-39.pyc
-│           renderers.cpython-39.pyc
-│           serializers.cpython-39.pyc
-│           urls.cpython-39.pyc
-│           utils.cpython-39.pyc
-│           views.cpython-39.pyc
-│           __init__.cpython-39.pyc
-│
-└───__pycache__
-        utils.cpython-39.pyc
 
 Muito obrigada por ter lido a nossa documentação. Caso queira conversar com a nossa equipe ou tirar alguma dúvida entre em contato conosco atráves dos nossos e-mails de contato.
 
