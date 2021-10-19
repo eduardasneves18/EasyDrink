@@ -4,7 +4,7 @@
 - Conteúdo
 - Descrição
 - Layout
-- Deploy 
+- Migração de base de dados Mysql para Localhost SqLite
 - Pré-Requisitos
 - Dependências e Libs Instaladas
 - Como rodas a aplicação teste na WEB
@@ -35,7 +35,26 @@ Com intuito de empreender, nós, a DreamTech, decidimos criar a nossa própria f
 
 
 
-## Deploy 
+## Migração de base de dados Mysql para Localhost SqLite
+
+1. Alterar configuração do local_setting.py de :
+        DATABASES = DbSqLite 
+        #DATABASES = DbMySQL
+
+2. Excluir ou renomear o arquivo atual se ouver db.sqlite3 
+3. Executar o python manage.py migrate  (irá criar o arquivo db.sqlite3 novamente)
+4. Instalar a extenção SQLite Viewer no VS code para analisar o conteudo do db.sqlite3 
+5. Importar conteudo fornecipelo pelo instrutor no arquivo easydrink.json com o comando: 
+        python manage.py loaddata easydrink.json
+
+6. Verificar se os dados foram importados corretamente para a sua base de dados local. (Pelo vscode sqlite browser)
+7. Rodar e verificar tudo pelo site. 
+
+*** Conteudo foi exportado da seguinte maneira:
+1. Conectado o local_settings no banco de dados em nuvem (mysql)
+2. Executar o comando de exportar para formato json
+        python manage.py dumpdata --all --output easy.json
+3. Copiar arquivo .json para o Luigi. 
 
 
 ## Pré-Requisitos 
@@ -219,8 +238,8 @@ Descrição dos Arquivos e Diretorios deste projeto:
 │   ├── pages = possui as view de cada página do site como, lista de desejos, sobre, contatos, login, carrinho...
 │   ├── products = possui o modelo de categorias e dos produtos, classe para trazer os produtos conforme a busca do usuário utilizando palavras-chave, possui uma função que mostra os produtos disponíveis e em destaque
 │   │   └── migrations = envia as informações das categorias e dos produtos cadastrados para o banco de dados
-│   ├── search = possui os códigos da barra de pesquisa
-│   │   └── migrations = envia as informações de busca para o banco de dados
+│   ├── search = possui os códigos da barra de pesquisa, onde pesquisa por nome de categoria e palavras específicas que podem estar na descrição do produto
+│   │   └── migrations = envia as informações de busca para o banco de dados para encontrar produtos de acordo com a pesquisa do usuário
 │   ├── static  
 │   │   ├── css 
 │   │   ├── images
@@ -231,33 +250,8 @@ Descrição dos Arquivos e Diretorios deste projeto:
 │   │       ├── categories = possui os templates das páginas com as categorias das bebidas
 │   │       ├── products = possui os templates da página dos produtos
 │   │       └── user = possui os templates da página de cadastro do usuário
-│   └── users
-│       └── migrations = envia as informações do usuário para o banco de dados
+│   └── users = Possui os códigos do usuário, onde é criado atráves de email,senha e usuário. É feito autenticação através do email, possível alterar informações de cadastro
+│       └── migrations = envia as informações do usuário para o banco de dados, onde é possível verificar se possui já uma conta com aquele email e senha
 
 
 Muito obrigada por ter lido a nossa documentação. Caso queira conversar com a nossa equipe ou tirar alguma dúvida entre em contato conosco atráves dos nossos e-mails de contato.
-
-
-
-## Migração de base de dados Mysql para Localhost SqLite
-
-1. Alterar configuração do local_setting.py de :
-        DATABASES = DbSqLite 
-        #DATABASES = DbMySQL
-
-2. Excluir arquivo atual se ouver db.sqlite3 (ou renomear por duvida)
-3. executar o python manage.py migrate  (ira criar o arquivo db.sqlite3 novamente)
-4. Instalar a extenção SQLite Viewer no VS code para analisar o conteudo do db.sqlite3 
-5. Importar conteudo fornecipelo pelo instrutor no arquivo easydrink.json com o comando: 
-        python manage.py loaddata easydrink.json
-        *** 
-
-6. Verificar se os dados foram importados corretamente para a sua base de dados local. (pelo vscode sqlite browser)
-7. rodar e verificar tudo pelo site. 
-
-
-*** Conteudo foi exportado da seguinte maneira:
-1. Conectado o local_settings no banco de dados em nuvem (mysql)
-2. Executar o comando de exportar para formato json
-        python manage.py dumpdata --all --output easy.json
-3. Copiar arquivo .json para o Luigi. 
