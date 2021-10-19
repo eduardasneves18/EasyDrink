@@ -186,3 +186,14 @@ a:hover {
     color: #192a56;
     box-shadow: 0 0 15px 1px rgb(202, 202, 202);
 }
+
+
+.btn-add {
+    color: #ffffff;
+    background-color: #192a56!important;
+}
+
+.btn-add:hover{
+    color: #ffffff;
+    background-color: #27ae60!important;
+}

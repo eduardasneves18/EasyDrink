@@ -3,6 +3,7 @@
 {% block content %} 
 {% include 'slider.html' %}
 
+
 <style>
 body{ text-transform: capitalize;}
 </style>
@@ -17,10 +18,12 @@ body{ text-transform: capitalize;}
     {% for key in data %} 
       {% if forloop.counter < 7 %}
     <div class="box" style="border:transparent">
-      <a href="#" class="fas fa-heart"></a>
+      <a href="{{product.my_absolute_url }}" class="fas fa-heart"></a>
       <a href="{{key.my_absolute_url }}" class="fas fa-eye"></a>
-      <a href="{{key.my_absolute_url}}"><img src="{{key.image}}" alt="{{key.description}}" /></a>
-      <h3>{{key.title}}</h3>
+
+      <a href="{{product.my_absolute_url }}"><img src="{{key.image}}" alt="{{key.description}}" /></a>
+      <h3>{{key.title|slice:14}}</h3>
+
       <div class="stars">
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
@@ -28,8 +31,10 @@ body{ text-transform: capitalize;}
         <i class="fas fa-star"></i>
         <i class="fas fa-star-half-alt"></i>
       </div>
-      <span>$ {{key.price}}</span>
-      <a href="{{key.my_absolute_url}}" class="btn" method="post" >add to cart</a>
+      <span>$ {{key.price}}</span><br>
+       <form  method="post">
+      <a href="{{key.my_absolute_url}}" class="btn" method="post" >Add to cart</a>
+
     </div>
       {% endif %}
     {% endfor %} 
@@ -45,11 +50,12 @@ body{ text-transform: capitalize;}
   <div class="box-container">
     {% for key in data %} 
       {% if forloop.counter < 7 %}
-    <div class="box style:border-transparent; height: fit-content" >
+    <div class="box " style="border:transparent; height:fit-content" >
       <div class="image"> 
-        <img src="{{key.image}}" style="hight: 100px; width: 100px; margin-left: 100px"alt="" />
-        <a href="#" class="fas fa-heart"></a>
+        <img src="{{key.image}}" style=" height: 100px; width: 100px; margin-left: 100px"alt="" />
+        <a href="{{key.my_absolute_url}}" class="fas fa-heart"></a>
       </div>
+      <center>
       <div class="content">
         <div class="stars">
           <i class="fas fa-star"></i>
@@ -58,18 +64,19 @@ body{ text-transform: capitalize;}
           <i class="fas fa-star"></i> 
           <i class="fas fa-star-half-alt"></i>
         </div>
-        <h3>{{key.title}}</h3>
+        <h3>{{key.title|slice:14}}</h3>
         <p>
           {{key.description|slice:"24"}}
         </p>
-        <a href="#" class="btn">add to cart</a>
-        <span class="price" style="text-align:center margin-top: 1.1rem!important"><br> $ {{key.price}}</span>
+        <span class="price">$ {{key.price}}</span><br>
+        <a href="{{key.my_absolute_url}}" class="btn">
+          Add to cart
+        </a>
       </div>
+      </center>
     </div>
       {% endif %}
     {% endfor %}
-
-
 
   </div>
 </section>

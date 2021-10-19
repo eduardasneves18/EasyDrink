@@ -61,7 +61,7 @@ load widget_tweaks %} {% load crispy_forms_tags %}
 </style>
 <div class="row">
   {% if cart %}
-  <aside class="col-lg-9">
+  <aside class="col-lg-6">
     <div class="table-reponsive">
       <table class="table">
         <thead>
@@ -101,18 +101,26 @@ load widget_tweaks %} {% load crispy_forms_tags %}
       </table>
     </div>
   </aside>
-  <aside class="col-sm-13 col-lg-3 ">
-    <div class="card md-4" style="border: transparent">
-      <div class="greet-text">
+  <aside class="col-sm-13 col-lg-6" style="margin-top: 100px;">
+    <div class="card md-6" style="border: transparent">
+      <center>
+        <div class="image">
+          <img src="{% static 'images/Logo3.png'%}" alt="logo">
+        </div>
+      </center>
+      <div class="greet-text" style="margin-top:auto">
         <h1>Thank you for shopping on our website.</h1>
         <div class="col-12 shop-txt">
           <h2>Keep shopping here:</h2>
-          <a
+          <center>
+            <a
             href="{% url 'pages:products' %}"
             class="btn btn-out btn-primary btn-checkout btn-st"
+            style="width: 150px;"
             data-abc="true"
             >Continue shopping</a
           >
+          </center>
         </div>
         {% else %}
         <h1>ALGO DEU ERRADO</h1>

@@ -202,10 +202,8 @@ Caso queira consultar acesse: https://github.com/Machado-tec/readme/blob/main/LI
 - Opção de logout
 - Tratar quantidade de itens no carrinho conforme o estoque
 - linkar os detalhes do produto com a view 
-- Dar funcionalidade aos ícones dos produtos
 - Tela dos vinhos favoritos
 - Filtros para pesquisa
-- Imagens dos produtos na home
 - Avaliação dos produtos
 - Sistema de atendimento
 - Na página about dar funcionalidade aos botões de: fast delivery, easy paymentes e 24/7Service
@@ -239,3 +237,27 @@ Descrição dos Arquivos e Diretorios deste projeto:
 
 Muito obrigada por ter lido a nossa documentação. Caso queira conversar com a nossa equipe ou tirar alguma dúvida entre em contato conosco atráves dos nossos e-mails de contato.
 
+
+
+## Migração de base de dados Mysql para Localhost SqLite
+
+1. Alterar configuração do local_setting.py de :
+        DATABASES = DbSqLite 
+        #DATABASES = DbMySQL
+
+2. Excluir arquivo atual se ouver db.sqlite3 (ou renomear por duvida)
+3. executar o python manage.py migrate  (ira criar o arquivo db.sqlite3 novamente)
+4. Instalar a extenção SQLite Viewer no VS code para analisar o conteudo do db.sqlite3 
+5. Importar conteudo fornecipelo pelo instrutor no arquivo easydrink.json com o comando: 
+        python manage.py loaddata easydrink.json
+        *** 
+
+6. Verificar se os dados foram importados corretamente para a sua base de dados local. (pelo vscode sqlite browser)
+7. rodar e verificar tudo pelo site. 
+
+
+*** Conteudo foi exportado da seguinte maneira:
+1. Conectado o local_settings no banco de dados em nuvem (mysql)
+2. Executar o comando de exportar para formato json
+        python manage.py dumpdata --all --output easy.json
+3. Copiar arquivo .json para o Luigi. 

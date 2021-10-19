@@ -58,13 +58,20 @@
 }
 
 .input-quantity {
-    width: 30%;
+    width: 25%;
+}
+.input-size{
+    padding: 1%!important;
+    margin: 2%!important;
 }
 
 .btn-checkout {
     margin: 5px;
     width: 50px;
     height: 35px;
+    color:#fff!important;
+    background-color: #192A56!important;
+
 }
 .card {
     margin-bottom: 1rem;
@@ -78,4 +85,26 @@
 
 .quantidade-input {
     max-width: 100%;
+}
+
+.btn-finish {
+    background-color: #27ae60!important;
+}
+
+.btn-apply {
+    align-items: initial;
+    background-color: #192A56!important;
+    color: #fff!important;
+    margin-bottom: 20%;
+
+
+}
+
+.items{
+    padding-left: 2%;
+}
+
+.box-coupon{
+    margin-top: 0%!important;
+    border: none!important;
 }
