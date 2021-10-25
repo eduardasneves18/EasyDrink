@@ -101,6 +101,7 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
 
     def change_password(self, password, token, uidb64):
         try: 
+            # get_host
             url = "http://127.0.0.1:8000/api/v1/auth/password-reset-complete"
             payload = {
                 "password": password,

@@ -50,9 +50,9 @@ body{ text-transform: capitalize;}
   <div class="box-container">
     {% for key in data %} 
       {% if forloop.counter < 7 %}
-    <div class="box " style="border:transparent; height:fit-content" >
+    <div class="box " style="border:transparent;">
       <div class="image"> 
-        <img src="{{key.image}}" style=" height: 100px; width: 100px; margin-left: 100px"alt="" />
+        <img class="speciality_menu"src="{{key.image}}" style="width: 100px; margin: 0 0 0 82px;"alt="" />
         <a href="{{key.my_absolute_url}}" class="fas fa-heart"></a>
       </div>
       <center>
